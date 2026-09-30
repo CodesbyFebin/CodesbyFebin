@@ -128,6 +128,58 @@ REPRODUCIBLE      Another implementation should be able to verify the contract
 SOURCE = PRODUCT  Public capability claims should correspond to inspectable code
 ```
 
+## DEVELOPER ECOSYSTEM
+
+I build and document systems so they can be understood by **humans, coding agents, automation and external developer platforms** without inventing capabilities that are not present.
+
+| Surface | Role in the engineering workflow |
+|---|---|
+| **GitHub** | Source, issues, pull requests, CI, security automation, evidence and release history |
+| **MCP** | Explicit tool/resource boundary for AI agents and developer automation |
+| **Agent Skills** | Reusable, scoped instructions for repeatable engineering workflows |
+| **LinkedIn** | Professional identity and public project discovery |
+| **Slack** | Team communication and developer collaboration when a workspace integration is configured |
+| **Vercel** | Web/application deployment for applicable projects |
+| **Docker** | Reproducible workload packaging and local/self-hosted execution |
+| **Kubernetes** | Cluster orchestration where a project explicitly implements or validates it |
+| **Local LLMs** | Operator-controlled inference paths for sovereign AI workflows |
+
+### Agent-native repository contract
+
+This profile follows the increasingly common separation between human documentation, agent instructions, compact LLM discovery and reusable skills:
+
+```text
+README.md
+   ├── human technical profile
+   ├── implemented systems
+   └── verification links
+
+AGENTS.md
+   ├── agent operating rules
+   ├── claim boundaries
+   └── source-of-truth guidance
+
+llms.txt
+   ├── compact identity
+   ├── project discovery
+   └── verification entry points
+
+SKILL.md / skills/
+   ├── reusable engineering workflows
+   └── evidence-first project inspection
+
+agents.txt / agents.json
+   └── machine-readable capability discovery
+```
+
+The repository does **not** treat the presence of an MCP server, skill file, social profile or deployment provider as proof of engineering capability. Those surfaces are interfaces. The underlying source, tests, specifications and evidence remain authoritative.
+
+### Collaboration contract
+
+For technical collaboration, start with the relevant repository and its issue/PR history. When an AI agent participates, it should inspect `AGENTS.md` and project-local instructions before modifying source. When a capability claim matters, verify it against source or executable evidence before repeating it.
+
+Public professional identity is linked through LinkedIn and ORCID. Communication platforms such as Slack are workflow integrations, not evidence sources by themselves.
+
 ## MACHINE INTERFACE
 
 This profile and the selected repositories expose machine-readable context where available:
