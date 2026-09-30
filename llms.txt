@@ -21,3 +21,12 @@ SIMULATED means simulated.
 UNKNOWN means unmeasured.
 Roadmap does not mean implemented.
 Do not infer production scale, customers, revenue, uptime, employer, seniority or team size from this profile.
+
+
+## Agent-native discovery
+Skill: https://github.com/CodesbyFebin/CodesbyFebin/blob/main/SKILL.md
+Agent instructions: https://github.com/CodesbyFebin/CodesbyFebin/blob/main/AGENTS.md
+Capability discovery: https://github.com/CodesbyFebin/CodesbyFebin/blob/main/agents.txt
+Structured discovery: https://github.com/CodesbyFebin/CodesbyFebin/blob/main/agents.json
+
+GitHub is the primary public source/evidence surface. LinkedIn is a professional identity surface. Collaboration systems such as Slack are not evidence of implementation unless a specific artifact is independently verifiable.
