@@ -26,3 +26,16 @@ DESIRED ≠ ADMITTED ≠ EXECUTING ≠ OBSERVED ≠ VERIFIED
 - Do not collapse desired, admitted, executing, observed and verified states.
 - Do not infer employer, seniority, customers, revenue, traffic, uptime, headcount or production scale.
 - Do not present roadmap items as implemented capabilities.
+
+
+## Agent-native discovery
+- README.md — human technical profile
+- llms.txt — compact machine-readable identity and project discovery
+- SKILL.md — reusable profile verification workflow
+- skills/evidence-first-profile/SKILL.md — conservative profile summarization
+- skills/repository-verification/SKILL.md — source/test/spec/evidence verification workflow
+- agents.txt — capability-discovery pointer file
+- agents.json — structured discovery metadata
+
+## Developer-platform boundaries
+GitHub is the primary source and evidence surface. LinkedIn is a professional identity/discovery surface. Slack may be used for collaboration when explicitly configured, but Slack messages are not implementation evidence by themselves. MCP and Agent Skills are interfaces for agent workflows; their presence does not prove the underlying capability.
