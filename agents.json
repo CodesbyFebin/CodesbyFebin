@@ -1,0 +1,34 @@
+{
+  "name": "Febin Francis",
+  "handle": "CodesbyFebin",
+  "role": "Systems Engineer",
+  "focus": [
+    "AI Infrastructure",
+    "Verifiable Compute",
+    "Sovereign Systems",
+    "AI Agents",
+    "Model Context Protocol",
+    "Local LLMs",
+    "Zero-Knowledge",
+    "Distributed Systems"
+  ],
+  "principle": "PROOF > PROMISES",
+  "discovery": {
+    "human": "https://github.com/CodesbyFebin",
+    "agents": "https://github.com/CodesbyFebin/CodesbyFebin/blob/main/AGENTS.md",
+    "llms": "https://github.com/CodesbyFebin/CodesbyFebin/blob/main/llms.txt",
+    "skill": "https://github.com/CodesbyFebin/CodesbyFebin/blob/main/SKILL.md"
+  },
+  "projects": [
+    "https://github.com/CodesbyFebin/rust-stark-zkvm",
+    "https://github.com/CodesbyFebin/Decentralized-",
+    "https://github.com/CodesbyFebin/decentralized.hosting",
+    "https://github.com/CodesbyFebin/xfree"
+  ],
+  "claimPolicy": {
+    "simulated": "must remain explicitly simulated",
+    "unknown": "must remain explicitly unmeasured",
+    "roadmap": "must not be represented as implemented",
+    "verification": "prefer source, tests, specifications and evidence"
+  }
+}
