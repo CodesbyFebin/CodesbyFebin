@@ -3,6 +3,6 @@ description: Building systems that prove what happened. Portfolio with 20+ open 
 url: "https://codesbyfebin.github.io"
 theme: null
 plugins: []
+keep_files: ['.nojekyll', 'assets', 'feed.xml', 'index.html', 'portfolio.html']
 include: ['.nojekyll', 'assets', 'feed.xml']
-exclude: []
-# GitHub Pages cache bust - 2026-10-03T09:02:15Z
+# GitHub Pages rebuild - 2026-10-03T09:03:30Z
