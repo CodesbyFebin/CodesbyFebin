@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CodesbyFebin Research - Papers, studies, and technical writings on verifiable compute, cryptography, and distributed systems.">
+    <meta property="og:title" content="Research | CodesbyFebin">
+    <meta property="og:description" content="Published research papers, technical studies, and deep dives into cryptography and systems engineering.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@codesbyfebin">
+    <title>Research & Publications | CodesbyFebin</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #00d46a;
+            --dark-bg: #0f0f0f;
+            --card-bg: #1a1a1a;
+            --text: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --border: #2d2d2d;
+        }
+
+        body {
+            font-family: 'Monaco', 'Courier New', monospace;
+            background: var(--dark-bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(15, 15, 15, 0.9);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-header {
+            margin-bottom: 60px;
+        }
+
+        .section-header h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .section-header p {
+            font-size: 1.1em;
+            color: var(--text-muted);
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .research-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 24px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .research-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s;
+        }
+
+        .research-card:hover {
+            border-color: var(--primary);
+        }
+
+        .research-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .research-card h3 {
+            font-size: 1.3em;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .research-meta {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            font-size: 0.85em;
+            color: var(--text-muted);
+        }
+
+        .research-abstract {
+            font-size: 0.95em;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .research-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+
+        .tag {
+            background: rgba(0, 212, 106, 0.1);
+            color: var(--primary);
+            padding: 3px 8px;
+            font-size: 0.75em;
+            border-radius: 2px;
+        }
+
+        .research-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .research-link:hover {
+            transform: translateX(4px);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text);
+            cursor: pointer;
+            font-family: 'Monaco', 'Courier New', monospace;
+            transition: all 0.3s;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--dark-bg);
+            border-color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--primary);
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 60px 0;
+            margin-top: 80px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85em;
+        }
+
+        @media (max-width: 768px) {
+            .section-header h1 {
+                font-size: 2em;
+            }
+
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+
+    <!-- Schema Markup: Research Publications Index -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Research & Publications — CodesbyFebin",
+        "description": "Published papers and technical studies on verifiable compute, cryptography, distributed systems, and AI infrastructure.",
+        "url": "https://codesbyfebin.vercel.app/docs/research/",
+        "publisher": {
+            "@type": "Organization",
+            "name": "CodesbyFebin"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Febin Francis"
+        }
+    }
+    </script>
+
+    <!-- Schema Markup: Sample ScholarlyArticle -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ScholarlyArticle",
+        "headline": "STARK Proofs: Scalability Without Trusted Setup",
+        "description": "Analysis of Scalable Transparent Arguments of Knowledge (STARKs) and their advantages over ZK-SNARKs with implementation details.",
+        "author": {
+            "@type": "Person",
+            "name": "Febin Francis"
+        },
+        "datePublished": "2026-10-01",
+        "publisher": {
+            "@type": "Organization",
+            "name": "CodesbyFebin"
+        },
+        "keywords": ["zero-knowledge proofs", "STARKs", "cryptography", "verifiable computation"],
+        "about": {
+            "@type": "Topic",
+            "name": "Cryptography"
+        }
+    }
+    </script>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">CodesbyFebin</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/docs/research/">Research</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section>
+            <div class="section-header">
+                <h1>> Research</h1>
+                <p>Published papers, technical studies, and deep dives into cryptography, verifiable computation, and distributed systems.</p>
+            </div>
+
+            <div class="research-grid">
+                <div class="research-card">
+                    <h3>STARK Proofs: Scalability Without Trusted Setup</h3>
+                    <div class="research-meta">
+                        <span>2026</span>
+                        <span>•</span>
+                        <span>15 min read</span>
+                    </div>
+                    <p class="research-abstract">Analysis of Scalable Transparent Arguments of Knowledge (STARKs) and their advantages over ZK-SNARKs. Covers mathematical foundations, implementation details, and practical applications.</p>
+                    <div class="research-tags">
+                        <span class="tag">Zero-Knowledge</span>
+                        <span class="tag">Cryptography</span>
+                        <span class="tag">STARKs</span>
+                    </div>
+                    <a href="#" class="research-link">Read Paper →</a>
+                </div>
+
+                <div class="research-card">
+                    <h3>Decentralized Consensus: Raft & Beyond</h3>
+                    <div class="research-meta">
+                        <span>2026</span>
+                        <span>•</span>
+                        <span>18 min read</span>
+                    </div>
+                    <p class="research-abstract">Comprehensive analysis of Raft consensus algorithm and modern alternatives. Includes performance benchmarks, failure scenarios, and recommendations for sovereign systems.</p>
+                    <div class="research-tags">
+                        <span class="tag">Distributed Systems</span>
+                        <span class="tag">Consensus</span>
+                        <span class="tag">Raft</span>
+                    </div>
+                    <a href="#" class="research-link">Read Paper →</a>
+                </div>
+
+                <div class="research-card">
+                    <h3>Building Privacy-Preserving AI Infrastructure</h3>
+                    <div class="research-meta">
+                        <span>2025</span>
+                        <span>•</span>
+                        <span>20 min read</span>
+                    </div>
+                    <p class="research-abstract">Framework for deploying AI models with privacy guarantees. Covers federated learning, differential privacy, secure enclaves, and practical implementation patterns.</p>
+                    <div class="research-tags">
+                        <span class="tag">AI/ML</span>
+                        <span class="tag">Privacy</span>
+                        <span class="tag">Infrastructure</span>
+                    </div>
+                    <a href="#" class="research-link">Read Paper →</a>
+                </div>
+
+                <div class="research-card">
+                    <h3>Cryptographic Commitments in Zero-Knowledge Systems</h3>
+                    <div class="research-meta">
+                        <span>2025</span>
+                        <span>•</span>
+                        <span>16 min read</span>
+                    </div>
+                    <p class="research-abstract">Deep dive into commitment schemes used in ZK systems. Compares Pedersen, Poseidon, and other schemes with performance analysis and security properties.</p>
+                    <div class="research-tags">
+                        <span class="tag">Cryptography</span>
+                        <span class="tag">Zero-Knowledge</span>
+                        <span class="tag">Commitments</span>
+                    </div>
+                    <a href="#" class="research-link">Read Paper →</a>
+                </div>
+
+                <div class="research-card">
+                    <h3>Sovereign Systems Architecture: Design & Implementation</h3>
+                    <div class="research-meta">
+                        <span>2025</span>
+                        <span>•</span>
+                        <span>22 min read</span>
+                    </div>
+                    <p class="research-abstract">Complete architecture guide for building self-hosted, decentralized systems. Covers infrastructure design, security hardening, networking, and deployment strategies.</p>
+                    <div class="research-tags">
+                        <span class="tag">Infrastructure</span>
+                        <span class="tag">Architecture</span>
+                        <span class="tag">Self-Hosted</span>
+                    </div>
+                    <a href="#" class="research-link">Read Paper →</a>
+                </div>
+
+                <div class="research-card">
+                    <h3>From Theory to Practice: Implementing Zero-Knowledge Proofs</h3>
+                    <div class="research-meta">
+                        <span>2025</span>
+                        <span>•</span>
+                        <span>24 min read</span>
+                    </div>
+                    <p class="research-abstract">Practical guide to implementing ZK systems. Covers Rust implementation patterns, common pitfalls, performance optimization, and testing strategies.</p>
+                    <div class="research-tags">
+                        <span class="tag">Zero-Knowledge</span>
+                        <span class="tag">Implementation</span>
+                        <span class="tag">Rust</span>
+                    </div>
+                    <a href="#" class="research-link">Read Paper →</a>
+                </div>
+            </div>
+        </section>
+
+        <section style="text-align: center;">
+            <h2 style="font-size: 2em; margin-bottom: 24px; color: var(--text);">Browse More Research</h2>
+            <p style="color: var(--text-muted); margin-bottom: 32px;">Check out my blog for more technical articles and insights on systems engineering.</p>
+            <a href="/blog/" class="btn btn-primary">View All Articles</a>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Febin Francis. Research & Technical Writings | <a href="/" style="color: var(--primary); text-decoration: none;">Back to Home</a></p>
+        </div>
+    </footer>
+<!-- Schema Markup: BreadcrumbList Navigation -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://codesbyfebin.vercel.app/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Research",
+                "item": "https://codesbyfebin.vercel.app/docs/research/"
+            }
+        ]
+    }
+    </script>
+
+</body>
+</html>

@@ -1,142 +1,2216 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>CodesbyFebin - Systems Engineering & AI Infrastructure</title>
-        <link>https://codesbyfebin.github.io/</link>
-        <description>Insights, experiments, and technical deep dives on AI infrastructure, verifiable compute, sovereign systems, and building what lasts.</description>
-        <language>en-us</language>
-        <copyright>© 2025 Febin Francis. All rights reserved.</copyright>
-        <managingEditor>febin@codesbyfebin.dev</managingEditor>
-        <atom:link href="https://codesbyfebin.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>CodesbyFebin — 100+ Technical Articles</title>
+  <subtitle>Deep dives into STARK proofs, self-hosted systems, AI infrastructure, and open-source engineering.</subtitle>
+  <link href="https://codesbyfebin.vercel.app/blog/"/>
+  <link rel="self" href="https://codesbyfebin.vercel.app/feed.xml"/>
+  <id>https://codesbyfebin.vercel.app/blog/</id>
+  <updated>2026-10-03T15:44:32.979363Z</updated>
+  <author>
+    <name>Febin Francis</name>
+    <email>codesbyfebin@gmail.com</email>
+    <uri>https://codesbyfebin.vercel.app</uri>
+  </author>
+  <rights>© 2025 Febin Francis. All rights reserved.</rights>
 
-        <!-- Featured Post -->
-        <item>
-            <title>Building a STARK-Powered Zero Knowledge VM</title>
-            <link>https://codesbyfebin.github.io/blog#building-stark-zkvm</link>
-            <guid isPermaLink="false">stark-zkvm-2025</guid>
-            <pubDate>Mon, 15 Mar 2025 10:00:00 GMT</pubDate>
-            <category>AI &amp; Crypto</category>
-            <description>A deep dive into building a zero-knowledge virtual machine using STARK proofs. Learn about the architecture, implementation challenges, and performance optimizations.</description>
-            <content:encoded><![CDATA[
-                <p>A deep dive into building a zero-knowledge virtual machine using STARK proofs.</p>
-                <p>Topics covered:</p>
-                <ul>
-                    <li>Custom VM ISA design</li>
-                    <li>Execution trace generation</li>
-                    <li>Algebraic Intermediate Representation (AIR)</li>
-                    <li>STARK proving and verification</li>
-                    <li>Performance optimization strategies</li>
-                </ul>
-                <p><a href="https://github.com/CodesbyFebin/rust-stark-zkvm">View Project on GitHub</a></p>
-            ]]></content:encoded>
-        </item>
+  <entry>
+    <title>[Case Study] Practical Development Technique 1</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-1.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-1</id>
+    <published>2026-10-02T15:43:10.107831Z</published>
+    <updated>2026-10-02T15:43:10.107831Z</updated>
+    <category term="DevOps"/>
+    <category term="Case Study"/>
+    <category term="user-contributed"/><category term="topic-1"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 1 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> DevOps</p>
+      <p><strong>Read time:</strong> 6 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Practical guide: Learn technique 1 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-1.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
 
-        <!-- Recent Article 1 -->
-        <item>
-            <title>Self-Hosted AI Infrastructure with Kubernetes</title>
-            <link>https://codesbyfebin.github.io/blog#self-hosted-ai-k8s</link>
-            <guid isPermaLink="false">self-hosted-ai-k8s-2025</guid>
-            <pubDate>Fri, 28 Feb 2025 14:30:00 GMT</pubDate>
-            <category>Infrastructure</category>
-            <description>A practical guide to setting up a self-hosted AI infrastructure using Kubernetes, with cost optimization, monitoring, and scaling strategies.</description>
-            <content:encoded><![CDATA[
-                <p>A practical guide to setting up a self-hosted AI infrastructure using Kubernetes.</p>
-                <p>Learn about:</p>
-                <ul>
-                    <li>Kubernetes cluster setup and configuration</li>
-                    <li>LLM model serving and management</li>
-                    <li>Resource optimization and cost reduction</li>
-                    <li>Monitoring and observability</li>
-                    <li>Scaling strategies for production</li>
-                </ul>
-            ]]></content:encoded>
-        </item>
+  <entry>
+    <title>[Guide] Expert Development Technique 2</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-2.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-2</id>
+    <published>2026-10-01T15:43:10.107837Z</published>
+    <updated>2026-10-01T15:43:10.107837Z</updated>
+    <category term="AI Infrastructure"/>
+    <category term="Tooling Guide"/>
+    <category term="user-contributed"/><category term="topic-2"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 2 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> AI Infrastructure</p>
+      <p><strong>Read time:</strong> 7 minutes</p>
+      <p><strong>Difficulty:</strong> Advanced</p>
+      <p>Practical guide: Learn technique 2 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-2.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
 
-        <!-- Recent Article 2 -->
-        <item>
-            <title>Building Decentralized.Host: A Sovereign Web Platform</title>
-            <link>https://codesbyfebin.github.io/blog#decentralized-host</link>
-            <guid isPermaLink="false">decentralized-host-2025</guid>
-            <pubDate>Fri, 19 Feb 2025 09:15:00 GMT</pubDate>
-            <category>Systems</category>
-            <description>How we're building a decentralized hosting platform where hosts remain sovereign with signed intent, local admission policy, and explicit state verification.</description>
-            <content:encoded><![CDATA[
-                <p>Building a decentralized hosting platform with sovereignty at its core.</p>
-                <p>Key concepts:</p>
-                <ul>
-                    <li>Ed25519 identities and signed intent</li>
-                    <li>Per-host local admission policy</li>
-                    <li>Desired vs Admitted vs Observed state</li>
-                    <li>Raft consensus and mTLS security</li>
-                    <li>WireGuard mesh networking</li>
-                    <li>Chaos and conformance testing</li>
-                </ul>
-                <p><a href="https://github.com/CodesbyFebin/Decentralized-">View Project on GitHub</a></p>
-            ]]></content:encoded>
-        </item>
+  <entry>
+    <title>Advanced Development Technique 1: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-11.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-11</id>
+    <published>2026-10-01T15:43:10.107528Z</published>
+    <updated>2026-10-01T15:43:10.107528Z</updated>
+    <category term="Microservices"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 1 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Microservices</p>
+      <p><strong>Read time:</strong> 10 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Comprehensive guide on advanced development technique 1 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-11.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
 
-        <!-- Recent Article 3 -->
-        <item>
-            <title>Python vs Rust for Systems Programming</title>
-            <link>https://codesbyfebin.github.io/blog#python-vs-rust</link>
-            <guid isPermaLink="false">python-vs-rust-2025</guid>
-            <pubDate>Wed, 22 Jan 2025 11:45:00 GMT</pubDate>
-            <category>Development</category>
-            <description>A practical comparison of Python and Rust for systems programming, examining performance, safety, concurrency, and real-world trade-offs.</description>
-            <content:encoded><![CDATA[
-                <p>When to use Python vs Rust for systems programming.</p>
-                <p>Comparison includes:</p>
-                <ul>
-                    <li>Performance characteristics</li>
-                    <li>Memory safety and type systems</li>
-                    <li>Concurrency models</li>
-                    <li>Ecosystem and libraries</li>
-                    <li>Development velocity vs runtime efficiency</li>
-                </ul>
-            ]]></content:encoded>
-        </item>
+  <entry>
+    <title>[Tutorial] Advanced Development Technique 3</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-3.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-3</id>
+    <published>2026-09-30T15:43:10.107849Z</published>
+    <updated>2026-09-30T15:43:10.107849Z</updated>
+    <category term="Verifiable Compute"/>
+    <category term="Tutorial"/>
+    <category term="user-contributed"/><category term="topic-3"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 3 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Verifiable Compute</p>
+      <p><strong>Read time:</strong> 8 minutes</p>
+      <p><strong>Difficulty:</strong> Beginner</p>
+      <p>Practical guide: Learn technique 3 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-3.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
 
-        <!-- Recent Article 4 -->
-        <item>
-            <title>Understanding Zero Knowledge Proofs</title>
-            <link>https://codesbyfebin.github.io/blog#zk-proofs</link>
-            <guid isPermaLink="false">zk-proofs-2025</guid>
-            <pubDate>Mon, 16 Jan 2025 16:20:00 GMT</pubDate>
-            <category>Blockchain</category>
-            <description>An introduction to zero-knowledge proofs, their applications, and their role in building privacy-preserving systems and verifiable computation.</description>
-            <content:encoded><![CDATA[
-                <p>An introduction to zero-knowledge proofs and their real-world applications.</p>
-                <p>Topics:</p>
-                <ul>
-                    <li>What are zero-knowledge proofs?</li>
-                    <li>Interactive vs non-interactive proofs</li>
-                    <li>STARKs and SNARKs comparison</li>
-                    <li>Privacy-preserving applications</li>
-                    <li>Verifiable computation use cases</li>
-                </ul>
-            ]]></content:encoded>
-        </item>
+  <entry>
+    <title>[Case Study] Practical Development Technique 4</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-4.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-4</id>
+    <published>2026-09-29T15:43:10.107930Z</published>
+    <updated>2026-09-29T15:43:10.107930Z</updated>
+    <category term="Self-Hosted"/>
+    <category term="Case Study"/>
+    <category term="user-contributed"/><category term="topic-4"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 4 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Self-Hosted</p>
+      <p><strong>Read time:</strong> 9 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Practical guide: Learn technique 4 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-4.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
 
-        <!-- Recent Article 5 -->
-        <item>
-            <title>Setting Up Your First Linux Server</title>
-            <link>https://codesbyfebin.github.io/blog#linux-server</link>
-            <guid isPermaLink="false">linux-server-2025</guid>
-            <pubDate>Wed, 28 Dec 2024 08:30:00 GMT</pubDate>
-            <category>Tutorial</category>
-            <description>A comprehensive guide to setting up a production Linux server with security best practices, monitoring, and essential tools.</description>
-            <content:encoded><![CDATA[
-                <p>A complete guide to setting up a production-ready Linux server.</p>
-                <p>Covers:</p>
-                <ul>
-                    <li>Initial server configuration</li>
-                    <li>SSH hardening and security</li>
-                    <li>Firewall setup with UFW</li>
-                    <li>System monitoring and logging</li>
-                    <li>Backup and disaster recovery</li>
-                    <li>Essential tools and utilities</li>
-                </ul>
-            ]]></content:encoded>
-        </item>
-    </channel>
-</rss>
+  <entry>
+    <title>Advanced Development Technique 2: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-12.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-12</id>
+    <published>2026-09-29T15:43:10.107680Z</published>
+    <updated>2026-09-29T15:43:10.107680Z</updated>
+    <category term="API Design"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 2 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> API Design</p>
+      <p><strong>Read time:</strong> 11 minutes</p>
+      <p><strong>Difficulty:</strong> Advanced</p>
+      <p>Comprehensive guide on advanced development technique 2 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-12.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Guide] Expert Development Technique 5</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-5.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-5</id>
+    <published>2026-09-28T15:43:10.107937Z</published>
+    <updated>2026-09-28T15:43:10.107937Z</updated>
+    <category term="Backend"/>
+    <category term="Tooling Guide"/>
+    <category term="user-contributed"/><category term="topic-5"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 5 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Backend</p>
+      <p><strong>Read time:</strong> 10 minutes</p>
+      <p><strong>Difficulty:</strong> Advanced</p>
+      <p>Practical guide: Learn technique 5 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-5.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Tutorial] Advanced Development Technique 6</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-6.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-6</id>
+    <published>2026-09-27T15:43:10.107942Z</published>
+    <updated>2026-09-27T15:43:10.107942Z</updated>
+    <category term="DevOps"/>
+    <category term="Tutorial"/>
+    <category term="user-contributed"/><category term="topic-6"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 6 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> DevOps</p>
+      <p><strong>Read time:</strong> 11 minutes</p>
+      <p><strong>Difficulty:</strong> Beginner</p>
+      <p>Practical guide: Learn technique 6 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-6.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 3: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-13.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-13</id>
+    <published>2026-09-27T15:43:10.107686Z</published>
+    <updated>2026-09-27T15:43:10.107686Z</updated>
+    <category term="Database"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 3 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Database</p>
+      <p><strong>Read time:</strong> 12 minutes</p>
+      <p><strong>Difficulty:</strong> Beginner</p>
+      <p>Comprehensive guide on advanced development technique 3 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-13.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Case Study] Practical Development Technique 7</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-7.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-7</id>
+    <published>2026-09-26T15:43:10.107946Z</published>
+    <updated>2026-09-26T15:43:10.107946Z</updated>
+    <category term="AI Infrastructure"/>
+    <category term="Case Study"/>
+    <category term="user-contributed"/><category term="topic-7"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 7 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> AI Infrastructure</p>
+      <p><strong>Read time:</strong> 5 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Practical guide: Learn technique 7 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-7.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Guide] Expert Development Technique 8</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-8.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-8</id>
+    <published>2026-09-25T15:43:10.107957Z</published>
+    <updated>2026-09-25T15:43:10.107957Z</updated>
+    <category term="Verifiable Compute"/>
+    <category term="Tooling Guide"/>
+    <category term="user-contributed"/><category term="topic-8"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 8 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Verifiable Compute</p>
+      <p><strong>Read time:</strong> 6 minutes</p>
+      <p><strong>Difficulty:</strong> Advanced</p>
+      <p>Practical guide: Learn technique 8 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-8.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 4: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-14.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-14</id>
+    <published>2026-09-25T15:43:10.107688Z</published>
+    <updated>2026-09-25T15:43:10.107688Z</updated>
+    <category term="DevOps"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 4 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> DevOps</p>
+      <p><strong>Read time:</strong> 13 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Comprehensive guide on advanced development technique 4 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-14.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Tutorial] Advanced Development Technique 9</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-9.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-9</id>
+    <published>2026-09-24T15:43:10.107964Z</published>
+    <updated>2026-09-24T15:43:10.107964Z</updated>
+    <category term="Self-Hosted"/>
+    <category term="Tutorial"/>
+    <category term="user-contributed"/><category term="topic-9"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 9 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Self-Hosted</p>
+      <p><strong>Read time:</strong> 7 minutes</p>
+      <p><strong>Difficulty:</strong> Beginner</p>
+      <p>Practical guide: Learn technique 9 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-9.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Case Study] Practical Development Technique 10</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-10.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-10</id>
+    <published>2026-09-23T15:43:10.107975Z</published>
+    <updated>2026-09-23T15:43:10.107975Z</updated>
+    <category term="Backend"/>
+    <category term="Case Study"/>
+    <category term="user-contributed"/><category term="topic-10"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 10 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Backend</p>
+      <p><strong>Read time:</strong> 8 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Practical guide: Learn technique 10 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-10.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 5: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-15.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-15</id>
+    <published>2026-09-23T15:43:10.107690Z</published>
+    <updated>2026-09-23T15:43:10.107690Z</updated>
+    <category term="Security"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 5 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Security</p>
+      <p><strong>Read time:</strong> 9 minutes</p>
+      <p><strong>Difficulty:</strong> Advanced</p>
+      <p>Comprehensive guide on advanced development technique 5 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-15.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Guide] Expert Development Technique 11</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-11.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-11</id>
+    <published>2026-09-22T15:43:10.107982Z</published>
+    <updated>2026-09-22T15:43:10.107982Z</updated>
+    <category term="DevOps"/>
+    <category term="Tooling Guide"/>
+    <category term="user-contributed"/><category term="topic-11"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 11 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> DevOps</p>
+      <p><strong>Read time:</strong> 9 minutes</p>
+      <p><strong>Difficulty:</strong> Advanced</p>
+      <p>Practical guide: Learn technique 11 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-11.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Tutorial] Advanced Development Technique 12</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-12.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-12</id>
+    <published>2026-09-21T15:43:10.107986Z</published>
+    <updated>2026-09-21T15:43:10.107986Z</updated>
+    <category term="AI Infrastructure"/>
+    <category term="Tutorial"/>
+    <category term="user-contributed"/><category term="topic-12"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 12 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> AI Infrastructure</p>
+      <p><strong>Read time:</strong> 10 minutes</p>
+      <p><strong>Difficulty:</strong> Beginner</p>
+      <p>Practical guide: Learn technique 12 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-12.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 6: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-16.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-16</id>
+    <published>2026-09-21T15:43:10.107693Z</published>
+    <updated>2026-09-21T15:43:10.107693Z</updated>
+    <category term="Frontend"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 6 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Frontend</p>
+      <p><strong>Read time:</strong> 10 minutes</p>
+      <p><strong>Difficulty:</strong> Beginner</p>
+      <p>Comprehensive guide on advanced development technique 6 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-16.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Case Study] Practical Development Technique 13</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-13.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-13</id>
+    <published>2026-09-20T15:43:10.107991Z</published>
+    <updated>2026-09-20T15:43:10.107991Z</updated>
+    <category term="Verifiable Compute"/>
+    <category term="Case Study"/>
+    <category term="user-contributed"/><category term="topic-13"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 13 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Verifiable Compute</p>
+      <p><strong>Read time:</strong> 11 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Practical guide: Learn technique 13 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-13.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Guide] Expert Development Technique 14</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-14.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-14</id>
+    <published>2026-09-19T15:43:10.107996Z</published>
+    <updated>2026-09-19T15:43:10.107996Z</updated>
+    <category term="Self-Hosted"/>
+    <category term="Tooling Guide"/>
+    <category term="user-contributed"/><category term="topic-14"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 14 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Self-Hosted</p>
+      <p><strong>Read time:</strong> 5 minutes</p>
+      <p><strong>Difficulty:</strong> Advanced</p>
+      <p>Practical guide: Learn technique 14 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-14.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 7: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-17.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-17</id>
+    <published>2026-09-19T15:43:10.107695Z</published>
+    <updated>2026-09-19T15:43:10.107695Z</updated>
+    <category term="Backend"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 7 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Backend</p>
+      <p><strong>Read time:</strong> 11 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Comprehensive guide on advanced development technique 7 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-17.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Tutorial] Advanced Development Technique 15</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-15.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-15</id>
+    <published>2026-09-18T15:43:10.108000Z</published>
+    <updated>2026-09-18T15:43:10.108000Z</updated>
+    <category term="Backend"/>
+    <category term="Tutorial"/>
+    <category term="user-contributed"/><category term="topic-15"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 15 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Backend</p>
+      <p><strong>Read time:</strong> 6 minutes</p>
+      <p><strong>Difficulty:</strong> Beginner</p>
+      <p>Practical guide: Learn technique 15 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-15.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Case Study] Practical Development Technique 16</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-16.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-16</id>
+    <published>2026-09-17T15:43:10.108004Z</published>
+    <updated>2026-09-17T15:43:10.108004Z</updated>
+    <category term="DevOps"/>
+    <category term="Case Study"/>
+    <category term="user-contributed"/><category term="topic-16"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 16 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> DevOps</p>
+      <p><strong>Read time:</strong> 7 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Practical guide: Learn technique 16 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-16.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 8: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-18.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-18</id>
+    <published>2026-09-17T15:43:10.107700Z</published>
+    <updated>2026-09-17T15:43:10.107700Z</updated>
+    <category term="Kubernetes"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 8 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Kubernetes</p>
+      <p><strong>Read time:</strong> 12 minutes</p>
+      <p><strong>Difficulty:</strong> Advanced</p>
+      <p>Comprehensive guide on advanced development technique 8 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-18.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Guide] Expert Development Technique 17</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-17.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-17</id>
+    <published>2026-09-16T15:43:10.108008Z</published>
+    <updated>2026-09-16T15:43:10.108008Z</updated>
+    <category term="AI Infrastructure"/>
+    <category term="Tooling Guide"/>
+    <category term="user-contributed"/><category term="topic-17"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 17 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> AI Infrastructure</p>
+      <p><strong>Read time:</strong> 8 minutes</p>
+      <p><strong>Difficulty:</strong> Advanced</p>
+      <p>Practical guide: Learn technique 17 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-17.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Tutorial] Advanced Development Technique 18</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-18.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-18</id>
+    <published>2026-09-15T15:43:10.108012Z</published>
+    <updated>2026-09-15T15:43:10.108012Z</updated>
+    <category term="Verifiable Compute"/>
+    <category term="Tutorial"/>
+    <category term="user-contributed"/><category term="topic-18"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 18 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Verifiable Compute</p>
+      <p><strong>Read time:</strong> 9 minutes</p>
+      <p><strong>Difficulty:</strong> Beginner</p>
+      <p>Practical guide: Learn technique 18 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-18.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 9: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-19.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-19</id>
+    <published>2026-09-15T15:43:10.107705Z</published>
+    <updated>2026-09-15T15:43:10.107705Z</updated>
+    <category term="Microservices"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 9 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Microservices</p>
+      <p><strong>Read time:</strong> 13 minutes</p>
+      <p><strong>Difficulty:</strong> Beginner</p>
+      <p>Comprehensive guide on advanced development technique 9 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-19.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Case Study] Practical Development Technique 19</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-19.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-19</id>
+    <published>2026-09-14T15:43:10.108017Z</published>
+    <updated>2026-09-14T15:43:10.108017Z</updated>
+    <category term="Self-Hosted"/>
+    <category term="Case Study"/>
+    <category term="user-contributed"/><category term="topic-19"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 19 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Self-Hosted</p>
+      <p><strong>Read time:</strong> 10 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Practical guide: Learn technique 19 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-19.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Guide] Expert Development Technique 20</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-20.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-20</id>
+    <published>2026-09-13T15:43:10.108030Z</published>
+    <updated>2026-09-13T15:43:10.108030Z</updated>
+    <category term="Backend"/>
+    <category term="Tooling Guide"/>
+    <category term="user-contributed"/><category term="topic-20"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 20 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Backend</p>
+      <p><strong>Read time:</strong> 11 minutes</p>
+      <p><strong>Difficulty:</strong> Advanced</p>
+      <p>Practical guide: Learn technique 20 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-20.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 10: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-20.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-20</id>
+    <published>2026-09-13T15:43:10.107710Z</published>
+    <updated>2026-09-13T15:43:10.107710Z</updated>
+    <category term="API Design"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 10 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> API Design</p>
+      <p><strong>Read time:</strong> 9 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Comprehensive guide on advanced development technique 10 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-20.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Tutorial] Advanced Development Technique 21</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-21.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-21</id>
+    <published>2026-09-12T15:43:10.108034Z</published>
+    <updated>2026-09-12T15:43:10.108034Z</updated>
+    <category term="DevOps"/>
+    <category term="Tutorial"/>
+    <category term="user-contributed"/><category term="topic-21"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 21 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> DevOps</p>
+      <p><strong>Read time:</strong> 5 minutes</p>
+      <p><strong>Difficulty:</strong> Beginner</p>
+      <p>Practical guide: Learn technique 21 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-21.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Case Study] Practical Development Technique 22</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-22.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-22</id>
+    <published>2026-09-11T15:43:10.108038Z</published>
+    <updated>2026-09-11T15:43:10.108038Z</updated>
+    <category term="AI Infrastructure"/>
+    <category term="Case Study"/>
+    <category term="user-contributed"/><category term="topic-22"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 22 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> AI Infrastructure</p>
+      <p><strong>Read time:</strong> 6 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Practical guide: Learn technique 22 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-22.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 11: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-21.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-21</id>
+    <published>2026-09-11T15:43:10.107713Z</published>
+    <updated>2026-09-11T15:43:10.107713Z</updated>
+    <category term="Database"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 11 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Database</p>
+      <p><strong>Read time:</strong> 10 minutes</p>
+      <p><strong>Difficulty:</strong> Advanced</p>
+      <p>Comprehensive guide on advanced development technique 11 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-21.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Guide] Expert Development Technique 23</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-23.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-23</id>
+    <published>2026-09-10T15:43:10.108042Z</published>
+    <updated>2026-09-10T15:43:10.108042Z</updated>
+    <category term="Verifiable Compute"/>
+    <category term="Tooling Guide"/>
+    <category term="user-contributed"/><category term="topic-23"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 23 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Verifiable Compute</p>
+      <p><strong>Read time:</strong> 7 minutes</p>
+      <p><strong>Difficulty:</strong> Advanced</p>
+      <p>Practical guide: Learn technique 23 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-23.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Tutorial] Advanced Development Technique 24</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-24.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-24</id>
+    <published>2026-09-09T15:43:10.108046Z</published>
+    <updated>2026-09-09T15:43:10.108046Z</updated>
+    <category term="Self-Hosted"/>
+    <category term="Tutorial"/>
+    <category term="user-contributed"/><category term="topic-24"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 24 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Self-Hosted</p>
+      <p><strong>Read time:</strong> 8 minutes</p>
+      <p><strong>Difficulty:</strong> Beginner</p>
+      <p>Practical guide: Learn technique 24 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-24.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 12: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-22.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-22</id>
+    <published>2026-09-09T15:43:10.107715Z</published>
+    <updated>2026-09-09T15:43:10.107715Z</updated>
+    <category term="DevOps"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 12 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> DevOps</p>
+      <p><strong>Read time:</strong> 11 minutes</p>
+      <p><strong>Difficulty:</strong> Beginner</p>
+      <p>Comprehensive guide on advanced development technique 12 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-22.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Case Study] Practical Development Technique 25</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-25.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-25</id>
+    <published>2026-09-08T15:43:10.108051Z</published>
+    <updated>2026-09-08T15:43:10.108051Z</updated>
+    <category term="Backend"/>
+    <category term="Case Study"/>
+    <category term="user-contributed"/><category term="topic-25"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 25 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Backend</p>
+      <p><strong>Read time:</strong> 9 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Practical guide: Learn technique 25 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-25.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Guide] Expert Development Technique 26</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-26.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-26</id>
+    <published>2026-09-07T15:43:10.108055Z</published>
+    <updated>2026-09-07T15:43:10.108055Z</updated>
+    <category term="DevOps"/>
+    <category term="Tooling Guide"/>
+    <category term="user-contributed"/><category term="topic-26"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 26 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> DevOps</p>
+      <p><strong>Read time:</strong> 10 minutes</p>
+      <p><strong>Difficulty:</strong> Advanced</p>
+      <p>Practical guide: Learn technique 26 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-26.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 13: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-23.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-23</id>
+    <published>2026-09-07T15:43:10.107717Z</published>
+    <updated>2026-09-07T15:43:10.107717Z</updated>
+    <category term="Security"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 13 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Security</p>
+      <p><strong>Read time:</strong> 12 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Comprehensive guide on advanced development technique 13 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-23.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Tutorial] Advanced Development Technique 27</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-27.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-27</id>
+    <published>2026-09-06T15:43:10.108059Z</published>
+    <updated>2026-09-06T15:43:10.108059Z</updated>
+    <category term="AI Infrastructure"/>
+    <category term="Tutorial"/>
+    <category term="user-contributed"/><category term="topic-27"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 27 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> AI Infrastructure</p>
+      <p><strong>Read time:</strong> 11 minutes</p>
+      <p><strong>Difficulty:</strong> Beginner</p>
+      <p>Practical guide: Learn technique 27 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-27.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Case Study] Practical Development Technique 28</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-28.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-28</id>
+    <published>2026-09-05T15:43:10.108062Z</published>
+    <updated>2026-09-05T15:43:10.108062Z</updated>
+    <category term="Verifiable Compute"/>
+    <category term="Case Study"/>
+    <category term="user-contributed"/><category term="topic-28"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 28 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Verifiable Compute</p>
+      <p><strong>Read time:</strong> 5 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Practical guide: Learn technique 28 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-28.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 14: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-24.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-24</id>
+    <published>2026-09-05T15:43:10.107719Z</published>
+    <updated>2026-09-05T15:43:10.107719Z</updated>
+    <category term="Frontend"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 14 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Frontend</p>
+      <p><strong>Read time:</strong> 13 minutes</p>
+      <p><strong>Difficulty:</strong> Advanced</p>
+      <p>Comprehensive guide on advanced development technique 14 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-24.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Guide] Expert Development Technique 29</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-29.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-29</id>
+    <published>2026-09-04T15:43:10.108067Z</published>
+    <updated>2026-09-04T15:43:10.108067Z</updated>
+    <category term="Self-Hosted"/>
+    <category term="Tooling Guide"/>
+    <category term="user-contributed"/><category term="topic-29"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 29 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Self-Hosted</p>
+      <p><strong>Read time:</strong> 6 minutes</p>
+      <p><strong>Difficulty:</strong> Advanced</p>
+      <p>Practical guide: Learn technique 29 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-29.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Tutorial] Advanced Development Technique 30</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-30.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-30</id>
+    <published>2026-09-03T15:43:10.108073Z</published>
+    <updated>2026-09-03T15:43:10.108073Z</updated>
+    <category term="Backend"/>
+    <category term="Tutorial"/>
+    <category term="user-contributed"/><category term="topic-30"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 30 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Backend</p>
+      <p><strong>Read time:</strong> 7 minutes</p>
+      <p><strong>Difficulty:</strong> Beginner</p>
+      <p>Practical guide: Learn technique 30 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-30.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 15: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-25.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-25</id>
+    <published>2026-09-03T15:43:10.107721Z</published>
+    <updated>2026-09-03T15:43:10.107721Z</updated>
+    <category term="Backend"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 15 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Backend</p>
+      <p><strong>Read time:</strong> 9 minutes</p>
+      <p><strong>Difficulty:</strong> Beginner</p>
+      <p>Comprehensive guide on advanced development technique 15 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-25.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Case Study] Practical Development Technique 31</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-31.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-31</id>
+    <published>2026-09-02T15:43:10.108080Z</published>
+    <updated>2026-09-02T15:43:10.108080Z</updated>
+    <category term="DevOps"/>
+    <category term="Case Study"/>
+    <category term="user-contributed"/><category term="topic-31"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 31 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> DevOps</p>
+      <p><strong>Read time:</strong> 8 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Practical guide: Learn technique 31 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-31.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Guide] Expert Development Technique 32</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-32.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-32</id>
+    <published>2026-09-01T15:43:10.108084Z</published>
+    <updated>2026-09-01T15:43:10.108084Z</updated>
+    <category term="AI Infrastructure"/>
+    <category term="Tooling Guide"/>
+    <category term="user-contributed"/><category term="topic-32"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 32 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> AI Infrastructure</p>
+      <p><strong>Read time:</strong> 9 minutes</p>
+      <p><strong>Difficulty:</strong> Advanced</p>
+      <p>Practical guide: Learn technique 32 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-32.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 16: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-26.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-26</id>
+    <published>2026-09-01T15:43:10.107723Z</published>
+    <updated>2026-09-01T15:43:10.107723Z</updated>
+    <category term="Kubernetes"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 16 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Kubernetes</p>
+      <p><strong>Read time:</strong> 10 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Comprehensive guide on advanced development technique 16 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-26.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Tutorial] Advanced Development Technique 33</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-33.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-33</id>
+    <published>2026-08-31T15:43:10.108111Z</published>
+    <updated>2026-08-31T15:43:10.108111Z</updated>
+    <category term="Verifiable Compute"/>
+    <category term="Tutorial"/>
+    <category term="user-contributed"/><category term="topic-33"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 33 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Verifiable Compute</p>
+      <p><strong>Read time:</strong> 10 minutes</p>
+      <p><strong>Difficulty:</strong> Beginner</p>
+      <p>Practical guide: Learn technique 33 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-33.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Case Study] Practical Development Technique 34</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-34.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-34</id>
+    <published>2026-08-30T15:43:10.108118Z</published>
+    <updated>2026-08-30T15:43:10.108118Z</updated>
+    <category term="Self-Hosted"/>
+    <category term="Case Study"/>
+    <category term="user-contributed"/><category term="topic-34"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 34 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Self-Hosted</p>
+      <p><strong>Read time:</strong> 11 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Practical guide: Learn technique 34 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-34.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 17: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-27.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-27</id>
+    <published>2026-08-30T15:43:10.107725Z</published>
+    <updated>2026-08-30T15:43:10.107725Z</updated>
+    <category term="Microservices"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 17 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Microservices</p>
+      <p><strong>Read time:</strong> 11 minutes</p>
+      <p><strong>Difficulty:</strong> Advanced</p>
+      <p>Comprehensive guide on advanced development technique 17 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-27.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Guide] Expert Development Technique 35</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-35.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-35</id>
+    <published>2026-08-29T15:43:10.108125Z</published>
+    <updated>2026-08-29T15:43:10.108125Z</updated>
+    <category term="Backend"/>
+    <category term="Tooling Guide"/>
+    <category term="user-contributed"/><category term="topic-35"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 35 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Backend</p>
+      <p><strong>Read time:</strong> 5 minutes</p>
+      <p><strong>Difficulty:</strong> Advanced</p>
+      <p>Practical guide: Learn technique 35 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-35.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Tutorial] Advanced Development Technique 36</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-36.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-36</id>
+    <published>2026-08-28T15:43:10.108130Z</published>
+    <updated>2026-08-28T15:43:10.108130Z</updated>
+    <category term="DevOps"/>
+    <category term="Tutorial"/>
+    <category term="user-contributed"/><category term="topic-36"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 36 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> DevOps</p>
+      <p><strong>Read time:</strong> 6 minutes</p>
+      <p><strong>Difficulty:</strong> Beginner</p>
+      <p>Practical guide: Learn technique 36 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-36.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 18: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-28.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-28</id>
+    <published>2026-08-28T15:43:10.107727Z</published>
+    <updated>2026-08-28T15:43:10.107727Z</updated>
+    <category term="API Design"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 18 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> API Design</p>
+      <p><strong>Read time:</strong> 12 minutes</p>
+      <p><strong>Difficulty:</strong> Beginner</p>
+      <p>Comprehensive guide on advanced development technique 18 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-28.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Case Study] Practical Development Technique 37</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-37.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-37</id>
+    <published>2026-08-27T15:43:10.108134Z</published>
+    <updated>2026-08-27T15:43:10.108134Z</updated>
+    <category term="AI Infrastructure"/>
+    <category term="Case Study"/>
+    <category term="user-contributed"/><category term="topic-37"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 37 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> AI Infrastructure</p>
+      <p><strong>Read time:</strong> 7 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Practical guide: Learn technique 37 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-37.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Guide] Expert Development Technique 38</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-38.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-38</id>
+    <published>2026-08-26T15:43:10.108142Z</published>
+    <updated>2026-08-26T15:43:10.108142Z</updated>
+    <category term="Verifiable Compute"/>
+    <category term="Tooling Guide"/>
+    <category term="user-contributed"/><category term="topic-38"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 38 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Verifiable Compute</p>
+      <p><strong>Read time:</strong> 8 minutes</p>
+      <p><strong>Difficulty:</strong> Advanced</p>
+      <p>Practical guide: Learn technique 38 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-38.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 19: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-29.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-29</id>
+    <published>2026-08-26T15:43:10.107729Z</published>
+    <updated>2026-08-26T15:43:10.107729Z</updated>
+    <category term="Database"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 19 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Database</p>
+      <p><strong>Read time:</strong> 13 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Comprehensive guide on advanced development technique 19 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-29.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Tutorial] Advanced Development Technique 39</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-39.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-39</id>
+    <published>2026-08-25T15:43:10.108149Z</published>
+    <updated>2026-08-25T15:43:10.108149Z</updated>
+    <category term="Self-Hosted"/>
+    <category term="Tutorial"/>
+    <category term="user-contributed"/><category term="topic-39"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 39 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Self-Hosted</p>
+      <p><strong>Read time:</strong> 9 minutes</p>
+      <p><strong>Difficulty:</strong> Beginner</p>
+      <p>Practical guide: Learn technique 39 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-39.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Case Study] Practical Development Technique 40</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-40.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/ugc-post-40</id>
+    <published>2026-08-24T15:43:10.108156Z</published>
+    <updated>2026-08-24T15:43:10.108156Z</updated>
+    <category term="Backend"/>
+    <category term="Case Study"/>
+    <category term="user-contributed"/><category term="topic-40"/><category term="practical"/>
+    <summary>Practical guide: Learn technique 40 with real-world examples and implementation details.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Backend</p>
+      <p><strong>Read time:</strong> 10 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Practical guide: Learn technique 40 with real-world examples and implementation details.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/ugc-post-40.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 20: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-30.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-30</id>
+    <published>2026-08-24T15:43:10.107734Z</published>
+    <updated>2026-08-24T15:43:10.107734Z</updated>
+    <category term="DevOps"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 20 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> DevOps</p>
+      <p><strong>Read time:</strong> 9 minutes</p>
+      <p><strong>Difficulty:</strong> Advanced</p>
+      <p>Comprehensive guide on advanced development technique 20 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-30.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 21: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-31.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-31</id>
+    <published>2026-08-22T15:43:10.107737Z</published>
+    <updated>2026-08-22T15:43:10.107737Z</updated>
+    <category term="Security"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 21 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Security</p>
+      <p><strong>Read time:</strong> 10 minutes</p>
+      <p><strong>Difficulty:</strong> Beginner</p>
+      <p>Comprehensive guide on advanced development technique 21 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-31.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 22: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-32.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-32</id>
+    <published>2026-08-20T15:43:10.107740Z</published>
+    <updated>2026-08-20T15:43:10.107740Z</updated>
+    <category term="Frontend"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 22 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Frontend</p>
+      <p><strong>Read time:</strong> 11 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Comprehensive guide on advanced development technique 22 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-32.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 23: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-33.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-33</id>
+    <published>2026-08-18T15:43:10.107742Z</published>
+    <updated>2026-08-18T15:43:10.107742Z</updated>
+    <category term="Backend"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 23 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Backend</p>
+      <p><strong>Read time:</strong> 12 minutes</p>
+      <p><strong>Difficulty:</strong> Advanced</p>
+      <p>Comprehensive guide on advanced development technique 23 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-33.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 24: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-34.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-34</id>
+    <published>2026-08-16T15:43:10.107747Z</published>
+    <updated>2026-08-16T15:43:10.107747Z</updated>
+    <category term="Kubernetes"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 24 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Kubernetes</p>
+      <p><strong>Read time:</strong> 13 minutes</p>
+      <p><strong>Difficulty:</strong> Beginner</p>
+      <p>Comprehensive guide on advanced development technique 24 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-34.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 25: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-35.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-35</id>
+    <published>2026-08-14T15:43:10.107749Z</published>
+    <updated>2026-08-14T15:43:10.107749Z</updated>
+    <category term="Microservices"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 25 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Microservices</p>
+      <p><strong>Read time:</strong> 9 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Comprehensive guide on advanced development technique 25 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-35.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 26: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-36.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-36</id>
+    <published>2026-08-12T15:43:10.107751Z</published>
+    <updated>2026-08-12T15:43:10.107751Z</updated>
+    <category term="API Design"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 26 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> API Design</p>
+      <p><strong>Read time:</strong> 10 minutes</p>
+      <p><strong>Difficulty:</strong> Advanced</p>
+      <p>Comprehensive guide on advanced development technique 26 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-36.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 27: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-37.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-37</id>
+    <published>2026-08-10T15:43:10.107753Z</published>
+    <updated>2026-08-10T15:43:10.107753Z</updated>
+    <category term="Database"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 27 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Database</p>
+      <p><strong>Read time:</strong> 11 minutes</p>
+      <p><strong>Difficulty:</strong> Beginner</p>
+      <p>Comprehensive guide on advanced development technique 27 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-37.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 28: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-38.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-38</id>
+    <published>2026-08-08T15:43:10.107755Z</published>
+    <updated>2026-08-08T15:43:10.107755Z</updated>
+    <category term="DevOps"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 28 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> DevOps</p>
+      <p><strong>Read time:</strong> 12 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Comprehensive guide on advanced development technique 28 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-38.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 29: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-39.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-39</id>
+    <published>2026-08-06T15:43:10.107757Z</published>
+    <updated>2026-08-06T15:43:10.107757Z</updated>
+    <category term="Security"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 29 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Security</p>
+      <p><strong>Read time:</strong> 13 minutes</p>
+      <p><strong>Difficulty:</strong> Advanced</p>
+      <p>Comprehensive guide on advanced development technique 29 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-39.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 30: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-40.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-40</id>
+    <published>2026-08-04T15:43:10.107763Z</published>
+    <updated>2026-08-04T15:43:10.107763Z</updated>
+    <category term="Frontend"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 30 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Frontend</p>
+      <p><strong>Read time:</strong> 9 minutes</p>
+      <p><strong>Difficulty:</strong> Beginner</p>
+      <p>Comprehensive guide on advanced development technique 30 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-40.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 31: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-41.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-41</id>
+    <published>2026-08-02T15:43:10.107766Z</published>
+    <updated>2026-08-02T15:43:10.107766Z</updated>
+    <category term="Backend"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 31 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Backend</p>
+      <p><strong>Read time:</strong> 10 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Comprehensive guide on advanced development technique 31 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-41.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 32: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-42.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-42</id>
+    <published>2026-07-31T15:43:10.107770Z</published>
+    <updated>2026-07-31T15:43:10.107770Z</updated>
+    <category term="Kubernetes"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 32 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Kubernetes</p>
+      <p><strong>Read time:</strong> 11 minutes</p>
+      <p><strong>Difficulty:</strong> Advanced</p>
+      <p>Comprehensive guide on advanced development technique 32 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-42.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 33: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-43.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-43</id>
+    <published>2026-07-29T15:43:10.107773Z</published>
+    <updated>2026-07-29T15:43:10.107773Z</updated>
+    <category term="Microservices"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 33 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Microservices</p>
+      <p><strong>Read time:</strong> 12 minutes</p>
+      <p><strong>Difficulty:</strong> Beginner</p>
+      <p>Comprehensive guide on advanced development technique 33 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-43.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 34: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-44.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-44</id>
+    <published>2026-07-27T15:43:10.107778Z</published>
+    <updated>2026-07-27T15:43:10.107778Z</updated>
+    <category term="API Design"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 34 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> API Design</p>
+      <p><strong>Read time:</strong> 13 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Comprehensive guide on advanced development technique 34 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-44.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 35: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-45.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-45</id>
+    <published>2026-07-25T15:43:10.107781Z</published>
+    <updated>2026-07-25T15:43:10.107781Z</updated>
+    <category term="Database"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 35 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Database</p>
+      <p><strong>Read time:</strong> 9 minutes</p>
+      <p><strong>Difficulty:</strong> Advanced</p>
+      <p>Comprehensive guide on advanced development technique 35 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-45.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 36: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-46.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-46</id>
+    <published>2026-07-23T15:43:10.107785Z</published>
+    <updated>2026-07-23T15:43:10.107785Z</updated>
+    <category term="DevOps"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 36 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> DevOps</p>
+      <p><strong>Read time:</strong> 10 minutes</p>
+      <p><strong>Difficulty:</strong> Beginner</p>
+      <p>Comprehensive guide on advanced development technique 36 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-46.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 37: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-47.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-47</id>
+    <published>2026-07-21T15:43:10.107788Z</published>
+    <updated>2026-07-21T15:43:10.107788Z</updated>
+    <category term="Security"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 37 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Security</p>
+      <p><strong>Read time:</strong> 11 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Comprehensive guide on advanced development technique 37 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-47.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 38: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-48.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-48</id>
+    <published>2026-07-19T15:43:10.107801Z</published>
+    <updated>2026-07-19T15:43:10.107801Z</updated>
+    <category term="Frontend"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 38 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Frontend</p>
+      <p><strong>Read time:</strong> 12 minutes</p>
+      <p><strong>Difficulty:</strong> Advanced</p>
+      <p>Comprehensive guide on advanced development technique 38 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-48.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 39: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-49.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-49</id>
+    <published>2026-07-17T15:43:10.107805Z</published>
+    <updated>2026-07-17T15:43:10.107805Z</updated>
+    <category term="Backend"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 39 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Backend</p>
+      <p><strong>Read time:</strong> 13 minutes</p>
+      <p><strong>Difficulty:</strong> Beginner</p>
+      <p>Comprehensive guide on advanced development technique 39 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-49.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Advanced Development Technique 40: Production Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/post-50.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/post-50</id>
+    <published>2026-07-15T15:43:10.107811Z</published>
+    <updated>2026-07-15T15:43:10.107811Z</updated>
+    <category term="Kubernetes"/>
+    <category term="Article"/>
+    <category term="advanced"/><category term="production"/><category term="best-practices"/>
+    <summary>Comprehensive guide on advanced development technique 40 for production systems.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Kubernetes</p>
+      <p><strong>Read time:</strong> 9 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Comprehensive guide on advanced development technique 40 for production systems.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/post-50.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Understanding STARK Proofs: A Complete Guide for Developers</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/understanding-stark-proofs-simple-guide.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/understanding-stark-proofs-simple-guide</id>
+    <published>2025-03-12T10:30:00Z</published>
+    <updated>2025-03-12T10:30:00Z</updated>
+    <category term="Verifiable Compute"/>
+    <category term="Article"/>
+    <category term="STARK"/><category term="cryptography"/><category term="zero-knowledge"/><category term="proofs"/>
+    <summary>Deep dive into STARK proofs with executable examples and real-world applications for blockchain scalability and privacy.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Verifiable Compute</p>
+      <p><strong>Read time:</strong> 8 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Deep dive into STARK proofs with executable examples and real-world applications for blockchain scalability and privacy.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/understanding-stark-proofs-simple-guide.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Building a Zero-Knowledge VM in Rust with Winterfell</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/building-zkvm-rust-winterfell.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/building-zkvm-rust-winterfell</id>
+    <published>2025-03-10T14:20:00Z</published>
+    <updated>2025-03-10T14:20:00Z</updated>
+    <category term="Verifiable Compute"/>
+    <category term="Article"/>
+    <category term="zkVM"/><category term="Winterfell"/><category term="Rust"/><category term="zero-knowledge"/>
+    <summary>Step-by-step guide to building a custom zero-knowledge VM using Rust and Winterfell STARK prover.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Verifiable Compute</p>
+      <p><strong>Read time:</strong> 12 minutes</p>
+      <p><strong>Difficulty:</strong> Advanced</p>
+      <p>Step-by-step guide to building a custom zero-knowledge VM using Rust and Winterfell STARK prover.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/building-zkvm-rust-winterfell.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Tutorial] Setting Up Your First rust-stark-zkvm Project</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/tutorial-setup-rust-stark-zkvm-project.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/tutorial-setup-rust-stark-zkvm-project</id>
+    <published>2025-03-08T11:00:00Z</published>
+    <updated>2025-03-08T11:00:00Z</updated>
+    <category term="Verifiable Compute"/>
+    <category term="Tutorial"/>
+    <category term="rust-stark-zkvm"/><category term="tutorial"/><category term="getting-started"/>
+    <summary>Step-by-step tutorial: Clone, build, and run your first STARK proof with rust-stark-zkvm.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Verifiable Compute</p>
+      <p><strong>Read time:</strong> 6 minutes</p>
+      <p><strong>Difficulty:</strong> Beginner</p>
+      <p>Step-by-step tutorial: Clone, build, and run your first STARK proof with rust-stark-zkvm.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/tutorial-setup-rust-stark-zkvm-project.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Case Study] Migrating 50TB to Decentralized.Host: Lessons Learned</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/case-study-decentralized-host-migration.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/case-study-decentralized-host-migration</id>
+    <published>2025-03-05T13:20:00Z</published>
+    <updated>2025-03-05T13:20:00Z</updated>
+    <category term="Self-Hosted Systems"/>
+    <category term="Case Study"/>
+    <category term="Decentralized.Host"/><category term="case-study"/><category term="migration"/>
+    <summary>Real-world case study: How we migrated 50TB infrastructure to Decentralized.Host with zero downtime.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Self-Hosted Systems</p>
+      <p><strong>Read time:</strong> 7 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Real-world case study: How we migrated 50TB infrastructure to Decentralized.Host with zero downtime.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/case-study-decentralized-host-migration.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Self-Hosted Infrastructure: A 2025 Setup Guide for Engineers</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/self-hosted-infrastructure-complete-setup.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/self-hosted-infrastructure-complete-setup</id>
+    <published>2025-02-28T09:15:00Z</published>
+    <updated>2025-02-28T09:15:00Z</updated>
+    <category term="Self-Hosted Systems"/>
+    <category term="Article"/>
+    <category term="self-hosted"/><category term="WireGuard"/><category term="infrastructure"/><category term="privacy"/>
+    <summary>Production-ready setup for sovereign infrastructure using WireGuard, DNS automation, and disaster recovery.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Self-Hosted Systems</p>
+      <p><strong>Read time:</strong> 14 minutes</p>
+      <p><strong>Difficulty:</strong> Advanced</p>
+      <p>Production-ready setup for sovereign infrastructure using WireGuard, DNS automation, and disaster recovery.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/self-hosted-infrastructure-complete-setup.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Guide] Integrating MCP Tools into Your AI Agents</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/guide-mcp-tools-ai-agents-integration.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/guide-mcp-tools-ai-agents-integration</id>
+    <published>2025-02-25T10:15:00Z</published>
+    <updated>2025-02-25T10:15:00Z</updated>
+    <category term="AI Infrastructure"/>
+    <category term="Tooling Guide"/>
+    <category term="MCP"/><category term="agents"/><category term="integration"/>
+    <summary>Complete guide: Add MCP tools to Claude, ChatGPT, and other agent frameworks.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> AI Infrastructure</p>
+      <p><strong>Read time:</strong> 8 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Complete guide: Add MCP tools to Claude, ChatGPT, and other agent frameworks.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/guide-mcp-tools-ai-agents-integration.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Tutorial] Building a WireGuard Mesh Network (3 Nodes)</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/tutorial-wireguard-mesh-3-nodes.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/tutorial-wireguard-mesh-3-nodes</id>
+    <published>2025-02-22T14:45:00Z</published>
+    <updated>2025-02-22T14:45:00Z</updated>
+    <category term="Self-Hosted Systems"/>
+    <category term="Tutorial"/>
+    <category term="WireGuard"/><category term="networking"/><category term="tutorial"/>
+    <summary>Hands-on tutorial: Set up a secure WireGuard mesh network connecting 3 VPS instances.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Self-Hosted Systems</p>
+      <p><strong>Read time:</strong> 6 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Hands-on tutorial: Set up a secure WireGuard mesh network connecting 3 VPS instances.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/tutorial-wireguard-mesh-3-nodes.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Building a Local LLM Inference Gateway: Complete Setup</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/local-llm-inference-gateway-setup.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/local-llm-inference-gateway-setup</id>
+    <published>2025-02-20T11:45:00Z</published>
+    <updated>2025-02-20T11:45:00Z</updated>
+    <category term="AI Infrastructure"/>
+    <category term="Article"/>
+    <category term="LLM"/><category term="inference"/><category term="local models"/><category term="privacy"/>
+    <summary>Deploy your own private LLM inference gateway with streaming, batching, and rate limiting.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> AI Infrastructure</p>
+      <p><strong>Read time:</strong> 13 minutes</p>
+      <p><strong>Difficulty:</strong> Advanced</p>
+      <p>Deploy your own private LLM inference gateway with streaming, batching, and rate limiting.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/local-llm-inference-gateway-setup.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Case Study] Saving $2000/month with a Local AI Gateway</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/case-study-ai-gateway-cost-savings.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/case-study-ai-gateway-cost-savings</id>
+    <published>2025-02-18T09:30:00Z</published>
+    <updated>2025-02-18T09:30:00Z</updated>
+    <category term="AI Infrastructure"/>
+    <category term="Case Study"/>
+    <category term="cost-savings"/><category term="AI gateway"/><category term="case-study"/>
+    <summary>Cost analysis: How switching from OpenAI API to a local gateway saved $2000/month.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> AI Infrastructure</p>
+      <p><strong>Read time:</strong> 5 minutes</p>
+      <p><strong>Difficulty:</strong> Beginner</p>
+      <p>Cost analysis: How switching from OpenAI API to a local gateway saved $2000/month.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/case-study-ai-gateway-cost-savings.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Rust Memory Safety: Ownership, Borrowing, and Lifetimes Explained</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/rust-memory-safety-ownership-borrowing.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/rust-memory-safety-ownership-borrowing</id>
+    <published>2025-02-15T13:30:00Z</published>
+    <updated>2025-02-15T13:30:00Z</updated>
+    <category term="Backend"/>
+    <category term="Article"/>
+    <category term="Rust"/><category term="memory safety"/><category term="ownership"/><category term="learning"/>
+    <summary>Master Rust's memory model: understand ownership, borrowing, and lifetimes with practical examples.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Backend</p>
+      <p><strong>Read time:</strong> 10 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Master Rust's memory model: understand ownership, borrowing, and lifetimes with practical examples.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/rust-memory-safety-ownership-borrowing.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Guide] Multi-Service Architecture with Docker Compose</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/guide-docker-compose-microservices.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/guide-docker-compose-microservices</id>
+    <published>2025-02-12T16:00:00Z</published>
+    <updated>2025-02-12T16:00:00Z</updated>
+    <category term="DevOps"/>
+    <category term="Tooling Guide"/>
+    <category term="Docker Compose"/><category term="microservices"/><category term="DevOps"/>
+    <summary>Guide: Build multi-service applications with Docker Compose, health checks, and networking.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> DevOps</p>
+      <p><strong>Read time:</strong> 7 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Guide: Build multi-service applications with Docker Compose, health checks, and networking.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/guide-docker-compose-microservices.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Building High-Performance Systems with Async Rust</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/async-rust-high-performance-systems.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/async-rust-high-performance-systems</id>
+    <published>2025-02-10T10:00:00Z</published>
+    <updated>2025-02-10T10:00:00Z</updated>
+    <category term="Backend"/>
+    <category term="Article"/>
+    <category term="Rust"/><category term="async"/><category term="performance"/><category term="concurrency"/>
+    <summary>Learn async/await in Rust, tokio runtime, and build concurrent systems at scale.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Backend</p>
+      <p><strong>Read time:</strong> 11 minutes</p>
+      <p><strong>Difficulty:</strong> Advanced</p>
+      <p>Learn async/await in Rust, tokio runtime, and build concurrent systems at scale.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/async-rust-high-performance-systems.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Tutorial] Setting Up Prometheus Monitoring for Your Stack</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/tutorial-prometheus-monitoring-setup.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/tutorial-prometheus-monitoring-setup</id>
+    <published>2025-02-08T11:20:00Z</published>
+    <updated>2025-02-08T11:20:00Z</updated>
+    <category term="DevOps"/>
+    <category term="Tutorial"/>
+    <category term="Prometheus"/><category term="monitoring"/><category term="observability"/>
+    <summary>Step-by-step: Configure Prometheus to scrape metrics from your applications and infrastructure.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> DevOps</p>
+      <p><strong>Read time:</strong> 6 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Step-by-step: Configure Prometheus to scrape metrics from your applications and infrastructure.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/tutorial-prometheus-monitoring-setup.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Introduction to Cryptographic Hash Functions and Security</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/cryptographic-hash-functions-security.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/cryptographic-hash-functions-security</id>
+    <published>2025-02-05T15:20:00Z</published>
+    <updated>2025-02-05T15:20:00Z</updated>
+    <category term="Verifiable Compute"/>
+    <category term="Article"/>
+    <category term="cryptography"/><category term="hashing"/><category term="security"/><category term="fundamentals"/>
+    <summary>Understand cryptographic hashing: SHA-256, collision resistance, and applications in blockchain.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Verifiable Compute</p>
+      <p><strong>Read time:</strong> 9 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Understand cryptographic hashing: SHA-256, collision resistance, and applications in blockchain.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/cryptographic-hash-functions-security.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Case Study] Achieving Zero-Downtime Deployments with Blue-Green Strategy</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/case-study-zero-downtime-deployment.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/case-study-zero-downtime-deployment</id>
+    <published>2025-02-03T13:45:00Z</published>
+    <updated>2025-02-03T13:45:00Z</updated>
+    <category term="DevOps"/>
+    <category term="Case Study"/>
+    <category term="deployment"/><category term="case-study"/><category term="zero-downtime"/>
+    <summary>Real deployment strategies: How we eliminated downtime using blue-green and canary deployments.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> DevOps</p>
+      <p><strong>Read time:</strong> 7 minutes</p>
+      <p><strong>Difficulty:</strong> Advanced</p>
+      <p>Real deployment strategies: How we eliminated downtime using blue-green and canary deployments.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/case-study-zero-downtime-deployment.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Guide] Rust Error Handling: Result vs Option Patterns</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/guide-rust-error-handling-patterns.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/guide-rust-error-handling-patterns</id>
+    <published>2025-01-30T10:10:00Z</published>
+    <updated>2025-01-30T10:10:00Z</updated>
+    <category term="Backend"/>
+    <category term="Tooling Guide"/>
+    <category term="Rust"/><category term="error handling"/><category term="patterns"/>
+    <summary>Master Rust error handling: Result types, Option enums, and custom error types.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Backend</p>
+      <p><strong>Read time:</strong> 6 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Master Rust error handling: Result types, Option enums, and custom error types.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/guide-rust-error-handling-patterns.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Distributed Consensus: Raft Protocol Deep Dive</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/raft-consensus-protocol-distributed-systems.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/raft-consensus-protocol-distributed-systems</id>
+    <published>2025-01-28T12:45:00Z</published>
+    <updated>2025-01-28T12:45:00Z</updated>
+    <category term="Self-Hosted Systems"/>
+    <category term="Article"/>
+    <category term="Raft"/><category term="consensus"/><category term="distributed systems"/><category term="database"/>
+    <summary>Master the Raft consensus algorithm: leader election, log replication, and safety guarantees.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Self-Hosted Systems</p>
+      <p><strong>Read time:</strong> 12 minutes</p>
+      <p><strong>Difficulty:</strong> Advanced</p>
+      <p>Master the Raft consensus algorithm: leader election, log replication, and safety guarantees.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/raft-consensus-protocol-distributed-systems.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>[Tutorial] Building a Production REST API with Actix-web</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/tutorial-building-rest-api-actix-web.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/tutorial-building-rest-api-actix-web</id>
+    <published>2025-01-25T14:30:00Z</published>
+    <updated>2025-01-25T14:30:00Z</updated>
+    <category term="Backend"/>
+    <category term="Tutorial"/>
+    <category term="Actix-web"/><category term="REST"/><category term="Rust"/><category term="API"/>
+    <summary>Complete REST API tutorial: Build production-ready endpoints with Actix-web and PostgreSQL.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Backend</p>
+      <p><strong>Read time:</strong> 8 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Complete REST API tutorial: Build production-ready endpoints with Actix-web and PostgreSQL.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/tutorial-building-rest-api-actix-web.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Quantum Computing Threats to Cryptography and NIST Standards</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/quantum-computing-cryptography-threats.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/quantum-computing-cryptography-threats</id>
+    <published>2025-01-20T14:10:00Z</published>
+    <updated>2025-01-20T14:10:00Z</updated>
+    <category term="Verifiable Compute"/>
+    <category term="Article"/>
+    <category term="quantum computing"/><category term="cryptography"/><category term="NIST"/><category term="post-quantum"/>
+    <summary>Understand quantum threats to current cryptography and NIST-approved post-quantum algorithms.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> Verifiable Compute</p>
+      <p><strong>Read time:</strong> 10 minutes</p>
+      <p><strong>Difficulty:</strong> Intermediate</p>
+      <p>Understand quantum threats to current cryptography and NIST-approved post-quantum algorithms.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/quantum-computing-cryptography-threats.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Getting Started with Docker: Containerization Fundamentals</title>
+    <link href="https://codesbyfebin.vercel.app/blog/posts/docker-containerization-fundamentals.html"/>
+    <id>https://codesbyfebin.vercel.app/blog/posts/docker-containerization-fundamentals</id>
+    <published>2025-01-15T09:30:00Z</published>
+    <updated>2025-01-15T09:30:00Z</updated>
+    <category term="DevOps"/>
+    <category term="Article"/>
+    <category term="Docker"/><category term="containers"/><category term="DevOps"/><category term="fundamentals"/>
+    <summary>Learn Docker from scratch: images, containers, networking, and building production deployments.</summary>
+    <content type="html"><![CDATA[
+      <p><strong>Category:</strong> DevOps</p>
+      <p><strong>Read time:</strong> 8 minutes</p>
+      <p><strong>Difficulty:</strong> Beginner</p>
+      <p>Learn Docker from scratch: images, containers, networking, and building production deployments.</p>
+      <p><a href="https://codesbyfebin.vercel.app/blog/posts/docker-containerization-fundamentals.html">Read full article →</a></p>
+    ]]></content>
+    <author>
+      <name>Febin Francis</name>
+    </author>
+  </entry>
+
+</feed>
