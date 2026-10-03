@@ -1,0 +1,17 @@
+.git
+.github
+.gitignore
+node_modules
+.env
+.env.local
+README.md
+AGENTS.md
+SKILL.md
+*.md
+.nojekyll
+_config.yml
+skills/
+llms.txt
+agents.txt
+agents.json
+docs/
