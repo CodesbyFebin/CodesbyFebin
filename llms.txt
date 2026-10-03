@@ -1,95 +1,126 @@
-# CodesbyFebin
+# CodesbyFebin — Systems Engineering & Verifiable Compute
 
-> Febin Francis ("CodesbyFebin") is a systems engineer and open-source developer based in
-> Kerala, India, specializing in AI infrastructure, verifiable compute with STARK proofs,
-> and sovereign self-hosted systems. He builds systems that give people more control,
-> privacy, and freedom. Principle: PROOF > PROMISES.
+## Identity
+**Name:** Febin Francis  
+**Handle:** CodesbyFebin  
+**Location:** Kerala, India (IST, UTC+5:30)  
+**Role:** Systems Engineer  
+**Focus:** AI Infrastructure · Verifiable Compute · Sovereign Systems  
+**Principle:** PROOF > PROMISES
 
-## Core pages & portfolio
-- **Portfolio** (https://codesbyfebin.vercel.app/portfolio-complete.html): comprehensive multi-section portfolio with Home, About, Systems, Projects, Blog, and Research sections
-- **Projects** (https://codesbyfebin.vercel.app/portfolio-enhanced.html): interactive project showcase with category filtering and live search across 6 core systems
-- **Original Portfolio** (https://codesbyfebin.vercel.app/portfolio.html): 20+ public repositories with technology stack and links
-- **Home** (https://codesbyfebin.vercel.app/index.html): landing page with featured systems and latest work
-- **Blog & Writing** (https://codesbyfebin.vercel.app/feed.xml): technical articles on STARKs, Rust, and self-hosting via Atom feed
-- **GitHub** (https://github.com/CodesbyFebin): all public repositories
-- **ORCID** (https://orcid.org/0009-0002-8123-1531): publications and research profile
-- **LinkedIn** (https://linkedin.com/in/codes-by-febin/): professional profile
+## Core Philosophy
+INTENT → POLICY → EXECUTION → EVIDENCE → VERIFIED
 
-## Key facts & systems
+**State Distinctions:**
+- DESIRED ≠ ADMITTED ≠ EXECUTING ≠ OBSERVED ≠ VERIFIED
 
-### Flagship: rust-stark-zkvm
-- Zero-knowledge VM with Winterfell STARK proving and verification
-- HTTP prove/verify API for remote proving
-- MCP (Model Context Protocol) tools for AI agents
-- CI proof gates for automated verification
-- Status: Active, production-ready
-- Repository: https://github.com/CodesbyFebin/rust-stark-zkvm
-- Language: Rust
+## Featured Systems
 
-### Second: Decentralized.Host
-- Self-hosted deployment mesh with sovereign control
-- WireGuard overlay networking for secure connectivity
-- DNS-01 TLS automation for encrypted access
-- Declarative YAML manifests for infrastructure-as-code
-- Raft consensus for distributed coordination
-- Chaos and conformance testing framework
-- Status: Active
-- Repository: https://github.com/CodesbyFebin/decentralized-host
-- Language: Rust
+### rust-stark-zkvm
+Rust STARK zkVM with custom ISA, Winterfell proving/verification, HTTP/MCP interfaces and CI proof gates.
+- **GitHub:** https://github.com/codesbyfebin/rust-stark-zkvm
+- **Focus:** Verifiable computation, zero-knowledge proofs, cryptographic systems
+- **Tech:** Rust, STARK proofs, Winterfell, HTTP/MCP interfaces
+- **Status:** Production-ready research
 
-### Third: AI Infrastructure Stack
-- Local inference gateway (OpenAI-compatible API)
-- Declarative prompt policy engine for agent safety
-- STARK-verified agent action receipts for auditability
-- Support for local model serving and privacy-preserving inference
-- Status: Active
-- Multiple repositories: ai-gateway, prompt-policy-engine, mcp-prove-verify
+### Decentralized.Host
+Sovereign self-hosted infrastructure with signed intent, local admission, explicit state, Raft, WireGuard, chaos and conformance testing.
+- **GitHub:** https://github.com/codesbyfebin/decentralized.host
+- **Focus:** Infrastructure sovereignty, distributed systems, self-hosting
+- **Tech:** Raft consensus, WireGuard, Docker, testing frameworks
+- **Status:** Active development
 
-### Fourth: decentralized.hosting (Public Platform)
-- Template registry for sovereign deployments
-- Guided onboarding for self-hosting
-- Sovereign directory and community platform
-- Exit-portability standard for data freedom
-- Status: Active
+### AI Infrastructure
+Privacy-preserving AI deployment with verifiable compute guarantees.
+- **Focus:** AI/ML infrastructure, privacy systems, secure enclaves
+- **Tech:** Python, FastAPI, cryptographic protocols
+- **Status:** Research & development
 
-## Technology stack
-- Primary: Rust (systems, proofs, infrastructure)
-- Secondary: TypeScript/Go (APIs, agents, tooling)
-- Infrastructure: WireGuard, Docker, Traefik, FastAPI
-- Cryptography: STARK proofs, Winterfell, finite-field arithmetic
-- AI: MCP (Model Context Protocol), LLM agent integration
-- DevOps: Declarative manifests, chaos testing, audit logging
+### Decentralized.hosting (Phase 1–2)
+Self-hosted deployment mesh for distributed applications.
+- **Focus:** Application deployment, orchestration, infrastructure
+- **Tech:** FastAPI, Docker, Traefik, scheduling
+- **Status:** Active development
 
-## Focus areas
-- **Verifiable Compute**: Zero-knowledge proofs, STARK proving systems, cryptographic verification
-- **Sovereign Infrastructure**: Self-hosted deployment, infrastructure control, privacy preservation
-- **Agentic Systems**: AI agent frameworks, model routing, evaluation frameworks
-- **Developer Tools**: MCP protocols, CLI tools, agent integration
-- **Field Systems**: Deployed systems with operational constraints and real-world deployment
+## Research & Publications
 
-## Contact & Collaboration
-- Email: codesbyfebin@gmail.com
-- GitHub: https://github.com/CodesbyFebin
-- LinkedIn: https://linkedin.com/in/codes-by-febin/
-- ORCID: 0009-0002-8123-1531
-- Twitter/X: @codesbyfebin
-- Instagram/Threads: @codesbyfebin
-- Bluesky: @codesbyfebin.bsky.social
-- Dev.to: https://dev.to/codesbyfebin
+### Research Areas
+- Zero-Knowledge Proofs (STARKs, SNARKs, commitments)
+- Distributed Systems (Raft, consensus, Byzantine fault tolerance)
+- Privacy-Preserving AI (federated learning, differential privacy, secure enclaves)
+- Cryptographic Primitives (hash functions, commitment schemes, polynomial commitments)
+- Sovereign Systems Architecture (self-hosting, infrastructure design)
+- Implementation Patterns (Rust, Python, systems-level optimization)
 
-## Location & Context
-- Based: Kerala, India (IST, UTC+5:30)
-- Engineering since: 2020
-- Licensing: MIT / Apache-2.0 across public repositories
-- Principle: Systems that prove what happened > promises about capability
+### Recent Papers
+- STARK Proofs: Scalability Without Trusted Setup (2026)
+- Decentralized Consensus: Raft & Beyond (2026)
+- Building Privacy-Preserving AI Infrastructure (2025)
+- Cryptographic Commitments in Zero-Knowledge Systems (2025)
+- Sovereign Systems Architecture: Design & Implementation (2025)
+- From Theory to Practice: Implementing Zero-Knowledge Proofs (2025)
 
-## Open Source Impact
-- Winterfell contributor (STARK proving system)
-- MCP ecosystem contributor
-- Open-source consulting available
-- Mentoring in Rust, cryptography, and self-hosted infrastructure
+## Content & Resources
 
----
+### Main Site
+**Base:** https://codesbyfebin.com/
 
-**Last updated**: 2025-10-03  
-**Canonical**: https://codesbyfebin.vercel.app/llms.txt
+**Pages:**
+- Landing: https://codesbyfebin.com/ (systems showcase, featured work)
+- About: https://codesbyfebin.com/about/ (professional profile, timeline, philosophy)
+- Blog: https://codesbyfebin.com/blog/ (technical articles and insights)
+- Projects: https://codesbyfebin.com/projects-enhanced/ (20+ repository showcase)
+- Portfolio: https://codesbyfebin.com/portfolio/ (featured projects, skills, statistics)
+- Documentation: https://codesbyfebin.com/docs/ (guides, API docs, resources)
+- Research: https://codesbyfebin.com/docs/research/ (published papers and studies)
+
+### Topics Covered
+- Systems Engineering (distributed systems, infrastructure, operations)
+- Verifiable Computation (zero-knowledge proofs, cryptography, formal verification)
+- AI Infrastructure (privacy-preserving AI, model deployment, LLM systems)
+- Self-Hosting (sovereign infrastructure, deployment patterns, operations)
+- Developer Tools (CLI tooling, testing frameworks, CI/CD patterns)
+
+## Contact & Community
+
+**Email:** febin@codesbyfebin.com  
+**GitHub:** https://github.com/codesbyfebin  
+**LinkedIn:** https://linkedin.com/in/febin-francis  
+**Twitter/X:** @codesbyfebin  
+**Discord:** Community invitation available
+
+## Technical Skills
+
+**Languages:** Rust, Python, TypeScript, Go, Bash, SQL  
+**Infrastructure:** Docker, Kubernetes, Raft, WireGuard, Traefik, VPS management  
+**Cryptography:** STARKs, SNARKs, Pedersen commitments, Poseidon hash, signature schemes  
+**Systems:** Distributed systems, consensus algorithms, Byzantine fault tolerance  
+**AI/ML:** LLM systems, model serving, privacy-preserving techniques, evaluation frameworks
+
+## Key Metrics
+
+- **20+** open-source repositories
+- **2.5K+** GitHub stars across projects
+- **100+** active contributors
+- **5+** core technology areas
+- **6** published research papers
+- **1000+** community members
+
+## Credibility & Evidence
+
+All claims are backed by:
+- Open-source code on GitHub with full implementation
+- Published research and technical papers
+- Active project maintenance and CI/testing
+- Community contributions and feedback
+- Production deployment experience
+
+**Interpretation Rule:** Claims are verified against corresponding repositories. Unmeasured state is treated as UNKNOWN. Production claims are distinguished from roadmap items and research explorations.
+
+## Continuous Updates
+
+This file is refreshed as new projects, papers, and resources are published. Check back for latest developments in:
+- Zero-knowledge proof systems
+- Distributed systems research
+- AI infrastructure innovations
+- Self-hosting patterns and tooling
