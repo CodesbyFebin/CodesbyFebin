@@ -1,4 +1,6 @@
-![Febin Francis — CodesbyFebin: AI infrastructure, verifiable compute and self-hosted systems](assets/profile-header.svg)
+ 
+<img width="1672" height="941" alt="Sovereign Systems Developer Portfolio(1)" src="https://github.com/user-attachments/assets/00a0fd77-a669-4752-9f7c-e4af0d4ac7c5" />
+
 
 <div align="center">
 
@@ -6,7 +8,7 @@
 
 </div>
 
-## Hi, I'm Febin 👋
+## Hi, I'm Febin Francis👋
 
 I'm an open-source builder from **Kerala, India**, working on AI infrastructure, verifiable computation and systems you can run yourself. I share code, debugging lessons and the trade-offs behind the design.
 
