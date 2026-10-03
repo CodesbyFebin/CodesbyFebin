@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>CodesbyFebin - Systems Engineering & AI Infrastructure</title>
+        <link>https://codesbyfebin.github.io/</link>
+        <description>Insights, experiments, and technical deep dives on AI infrastructure, verifiable compute, sovereign systems, and building what lasts.</description>
+        <language>en-us</language>
+        <copyright>© 2025 Febin Francis. All rights reserved.</copyright>
+        <managingEditor>febin@codesbyfebin.dev</managingEditor>
+        <atom:link href="https://codesbyfebin.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+
+        <!-- Featured Post -->
+        <item>
+            <title>Building a STARK-Powered Zero Knowledge VM</title>
+            <link>https://codesbyfebin.github.io/blog#building-stark-zkvm</link>
+            <guid isPermaLink="false">stark-zkvm-2025</guid>
+            <pubDate>Mon, 15 Mar 2025 10:00:00 GMT</pubDate>
+            <category>AI &amp; Crypto</category>
+            <description>A deep dive into building a zero-knowledge virtual machine using STARK proofs. Learn about the architecture, implementation challenges, and performance optimizations.</description>
+            <content:encoded><![CDATA[
+                <p>A deep dive into building a zero-knowledge virtual machine using STARK proofs.</p>
+                <p>Topics covered:</p>
+                <ul>
+                    <li>Custom VM ISA design</li>
+                    <li>Execution trace generation</li>
+                    <li>Algebraic Intermediate Representation (AIR)</li>
+                    <li>STARK proving and verification</li>
+                    <li>Performance optimization strategies</li>
+                </ul>
+                <p><a href="https://github.com/CodesbyFebin/rust-stark-zkvm">View Project on GitHub</a></p>
+            ]]></content:encoded>
+        </item>
+
+        <!-- Recent Article 1 -->
+        <item>
+            <title>Self-Hosted AI Infrastructure with Kubernetes</title>
+            <link>https://codesbyfebin.github.io/blog#self-hosted-ai-k8s</link>
+            <guid isPermaLink="false">self-hosted-ai-k8s-2025</guid>
+            <pubDate>Fri, 28 Feb 2025 14:30:00 GMT</pubDate>
+            <category>Infrastructure</category>
+            <description>A practical guide to setting up a self-hosted AI infrastructure using Kubernetes, with cost optimization, monitoring, and scaling strategies.</description>
+            <content:encoded><![CDATA[
+                <p>A practical guide to setting up a self-hosted AI infrastructure using Kubernetes.</p>
+                <p>Learn about:</p>
+                <ul>
+                    <li>Kubernetes cluster setup and configuration</li>
+                    <li>LLM model serving and management</li>
+                    <li>Resource optimization and cost reduction</li>
+                    <li>Monitoring and observability</li>
+                    <li>Scaling strategies for production</li>
+                </ul>
+            ]]></content:encoded>
+        </item>
+
+        <!-- Recent Article 2 -->
+        <item>
+            <title>Building Decentralized.Host: A Sovereign Web Platform</title>
+            <link>https://codesbyfebin.github.io/blog#decentralized-host</link>
+            <guid isPermaLink="false">decentralized-host-2025</guid>
+            <pubDate>Fri, 19 Feb 2025 09:15:00 GMT</pubDate>
+            <category>Systems</category>
+            <description>How we're building a decentralized hosting platform where hosts remain sovereign with signed intent, local admission policy, and explicit state verification.</description>
+            <content:encoded><![CDATA[
+                <p>Building a decentralized hosting platform with sovereignty at its core.</p>
+                <p>Key concepts:</p>
+                <ul>
+                    <li>Ed25519 identities and signed intent</li>
+                    <li>Per-host local admission policy</li>
+                    <li>Desired vs Admitted vs Observed state</li>
+                    <li>Raft consensus and mTLS security</li>
+                    <li>WireGuard mesh networking</li>
+                    <li>Chaos and conformance testing</li>
+                </ul>
+                <p><a href="https://github.com/CodesbyFebin/Decentralized-">View Project on GitHub</a></p>
+            ]]></content:encoded>
+        </item>
+
+        <!-- Recent Article 3 -->
+        <item>
+            <title>Python vs Rust for Systems Programming</title>
+            <link>https://codesbyfebin.github.io/blog#python-vs-rust</link>
+            <guid isPermaLink="false">python-vs-rust-2025</guid>
+            <pubDate>Wed, 22 Jan 2025 11:45:00 GMT</pubDate>
+            <category>Development</category>
+            <description>A practical comparison of Python and Rust for systems programming, examining performance, safety, concurrency, and real-world trade-offs.</description>
+            <content:encoded><![CDATA[
+                <p>When to use Python vs Rust for systems programming.</p>
+                <p>Comparison includes:</p>
+                <ul>
+                    <li>Performance characteristics</li>
+                    <li>Memory safety and type systems</li>
+                    <li>Concurrency models</li>
+                    <li>Ecosystem and libraries</li>
+                    <li>Development velocity vs runtime efficiency</li>
+                </ul>
+            ]]></content:encoded>
+        </item>
+
+        <!-- Recent Article 4 -->
+        <item>
+            <title>Understanding Zero Knowledge Proofs</title>
+            <link>https://codesbyfebin.github.io/blog#zk-proofs</link>
+            <guid isPermaLink="false">zk-proofs-2025</guid>
+            <pubDate>Mon, 16 Jan 2025 16:20:00 GMT</pubDate>
+            <category>Blockchain</category>
+            <description>An introduction to zero-knowledge proofs, their applications, and their role in building privacy-preserving systems and verifiable computation.</description>
+            <content:encoded><![CDATA[
+                <p>An introduction to zero-knowledge proofs and their real-world applications.</p>
+                <p>Topics:</p>
+                <ul>
+                    <li>What are zero-knowledge proofs?</li>
+                    <li>Interactive vs non-interactive proofs</li>
+                    <li>STARKs and SNARKs comparison</li>
+                    <li>Privacy-preserving applications</li>
+                    <li>Verifiable computation use cases</li>
+                </ul>
+            ]]></content:encoded>
+        </item>
+
+        <!-- Recent Article 5 -->
+        <item>
+            <title>Setting Up Your First Linux Server</title>
+            <link>https://codesbyfebin.github.io/blog#linux-server</link>
+            <guid isPermaLink="false">linux-server-2025</guid>
+            <pubDate>Wed, 28 Dec 2024 08:30:00 GMT</pubDate>
+            <category>Tutorial</category>
+            <description>A comprehensive guide to setting up a production Linux server with security best practices, monitoring, and essential tools.</description>
+            <content:encoded><![CDATA[
+                <p>A complete guide to setting up a production-ready Linux server.</p>
+                <p>Covers:</p>
+                <ul>
+                    <li>Initial server configuration</li>
+                    <li>SSH hardening and security</li>
+                    <li>Firewall setup with UFW</li>
+                    <li>System monitoring and logging</li>
+                    <li>Backup and disaster recovery</li>
+                    <li>Essential tools and utilities</li>
+                </ul>
+            ]]></content:encoded>
+        </item>
+    </channel>
+</rss>
