@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300">
+  <defs>
+    <style>
+      .header-bg { fill: #0d1117; }
+      .accent-primary { stroke: #00d46a; fill: none; }
+      .accent-text { fill: #00d46a; }
+      .text-main { fill: #ffffff; font-family: 'Monaco', 'Courier New', monospace; }
+      .text-title { font-size: 48px; font-weight: bold; letter-spacing: 2px; }
+      .text-subtitle { font-size: 16px; font-weight: 300; }
+      .text-focus { font-size: 14px; letter-spacing: 0.5px; }
+      .terminal-border { stroke: #00d46a; fill: none; stroke-width: 1.5; }
+      .terminal-header { fill: #00d46a; font-size: 11px; font-weight: bold; }
+      .terminal-text { fill: #00d46a; font-size: 10px; }
+      .dot { fill: #00d46a; }
+      .grid { opacity: 0.05; }
+    </style>
+    <pattern id="dotGrid" x="20" y="20" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="1" class="grid" fill="#00d46a"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect class="header-bg" width="1200" height="300"/>
+
+  <!-- Grid pattern -->
+  <rect width="1200" height="300" fill="url(#dotGrid)" opacity="0.1"/>
+
+  <!-- Accent lines -->
+  <line x1="0" y1="100" x2="1200" y2="100" stroke="#00d46a" stroke-width="0.5" opacity="0.15"/>
+  <line x1="0" y1="150" x2="1200" y2="150" stroke="#00d46a" stroke-width="0.5" opacity="0.15"/>
+  <line x1="0" y1="200" x2="1200" y2="200" stroke="#00d46a" stroke-width="0.5" opacity="0.15"/>
+
+  <!-- Top-left terminal window -->
+  <g>
+    <rect x="20" y="20" width="300" height="120" class="terminal-border" rx="4"/>
+    <rect x="20" y="20" width="300" height="20" fill="#00d46a" opacity="0.1"/>
+    <circle cx="35" cy="30" r="4" fill="#00d46a" opacity="0.5"/>
+    <circle cx="52" cy="30" r="4" fill="#00d46a" opacity="0.3"/>
+    <circle cx="69" cy="30" r="4" fill="#00d46a" opacity="0.2"/>
+    <text x="310" y="32" class="terminal-header">CODES BY FEBIN</text>
+
+    <text x="30" y="60" class="terminal-text">$ whoami</text>
+    <text x="30" y="80" class="terminal-text">  Febin Francis</text>
+    <text x="30" y="100" class="terminal-text">  Open-source builder</text>
+    <text x="30" y="120" class="terminal-text">$ █</text>
+  </g>
+
+  <!-- Center title section -->
+  <g text-anchor="middle">
+    <text x="600" y="80" class="text-main text-title">CodesbyFebin</text>
+    <text x="600" y="110" class="text-main text-subtitle">Febin Francis • Open-source developer</text>
+    <text x="600" y="135" class="text-main text-focus">AI infrastructure • Verifiable compute • Self-hosted systems</text>
+
+    <!-- PROOF > PROMISES box -->
+    <rect x="480" y="150" width="240" height="40" class="terminal-border" rx="2"/>
+    <text x="600" y="177" class="text-main text-focus" font-weight="bold" letter-spacing="3">PROOF &gt; PROMISES</text>
+  </g>
+
+  <!-- Top-right terminal window -->
+  <g>
+    <rect x="880" y="20" width="300" height="120" class="terminal-border" rx="4"/>
+    <rect x="880" y="20" width="300" height="20" fill="#00d46a" opacity="0.1"/>
+    <circle cx="895" cy="30" r="4" fill="#00d46a" opacity="0.5"/>
+    <circle cx="912" cy="30" r="4" fill="#00d46a" opacity="0.3"/>
+    <circle cx="929" cy="30" r="4" fill="#00d46a" opacity="0.2"/>
+    <text x="1170" y="32" class="terminal-header" text-anchor="end">~/projects</text>
+
+    <text x="890" y="60" class="terminal-text">$ tree</text>
+    <text x="890" y="80" class="terminal-text">├─ rust-stark-zkvm/</text>
+    <text x="890" y="95" class="terminal-text">├─ OM-Personal-AI/</text>
+    <text x="890" y="110" class="terminal-text">├─ self-hosted-systems/</text>
+    <text x="890" y="125" class="terminal-text">└─ README.md</text>
+  </g>
+
+  <!-- Bottom-right info panel -->
+  <g>
+    <rect x="880" y="160" width="300" height="120" class="terminal-border" rx="4"/>
+    <rect x="880" y="160" width="300" height="20" fill="#00d46a" opacity="0.1"/>
+
+    <g text-anchor="start">
+      <text x="900" y="200" class="terminal-text">⬜ AI INFRASTRUCTURE</text>
+      <text x="900" y="220" class="terminal-text">⚙️  VERIFIABLE COMPUTE</text>
+      <text x="900" y="240" class="terminal-text">☁️  SELF-HOSTED SYSTEMS</text>
+      <text x="900" y="260" class="terminal-text">📂 OPEN SOURCE</text>
+    </g>
+  </g>
+
+  <!-- Connecting lines and dots -->
+  <line x1="320" y1="80" x2="480" y2="120" class="accent-primary" stroke-width="1" opacity="0.3"/>
+  <line x1="720" y1="120" x2="880" y2="80" class="accent-primary" stroke-width="1" opacity="0.3"/>
+  <circle cx="320" cy="80" r="3" class="dot" opacity="0.6"/>
+  <circle cx="880" cy="220" r="3" class="dot" opacity="0.6"/>
+
+  <!-- Footer link -->
+  <text x="600" y="285" class="text-main text-focus" text-anchor="middle" font-size="12">github.com/CodesbyFebin</text>
+</svg>
