@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Febin Francis - Systems Engineer. Building systems that prove what happened. AI infrastructure, verifiable compute, sovereign systems.">
+    <meta property="og:title" content="Febin Francis - Systems Engineer & Open Source Developer">
+    <meta property="og:description" content="Building systems that prove what happened. Explore core systems spanning verifiable computation, agentic infrastructure, and sovereign systems.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://codesbyfebin.vercel.app/">
+    <meta property="og:image" content="https://codesbyfebin.vercel.app/assets/profile-header.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@codesbyfebin">
+    <link rel="alternate" type="application/rss+xml" title="CodesbyFebin Blog Feed" href="https://codesbyfebin.vercel.app/feed.xml">
+    <title>Febin Francis - Systems Engineer | Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #00d46a;
+            --secondary: #1a1a1a;
+            --dark-bg: #0f0f0f;
+            --card-bg: #1a1a1a;
+            --border: #2d2d2d;
+            --text-primary: #e0e0e0;
+            --text-secondary: #a0a0a0;
+            --success: #51cf66;
+        }
+
+        body {
+            font-family: 'Monaco', 'Courier New', monospace;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--dark-bg);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            background: rgba(15, 15, 15, 0.95);
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .nav-logo {
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-menu button {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-family: 'Monaco', monospace;
+            font-size: 0.9em;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu button:hover,
+        .nav-menu button.active {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-icon {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-icon:hover {
+            opacity: 1;
+        }
+
+        /* Sections */
+        section {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Home Section */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            color: var(--primary);
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3em;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+        }
+
+        .hero .tagline {
+            font-size: 1.1em;
+            color: var(--text-primary);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .hero .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+
+        .cta-button {
+            padding: 12px 30px;
+            border: 2px solid var(--primary);
+            background: var(--primary);
+            color: var(--secondary);
+            cursor: pointer;
+            font-family: 'Monaco', monospace;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: var(--primary);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px rgba(0, 212, 106, 0.3);
+        }
+
+        .featured-systems {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .system-card {
+            border: 1px solid var(--border);
+            padding: 30px;
+            background: var(--card-bg);
+            transition: all 0.3s ease;
+        }
+
+        .system-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 0 20px rgba(0, 212, 106, 0.1);
+        }
+
+        .system-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .system-card p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .system-card .link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Grid Sections */
+        .section-grid {
+            padding: 60px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .grid-item {
+            border: 1px solid var(--border);
+            padding: 30px;
+            background: var(--card-bg);
+            transition: all 0.3s ease;
+        }
+
+        .grid-item:hover {
+            border-color: var(--primary);
+            background: rgba(0, 212, 106, 0.05);
+        }
+
+        .grid-item h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .grid-item p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(0, 212, 106, 0.1);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            font-size: 0.8em;
+            margin-right: 8px;
+            margin-bottom: 10px;
+        }
+
+        /* About Section */
+        .about-hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            padding: 80px 0;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .about-content h1 {
+            color: var(--primary);
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .about-content p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 0.95em;
+        }
+
+        .about-content strong {
+            color: var(--primary);
+        }
+
+        .about-info {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 30px;
+        }
+
+        .about-info h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-size: 0.9em;
+        }
+
+        .about-info-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .about-info-item:last-child {
+            border-bottom: none;
+        }
+
+        .about-info-label {
+            color: var(--text-secondary);
+            font-size: 0.85em;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .about-info-value {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Projects Section */
+        .projects-header {
+            padding: 60px 0;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .projects-header h1 {
+            color: var(--primary);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .projects-header p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            line-height: 1.8;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 60px 0;
+        }
+
+        .project-card {
+            border: 1px solid var(--border);
+            padding: 30px;
+            background: var(--card-bg);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 0 20px rgba(0, 212, 106, 0.2);
+        }
+
+        .project-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .project-category {
+            color: var(--primary);
+            font-size: 0.75em;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .project-name {
+            color: var(--text-primary);
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-size: 0.95em;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .project-meta-item {
+            color: var(--text-secondary);
+            font-size: 0.85em;
+        }
+
+        .project-link {
+            display: inline-block;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Blog Section */
+        .blog-header {
+            padding: 60px 0;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .blog-header h1 {
+            color: var(--primary);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .blog-posts {
+            display: grid;
+            gap: 40px;
+            padding: 60px 0;
+        }
+
+        .blog-post {
+            border-left: 3px solid var(--primary);
+            padding: 30px;
+            background: var(--card-bg);
+            transition: all 0.3s ease;
+        }
+
+        .blog-post:hover {
+            box-shadow: 0 0 20px rgba(0, 212, 106, 0.1);
+        }
+
+        .blog-category {
+            color: var(--primary);
+            font-size: 0.75em;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .blog-title {
+            color: var(--text-primary);
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .blog-excerpt {
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 20px;
+            color: var(--text-secondary);
+            font-size: 0.85em;
+        }
+
+        .blog-read-more {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+            display: inline-block;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+            margin-top: 60px;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .social-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-bottom {
+            font-size: 0.9em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2em; }
+            .about-hero { grid-template-columns: 1fr; }
+            .nav-menu { gap: 15px; font-size: 0.85em; }
+            .nav-wrapper { gap: 20px; flex-wrap: wrap; }
+            .hero .cta-buttons { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="nav-logo" onclick="showSection('home')">→ CodesbyFebin</div>
+                <ul class="nav-menu">
+                    <li><button class="nav-link active" onclick="showSection('home')">Home</button></li>
+                    <li><button class="nav-link" onclick="showSection('about')">About</button></li>
+                    <li><button class="nav-link" onclick="showSection('systems')">Systems</button></li>
+                    <li><button class="nav-link" onclick="showSection('projects')">Projects</button></li>
+                    <li><button class="nav-link" onclick="showSection('blog')">Blog</button></li>
+                    <li><button class="nav-link" onclick="showSection('research')">Research</button></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="https://github.com/CodesbyFebin" title="GitHub" style="color: var(--text-secondary);">◆</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- HOME SECTION -->
+        <section id="home" class="active">
+            <div class="hero">
+                <h1>Building Sovereign Systems</h1>
+                <div class="subtitle">for a Verifiable Future</div>
+                <div class="tagline">
+                    I'm Febin Francis, a systems engineer and open-source developer based in Kerala, India. I specialize in AI infrastructure, verifiable compute, and sovereign systems. I build tools, systems, and infrastructure that give people more control, privacy, and freedom.
+                </div>
+                <div class="cta-buttons">
+                    <button class="cta-button" onclick="showSection('projects')">View My Projects →</button>
+                    <button class="cta-button secondary" onclick="showSection('about')">About Me</button>
+                </div>
+            </div>
+
+            <div class="featured-systems">
+                <div class="system-card">
+                    <h3>rust-stark-zkvm</h3>
+                    <p>High-performance zero-knowledge VM built with Rust and STARK proofs. Production-ready verifiable computation.</p>
+                    <span class="system-card link" onclick="showSection('projects')">View Project →</span>
+                </div>
+                <div class="system-card">
+                    <h3>Decentralized.Host</h3>
+                    <p>Self-hosted, decentralized cloud infrastructure for sovereign deployments. Full control of your data.</p>
+                    <span class="system-card link" onclick="showSection('projects')">View Project →</span>
+                </div>
+                <div class="system-card">
+                    <h3>AI Infrastructure</h3>
+                    <p>Scalable infrastructure for running AI models with privacy and control. Designed for the real world.</p>
+                    <span class="system-card link" onclick="showSection('projects')">View Project →</span>
+                </div>
+                <div class="system-card">
+                    <h3>Sovereign Systems</h3>
+                    <p>Privacy-focused tools for digital sovereignty. Build what you control, not what controls you.</p>
+                    <span class="system-card link" onclick="showSection('projects')">View Project →</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about">
+            <div class="about-hero">
+                <div class="about-content">
+                    <h1>Systems Engineer</h1>
+                    <p>I'm Febin Francis, a systems engineer and open-source builder based in Kerala, India. I specialize in <strong>AI infrastructure, verifiable compute, and sovereign systems</strong>.</p>
+                    <p>I build tools, systems, and infrastructure that give people more control, privacy, and freedom. My work spans verifiable computation (STARK proofs, zero-knowledge systems), distributed infrastructure (Kubernetes, Terraform, self-hosting), and AI/ML systems optimization.</p>
+                    <p><strong>"Build systems that prove what happened"</strong> is my engineering principle. Every implementation is backed by evidence, tests, and verification gates. No handwaving, no claims without proof.</p>
+                    <p>I'm always open to discussing new projects, collaborations, and interesting ideas. Let's build something great together.</p>
+                </div>
+                <div class="about-info">
+                    <h3>About Me</h3>
+                    <div class="about-info-item">
+                        <div class="about-info-label">Location</div>
+                        <div class="about-info-value">Kerala, India</div>
+                    </div>
+                    <div class="about-info-item">
+                        <div class="about-info-label">Timezone</div>
+                        <div class="about-info-value">IST (UTC+5:30)</div>
+                    </div>
+                    <div class="about-info-item">
+                        <div class="about-info-label">Focus</div>
+                        <div class="about-info-value">AI Infrastructure<br>Verifiable Compute<br>Sovereign Systems</div>
+                    </div>
+                    <div class="about-info-item">
+                        <div class="about-info-label">Languages</div>
+                        <div class="about-info-value">Rust, Go, TypeScript, Python</div>
+                    </div>
+                    <div class="about-info-item">
+                        <div class="about-info-label">ORCID</div>
+                        <div class="about-info-value">0009-0002-8123-1531</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SYSTEMS SECTION -->
+        <section id="systems">
+            <div class="projects-header">
+                <h1>Core Systems</h1>
+                <p>Four key systems that power the future of decentralized, verifiable infrastructure.</p>
+            </div>
+            <div class="section-grid">
+                <div class="grid-item">
+                    <h3>rust-stark-zkvm</h3>
+                    <p>A Rust-based zero-knowledge VM with custom ISA, STARK prover/verifier, and HTTP proving API.</p>
+                    <span class="badge">Rust</span>
+                    <span class="badge">Winterfell</span>
+                    <span class="badge">MCP</span>
+                </div>
+                <div class="grid-item">
+                    <h3>Decentralized.Host</h3>
+                    <p>Sovereign self-hosted infrastructure with Raft consensus, WireGuard mesh, and conformance testing.</p>
+                    <span class="badge">Go</span>
+                    <span class="badge">Raft</span>
+                    <span class="badge">Docker</span>
+                </div>
+                <div class="grid-item">
+                    <h3>Sovereign AI</h3>
+                    <p>Self-hosted AI agent infrastructure with privacy-preserving inference and local model routing.</p>
+                    <span class="badge">Python</span>
+                    <span class="badge">FastAPI</span>
+                    <span class="badge">LLMs</span>
+                </div>
+                <div class="grid-item">
+                    <h3>Bharat Gateway</h3>
+                    <p>Model routing and residency control for India. Geographic, legal, and operational sovereignty.</p>
+                    <span class="badge">Go</span>
+                    <span class="badge">gRPC</span>
+                    <span class="badge">K8s</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects">
+            <div class="projects-header">
+                <h1>Open Source Projects</h1>
+                <p>20+ repositories spanning verifiable computation, agentic infrastructure, and sovereign systems.</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-category">Verifiable Compute</div>
+                    <div class="project-name">rust-stark-zkvm</div>
+                    <div class="project-description">High-performance zero-knowledge VM with Rust and STARK proofs. Production-ready verifiable computation.</div>
+                    <div class="project-meta">
+                        <span class="project-meta-item">⭐ 156 stars</span>
+                        <span class="project-meta-item">🔗 140 forks</span>
+                    </div>
+                    <a href="https://github.com/CodesbyFebin/rust-stark-zkvm" class="project-link" target="_blank">View Repository →</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-category">Sovereign Infrastructure</div>
+                    <div class="project-name">Decentralized.Host</div>
+                    <div class="project-description">Self-hosted, decentralized cloud infrastructure. Full control of your data and infrastructure.</div>
+                    <div class="project-meta">
+                        <span class="project-meta-item">⭐ 89 stars</span>
+                        <span class="project-meta-item">🔗 34 forks</span>
+                    </div>
+                    <a href="https://github.com/CodesbyFebin/Decentralized.Host" class="project-link" target="_blank">View Repository →</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-category">AI Infrastructure</div>
+                    <div class="project-name">Sovereign AI Platform</div>
+                    <div class="project-description">Scalable infrastructure for running AI models with privacy and control.</div>
+                    <div class="project-meta">
+                        <span class="project-meta-item">⭐ 78 stars</span>
+                        <span class="project-meta-item">🔗 22 forks</span>
+                    </div>
+                    <a href="https://github.com/CodesbyFebin" class="project-link" target="_blank">View Repository →</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-category">Developer Tools</div>
+                    <div class="project-name">MCP Directory</div>
+                    <div class="project-description">Model Context Protocol tools and framework for building AI agents.</div>
+                    <div class="project-meta">
+                        <span class="project-meta-item">⭐ 64 stars</span>
+                        <span class="project-meta-item">🔗 18 forks</span>
+                    </div>
+                    <a href="https://github.com/CodesbyFebin" class="project-link" target="_blank">View Repository →</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-category">Infrastructure</div>
+                    <div class="project-name">Bharat Gateway</div>
+                    <div class="project-description">Geographic routing and residency control for sovereign model deployment in India.</div>
+                    <div class="project-meta">
+                        <span class="project-meta-item">⭐ 52 stars</span>
+                        <span class="project-meta-item">🔗 15 forks</span>
+                    </div>
+                    <a href="https://github.com/CodesbyFebin" class="project-link" target="_blank">View Repository →</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-category">Developer Tools</div>
+                    <div class="project-name">Agent Evaluation</div>
+                    <div class="project-description">Structured evaluation framework for AI agents with compliance testing and readiness gates.</div>
+                    <div class="project-meta">
+                        <span class="project-meta-item">⭐ 41 stars</span>
+                        <span class="project-meta-item">🔗 12 forks</span>
+                    </div>
+                    <a href="https://github.com/CodesbyFebin" class="project-link" target="_blank">View Repository →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOG SECTION -->
+        <section id="blog">
+            <div class="blog-header">
+                <h1>Blog & Articles</h1>
+                <p>Insights, experiments, and technical deep dives on AI infrastructure, verifiable compute, distributed systems.</p>
+            </div>
+            <div class="blog-posts">
+                <div class="blog-post">
+                    <div class="blog-category">AI & Crypto</div>
+                    <div class="blog-title">Building a STARK-Powered Zero Knowledge VM</div>
+                    <div class="blog-excerpt">A deep dive into building a zero-knowledge virtual machine using STARK proofs. We'll explore the architecture, implementation challenges, and performance optimizations.</div>
+                    <div class="blog-meta">
+                        <span>Mar 15, 2025</span>
+                        <span>12 min read</span>
+                        <span>2.4k views</span>
+                    </div>
+                    <a onclick="alert('Full article coming soon')" class="blog-read-more">Read More →</a>
+                </div>
+                <div class="blog-post">
+                    <div class="blog-category">Infrastructure</div>
+                    <div class="blog-title">Self-Hosted AI Infrastructure with Kubernetes</div>
+                    <div class="blog-excerpt">A practical guide to setting up a self-hosted AI infrastructure using Kubernetes, with cost optimization, monitoring, and scaling strategies.</div>
+                    <div class="blog-meta">
+                        <span>Feb 28, 2025</span>
+                        <span>10 min read</span>
+                        <span>1.8k views</span>
+                    </div>
+                    <a onclick="alert('Full article coming soon')" class="blog-read-more">Read More →</a>
+                </div>
+                <div class="blog-post">
+                    <div class="blog-category">Systems</div>
+                    <div class="blog-title">Building Decentralized.Host: A Sovereign Web Platform</div>
+                    <div class="blog-excerpt">How we're building a decentralized hosting platform with focus on privacy, ownership, and global accessibility.</div>
+                    <div class="blog-meta">
+                        <span>Feb 10, 2025</span>
+                        <span>14 min read</span>
+                        <span>1.2k views</span>
+                    </div>
+                    <a onclick="alert('Full article coming soon')" class="blog-read-more">Read More →</a>
+                </div>
+                <div class="blog-post">
+                    <div class="blog-category">Development</div>
+                    <div class="blog-title">Python vs Rust for Systems Programming</div>
+                    <div class="blog-excerpt">A practical comparison of Python and Rust for systems programming, with benchmarks and real-world examples.</div>
+                    <div class="blog-meta">
+                        <span>Jan 22, 2025</span>
+                        <span>11 min read</span>
+                        <span>2.1k views</span>
+                    </div>
+                    <a onclick="alert('Full article coming soon')" class="blog-read-more">Read More →</a>
+                </div>
+                <div class="blog-post">
+                    <div class="blog-category">Blockchain</div>
+                    <div class="blog-title">Understanding Zero Knowledge Proofs</div>
+                    <div class="blog-excerpt">An introduction to zero-knowledge proofs, their applications in privacy, and real-world systems.</div>
+                    <div class="blog-meta">
+                        <span>Jan 10, 2025</span>
+                        <span>8 min read</span>
+                        <span>1.7k views</span>
+                    </div>
+                    <a onclick="alert('Full article coming soon')" class="blog-read-more">Read More →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESEARCH SECTION -->
+        <section id="research">
+            <div class="projects-header">
+                <h1>Research & Specifications</h1>
+                <p>Technical specifications, whitepapers, and research notes on verifiable systems and distributed infrastructure.</p>
+            </div>
+            <div class="section-grid">
+                <div class="grid-item">
+                    <h3>STARK Proving Systems</h3>
+                    <p>Research on Scalable Transparent ARgument of Knowledge proving systems and their applications.</p>
+                    <span class="badge">Cryptography</span>
+                    <span class="badge">ZK Proofs</span>
+                </div>
+                <div class="grid-item">
+                    <h3>Distributed Consensus</h3>
+                    <p>Specifications for Raft-based consensus with Byzantine fault tolerance for sovereign infrastructure.</p>
+                    <span class="badge">Distributed Systems</span>
+                    <span class="badge">Consensus</span>
+                </div>
+                <div class="grid-item">
+                    <h3>AI Model Routing</h3>
+                    <p>Framework for geographic routing, model selection, and sovereign AI deployment in constrained environments.</p>
+                    <span class="badge">AI Infrastructure</span>
+                    <span class="badge">Optimization</span>
+                </div>
+                <div class="grid-item">
+                    <h3>Privacy-Preserving Inference</h3>
+                    <p>Techniques for running inference locally with privacy guarantees and zero data leakage.</p>
+                    <span class="badge">Privacy</span>
+                    <span class="badge">AI</span>
+                </div>
+                <div class="grid-item">
+                    <h3>Self-Hosting Architecture</h3>
+                    <p>Design patterns for self-hosted infrastructure with high availability, disaster recovery, and security.</p>
+                    <span class="badge">Infrastructure</span>
+                    <span class="badge">Architecture</span>
+                </div>
+                <div class="grid-item">
+                    <h3>Verifiable Computation</h3>
+                    <p>Building verifiable systems where every claim is backed by cryptographic proof and test coverage.</p>
+                    <span class="badge">Verification</span>
+                    <span class="badge">Testing</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/CodesbyFebin" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/codesbyfebin" target="_blank">LinkedIn</a>
+            <a href="https://orcid.org/0009-0002-8123-1531" target="_blank">ORCID</a>
+            <a href="https://codesbyfebin.vercel.app/feed.xml" target="_blank">RSS Feed</a>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Febin Francis. All rights reserved. | <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+            <p>Building sovereign systems for a verifiable future.</p>
+        </div>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            // Update nav buttons
+            document.querySelectorAll('.nav-link').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Close menu on mobile when clicking on nav links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                showSection(this.dataset.section || 'home');
+            });
+        });
+    </script>
+</body>
+</html>
