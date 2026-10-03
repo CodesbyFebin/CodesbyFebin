@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Febin Francis - Systems Engineer. Building systems that prove what happened. AI infrastructure, verifiable compute, sovereign systems.">
+    <meta property="og:title" content="Febin Francis - Systems Engineer & Open Source Developer">
+    <meta property="og:description" content="Building systems that prove what happened. Explore 20+ repositories spanning verifiable computation, agentic infrastructure, and sovereign systems.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://codesbyfebin.vercel.app/">
+    <meta property="og:image" content="https://codesbyfebin.vercel.app/assets/profile-header.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@codesbyfebin">
+    <link rel="alternate" type="application/rss+xml" title="CodesbyFebin Blog Feed" href="https://codesbyfebin.vercel.app/feed.xml">
+    <title>Febin Francis - Systems Engineer | Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #00d46a;
+            --secondary: #1a1a1a;
+            --dark-bg: #0f0f0f;
+            --card-bg: #1a1a1a;
+            --border: #2d2d2d;
+            --text-primary: #e0e0e0;
+            --text-secondary: #a0a0a0;
+        }
+
+        body {
+            font-family: 'Monaco', 'Courier New', monospace;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--dark-bg);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            border-bottom: 2px solid var(--primary);
+            padding: 60px 0 40px;
+            margin-bottom: 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::before {
+            content: '> ';
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .header .title {
+            font-size: 1.2em;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .header .tagline {
+            color: var(--text-primary);
+            font-size: 1em;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border-left: 2px solid var(--primary);
+            background: rgba(0, 212, 106, 0.05);
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .nav-button {
+            padding: 10px 20px;
+            border: 1px solid var(--primary);
+            background: transparent;
+            color: var(--primary);
+            cursor: pointer;
+            font-family: 'Monaco', monospace;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover,
+        .nav-button.active {
+            background: var(--primary);
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .category-filter {
+            padding: 8px 16px;
+            border: 1px solid var(--border);
+            background: var(--card-bg);
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-family: 'Monaco', monospace;
+            font-size: 0.85em;
+            transition: all 0.3s ease;
+            border-radius: 0;
+        }
+
+        .category-filter:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .category-filter.active {
+            background: var(--primary);
+            color: var(--secondary);
+            border-color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .project-card {
+            border: 1px solid var(--border);
+            background: var(--card-bg);
+            padding: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            border-color: var(--primary);
+            background: rgba(0, 212, 106, 0.05);
+            box-shadow: 0 0 20px rgba(0, 212, 106, 0.1);
+        }
+
+        .project-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .project-category {
+            display: inline-block;
+            color: var(--primary);
+            font-size: 0.75em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .project-name {
+            font-size: 1.3em;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .project-status {
+            display: inline-block;
+            padding: 4px 8px;
+            font-size: 0.75em;
+            border: 1px solid var(--text-secondary);
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .project-status.active {
+            border-color: #51cf66;
+            color: #51cf66;
+            background: rgba(81, 207, 102, 0.1);
+        }
+
+        .project-summary {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .project-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .stack-tag {
+            padding: 4px 10px;
+            background: rgba(0, 212, 106, 0.1);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            font-size: 0.75em;
+            border-radius: 0;
+        }
+
+        .project-highlights {
+            background: rgba(0, 212, 106, 0.05);
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 2px solid var(--primary);
+        }
+
+        .project-highlights h4 {
+            color: var(--primary);
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .project-highlights ul {
+            list-style: none;
+            padding-left: 10px;
+        }
+
+        .project-highlights li {
+            color: var(--text-secondary);
+            font-size: 0.85em;
+            margin-bottom: 5px;
+            padding-left: 15px;
+        }
+
+        .project-highlights li::before {
+            content: '→ ';
+            color: var(--primary);
+            margin-right: 5px;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .project-link {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.85em;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .project-link:hover {
+            background: var(--primary);
+            color: var(--secondary);
+        }
+
+        /* About Section */
+        .about-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 40px;
+            margin-bottom: 60px;
+            border-left: 3px solid var(--primary);
+        }
+
+        .about-section h2 {
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-size: 1.8em;
+            letter-spacing: 1px;
+        }
+
+        .about-subsection {
+            margin-bottom: 30px;
+        }
+
+        .about-subsection h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            text-transform: uppercase;
+        }
+
+        .about-subsection p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        /* Search */
+        .search-box {
+            margin-bottom: 30px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid var(--border);
+            background: var(--card-bg);
+            color: var(--text-primary);
+            font-family: 'Monaco', monospace;
+            font-size: 1em;
+        }
+
+        .search-input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(0, 212, 106, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav {
+                flex-direction: column;
+            }
+
+            .project-links {
+                flex-direction: column;
+            }
+
+            .about-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>CodesbyFebin</h1>
+            <div class="title">Systems Engineer · AI Infrastructure · Verifiable Compute · Sovereign Systems</div>
+            <div class="tagline">Build systems that prove what happened instead of asking you to trust what happened.</div>
+        </header>
+
+        <!-- Search & Filter -->
+        <div class="search-box">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search projects by name or technology...">
+        </div>
+
+        <div class="filter-section">
+            <button class="category-filter active" data-category="all">All Categories</button>
+            <button class="category-filter" data-category="verifiable-compute">Verifiable Compute</button>
+            <button class="category-filter" data-category="sovereign-infrastructure">Sovereign Infrastructure</button>
+            <button class="category-filter" data-category="agentic-systems">Agentic Systems</button>
+            <button class="category-filter" data-category="developer-tools">Developer Tools</button>
+        </div>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <h2>About</h2>
+            <div class="about-subsection">
+                <h3>System Profile</h3>
+                <p>Febin Francis works under the handle CodesbyFebin. The job title that fits is systems engineer. The subjects are AI infrastructure, verifiable compute, and sovereign self-hosted systems. The practice is based in Kerala, India.</p>
+                <p>The sentence I am willing to repeat is this: <strong>build systems that prove what happened</strong> instead of asking you to trust what happened. It is not a brand line invented for a landing page. It is a filter on pull requests.</p>
+            </div>
+            <div class="about-subsection">
+                <h3>Principle: Measure, Then Verify, Then Admit</h3>
+                <p>The operating sequence is: <strong>measure → verify → admit → execute → prove</strong></p>
+                <p>Desired is not admitted. Admitted is not executing. Executing is not observed. Observed is not verified. Fail closed is the error policy. Missing signature, missing policy, unread journal, unreachable verifier: the action does not proceed.</p>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <div id="projectsContainer" class="projects-grid">
+            <!-- Projects will be inserted here by JavaScript -->
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Open source on <a href="https://github.com/CodesbyFebin">GitHub</a> ·
+            <a href="https://orcid.org/0009-0002-8123-1531">ORCID 0009-0002-8123-1531</a> ·
+            <a href="https://codesbyfebin.vercel.app/feed.xml">RSS Feed</a></p>
+        </footer>
+    </div>
+
+    <script>
+        // Project Data - Core Systems
+        const PROJECTS = [
+            {
+                slug: "rust-stark-zkvm",
+                name: "rust-stark-zkvm",
+                category: "verifiable-compute",
+                language: "Rust",
+                url: "https://github.com/CodesbyFebin/rust-stark-zkvm",
+                live: "https://www.zkvm.host",
+                summary: "A small zero-knowledge virtual machine with a real STARK prover and verifier, built on Winterfell.",
+                highlights: [
+                    "Custom ISA with branching and a four-register file",
+                    "Winterfell STARK prover and verifier",
+                    "HTTP proving API and honestly labeled mock backend",
+                    "MCP prove and verify tools",
+                    "CI job that verifies example proofs"
+                ],
+                stack: ["Rust", "Winterfell", "AIR", "Foundry", "MCP"],
+                status: "active"
+            },
+            {
+                slug: "decentralized-host",
+                name: "Decentralized.Host",
+                category: "sovereign-infrastructure",
+                language: "Go",
+                url: "https://github.com/CodesbyFebin/Decentralized.Host",
+                summary: "Sovereign self-hosted infrastructure with signed intent, local admission, explicit state, Raft, WireGuard, chaos and conformance testing.",
+                highlights: [
+                    "Go control plane with Raft consensus",
+                    "WireGuard encrypted mesh networking",
+                    "Chaos and conformance test framework",
+                    "Explicit state machine with proof gates",
+                    "Docker + Kubernetes orchestration"
+                ],
+                stack: ["Go", "Raft", "WireGuard", "Docker", "Kubernetes"],
+                status: "active"
+            },
+            {
+                slug: "mcp-directory",
+                name: "MCP Directory & Tools",
+                category: "developer-tools",
+                language: "TypeScript",
+                url: "https://github.com/CodesbyFebin/mcp-tools",
+                summary: "Model Context Protocol tools and directory for AI agents. Standardized interfaces for tool discovery and composition.",
+                highlights: [
+                    "MCP server implementations",
+                    "Tool registry and discovery",
+                    "Agent evaluation frameworks",
+                    "Standardized tool interfaces",
+                    "Self-documenting capabilities"
+                ],
+                stack: ["TypeScript", "Node.js", "MCP", "JSON Schema"],
+                status: "active"
+            },
+            {
+                slug: "sovereign-ai",
+                name: "Sovereign AI Infrastructure",
+                category: "agentic-systems",
+                language: "Python",
+                url: "https://github.com/CodesbyFebin/sovereign-ai",
+                summary: "Self-hosted AI agent infrastructure. Local model routing, privacy-preserving inference, sovereign compute.",
+                highlights: [
+                    "Local model serving and routing",
+                    "Privacy-preserving inference pipelines",
+                    "Self-hosted agent framework",
+                    "Sovereign data handling",
+                    "Multi-model orchestration"
+                ],
+                stack: ["Python", "FastAPI", "Ray", "Local LLMs"],
+                status: "active"
+            },
+            {
+                slug: "bharat-gateway",
+                name: "Bharat Gateway",
+                category: "sovereign-infrastructure",
+                language: "Go",
+                url: "https://github.com/CodesbyFebin/bharat-gateway",
+                summary: "Model routing and residency control for India. Handles geographic, legal, and operational constraints for sovereign model deployment.",
+                highlights: [
+                    "Geographic routing and residency",
+                    "Compliance-aware model selection",
+                    "Bandwidth optimization",
+                    "Local inference preferences",
+                    "Cost and latency optimization"
+                ],
+                stack: ["Go", "gRPC", "Kubernetes"],
+                status: "active"
+            },
+            {
+                slug: "agent-evaluation",
+                name: "Agent Evaluation Framework",
+                category: "developer-tools",
+                language: "TypeScript",
+                url: "https://github.com/CodesbyFebin/agent-eval",
+                summary: "Structured evaluation framework for AI agents. Benchmarks, compliance testing, and readiness gates.",
+                highlights: [
+                    "Structured evaluation protocols",
+                    "Compliance test suites",
+                    "Performance benchmarking",
+                    "Readiness gates and gates",
+                    "Evidence collection and reporting"
+                ],
+                stack: ["TypeScript", "Node.js", "Jest", "OpenAI API"],
+                status: "active"
+            }
+        ];
+
+        // Initialize
+        let filteredProjects = PROJECTS;
+        let searchTerm = "";
+
+        // Render Projects
+        function renderProjects() {
+            const container = document.getElementById('projectsContainer');
+            container.innerHTML = '';
+
+            filteredProjects.forEach(project => {
+                const projectCard = document.createElement('div');
+                projectCard.className = 'project-card';
+                projectCard.innerHTML = `
+                    <div class="project-category">${project.category.replace('-', ' ')}</div>
+                    <div class="project-name">${project.name}</div>
+                    <div class="project-status ${project.status === 'active' ? 'active' : ''}">
+                        ${project.status.toUpperCase()}
+                    </div>
+                    <div class="project-summary">${project.summary}</div>
+                    <div class="project-stack">
+                        ${project.stack.map(tech => `<span class="stack-tag">${tech}</span>`).join('')}
+                    </div>
+                    <div class="project-highlights">
+                        <h4>Highlights</h4>
+                        <ul>
+                            ${project.highlights.map(h => `<li>${h}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div class="project-links">
+                        <a href="${project.url}" class="project-link">View Repository</a>
+                        ${project.live ? `<a href="${project.live}" class="project-link">Live Demo</a>` : ''}
+                    </div>
+                `;
+                container.appendChild(projectCard);
+            });
+        }
+
+        // Filter Logic
+        function applyFilters() {
+            filteredProjects = PROJECTS.filter(project => {
+                const categoryMatch = selectedCategory === 'all' || project.category === selectedCategory;
+                const searchMatch = searchTerm === '' ||
+                    project.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    project.summary.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    project.stack.some(s => s.toLowerCase().includes(searchTerm.toLowerCase()));
+                return categoryMatch && searchMatch;
+            });
+            renderProjects();
+        }
+
+        let selectedCategory = 'all';
+
+        // Event Listeners
+        document.querySelectorAll('.category-filter').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.category-filter').forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
+                selectedCategory = e.target.dataset.category;
+                applyFilters();
+            });
+        });
+
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            searchTerm = e.target.value;
+            applyFilters();
+        });
+
+        // Initial render
+        renderProjects();
+    </script>
+</body>
+</html>
