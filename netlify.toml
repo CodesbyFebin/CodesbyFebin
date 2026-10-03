@@ -1,0 +1,40 @@
+[build]
+  publish = "."
+  command = "echo 'Static site deployment'"
+
+[[redirects]]
+  from = "/github"
+  to = "https://github.com/CodesbyFebin"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/linkedin"
+  to = "https://linkedin.com/in/codesbyfebin"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/twitter"
+  to = "https://twitter.com/codesbyfebin"
+  status = 301
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Content-Type = "text/plain"
