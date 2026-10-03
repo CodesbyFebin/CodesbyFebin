@@ -1,0 +1,34 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://codesbyfebin.vercel.app/#person",
+  "name": "Febin Francis",
+  "alternateName": "CodesbyFebin",
+  "url": "https://codesbyfebin.vercel.app",
+  "jobTitle": "Systems Engineer",
+  "email": "mailto:codesbyfebin@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kerala",
+    "addressRegion": "KL",
+    "addressCountry": "IN"
+  },
+  "knowsAbout": [
+    "AI Infrastructure",
+    "Verifiable Compute",
+    "Zero-Knowledge Proofs",
+    "STARK",
+    "Distributed Systems",
+    "Self-Hosted Systems",
+    "Rust",
+    "Cryptography",
+    "MCP",
+    "LLM Agents"
+  ],
+  "sameAs": [
+    "https://github.com/CodesbyFebin",
+    "https://linkedin.com/in/codes-by-febin/",
+    "https://orcid.org/0009-0002-8123-1531",
+    "https://twitter.com/codesbyfebin"
+  ]
+}

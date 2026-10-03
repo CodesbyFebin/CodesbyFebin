@@ -1,0 +1,40 @@
+{
+  "updated": "2025-10-03",
+  "systems": [
+    {
+      "id": "rust-stark-zkvm",
+      "name": "rust-stark-zkvm",
+      "pillar": "verifiable-compute",
+      "docs": "https://codesbyfebin.vercel.app/portfolio-complete.html#systems",
+      "repo": "https://github.com/CodesbyFebin/rust-stark-zkvm",
+      "summary": "Rust zkVM with Winterfell STARK proving, HTTP API, MCP tools, CI proof gates.",
+      "status": "active"
+    },
+    {
+      "id": "decentralized-host",
+      "name": "Decentralized.Host",
+      "pillar": "deployment-mesh",
+      "docs": "https://codesbyfebin.vercel.app/portfolio-complete.html#systems",
+      "repo": "https://github.com/CodesbyFebin/decentralized-host",
+      "summary": "Node agent + control plane + edge layer; WireGuard, DNS-01 TLS, declarative YAML.",
+      "status": "active"
+    },
+    {
+      "id": "decentralized-hosting",
+      "name": "decentralized.hosting",
+      "pillar": "public-platform",
+      "docs": "https://codesbyfebin.vercel.app/portfolio-complete.html#systems",
+      "repo": "https://github.com/CodesbyFebin/decentralized-hosting",
+      "summary": "Template registry, guided onboarding, sovereign directory, exit-portability standard.",
+      "status": "active"
+    },
+    {
+      "id": "sovereign-ai",
+      "name": "Sovereign AI Infrastructure",
+      "pillar": "private-ai",
+      "docs": "https://codesbyfebin.vercel.app/portfolio-complete.html#systems",
+      "summary": "Local inference gateway, policy engine, STARK-verified agent receipts.",
+      "status": "active"
+    }
+  ]
+}

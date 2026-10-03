@@ -1,0 +1,21 @@
+{
+  "$schema": "https://codesbyfebin.vercel.app/sitemap.json",
+  "site": {
+    "name": "CodesbyFebin",
+    "url": "https://codesbyfebin.vercel.app",
+    "description": "AI infrastructure, verifiable compute with STARK proofs, and sovereign self-hosted systems. By Febin Francis, Kerala, India.",
+    "language": "en",
+    "feed": "https://codesbyfebin.vercel.app/feed.xml",
+    "llms": "https://codesbyfebin.vercel.app/llms.txt"
+  },
+  "sitemaps": [
+    { "url": "https://codesbyfebin.vercel.app/portfolio-complete.html", "type": "website", "title": "CodesbyFebin — AI Infrastructure, Verifiable Compute & Self-Hosted Systems", "lastModified": "2025-10-03", "priority": 1.0, "tags": ["portfolio", "ai-infrastructure", "verifiable-compute", "open-source"] },
+    { "url": "https://codesbyfebin.vercel.app/portfolio-enhanced.html", "type": "collection", "title": "Projects — Interactive Portfolio with Category Filtering", "lastModified": "2025-10-03", "priority": 0.9, "items": 6, "tags": ["projects", "systems", "interactive"] },
+    { "url": "https://codesbyfebin.vercel.app/portfolio.html", "type": "collection", "title": "Projects — 20+ Open Source Repositories", "lastModified": "2025-10-03", "priority": 0.85, "items": 24, "tags": ["github", "repositories", "rust"] },
+    { "url": "https://codesbyfebin.vercel.app/index.html", "type": "website", "title": "CodesbyFebin — Systems Engineer & Developer", "lastModified": "2025-10-03", "priority": 0.95, "tags": ["bio", "home", "featured-projects"] },
+    { "url": "https://codesbyfebin.vercel.app/feed.xml", "type": "feed", "title": "Blog & Article Feed", "lastModified": "2025-10-03", "priority": 0.8, "tags": ["articles", "blog"] },
+    { "url": "https://github.com/CodesbyFebin", "type": "external", "title": "GitHub Profile — All Public Repositories", "priority": 0.8, "tags": ["github", "repositories"] },
+    { "url": "https://linkedin.com/in/codes-by-febin/", "type": "external", "title": "LinkedIn Profile", "priority": 0.6, "tags": ["linkedin", "professional"] },
+    { "url": "https://orcid.org/0009-0002-8123-1531", "type": "external", "title": "ORCID Profile — Publications & Research", "priority": 0.7, "tags": ["orcid", "research", "publications"] }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "CodesbyFebin — Sovereign Systems Engineer",
+  "short_name": "CodesbyFebin",
+  "description": "AI infrastructure, verifiable compute, and self-hosted systems.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0f0f",
+  "theme_color": "#00d46a",
+  "lang": "en",
+  "icons": [
+    { "src": "/assets/images/logo.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

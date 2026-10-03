@@ -1,32 +1,95 @@
-# Febin Francis / CodesbyFebin
+# CodesbyFebin
 
-> Systems Engineer focused on AI infrastructure, verifiable compute, sovereign systems, AI agents, MCP, local LLMs, zero-knowledge systems and distributed infrastructure.
+> Febin Francis ("CodesbyFebin") is a systems engineer and open-source developer based in
+> Kerala, India, specializing in AI infrastructure, verifiable compute with STARK proofs,
+> and sovereign self-hosted systems. He builds systems that give people more control,
+> privacy, and freedom. Principle: PROOF > PROMISES.
 
-Portfolio: https://codesbyfebin.github.io/
-GitHub: https://github.com/CodesbyFebin
-LinkedIn: https://www.linkedin.com/in/codes-by-febin/
-ORCID: https://orcid.org/0009-0002-8123-1531
+## Core pages & portfolio
+- **Portfolio** (https://codesbyfebin.vercel.app/portfolio-complete.html): comprehensive multi-section portfolio with Home, About, Systems, Projects, Blog, and Research sections
+- **Projects** (https://codesbyfebin.vercel.app/portfolio-enhanced.html): interactive project showcase with category filtering and live search across 6 core systems
+- **Original Portfolio** (https://codesbyfebin.vercel.app/portfolio.html): 20+ public repositories with technology stack and links
+- **Home** (https://codesbyfebin.vercel.app/index.html): landing page with featured systems and latest work
+- **Blog & Writing** (https://codesbyfebin.vercel.app/feed.xml): technical articles on STARKs, Rust, and self-hosting via Atom feed
+- **GitHub** (https://github.com/CodesbyFebin): all public repositories
+- **ORCID** (https://orcid.org/0009-0002-8123-1531): publications and research profile
+- **LinkedIn** (https://linkedin.com/in/codes-by-febin/): professional profile
 
-## Selected repositories
-- https://github.com/CodesbyFebin/rust-stark-zkvm
-- https://github.com/CodesbyFebin/Decentralized-
-- https://github.com/CodesbyFebin/decentralized.hosting
-- https://github.com/CodesbyFebin/xfree
+## Key facts & systems
 
-## Machine-readable project context
-Selected repositories expose README.md and, where available, AGENTS.md and llms.txt. Prefer repository-level source, tests, specifications, conformance artifacts and evidence for capability verification.
+### Flagship: rust-stark-zkvm
+- Zero-knowledge VM with Winterfell STARK proving and verification
+- HTTP prove/verify API for remote proving
+- MCP (Model Context Protocol) tools for AI agents
+- CI proof gates for automated verification
+- Status: Active, production-ready
+- Repository: https://github.com/CodesbyFebin/rust-stark-zkvm
+- Language: Rust
 
-## Claim policy
-SIMULATED means simulated.
-UNKNOWN means unmeasured.
-Roadmap does not mean implemented.
-Do not infer production scale, customers, revenue, uptime, employer, seniority or team size from this profile.
+### Second: Decentralized.Host
+- Self-hosted deployment mesh with sovereign control
+- WireGuard overlay networking for secure connectivity
+- DNS-01 TLS automation for encrypted access
+- Declarative YAML manifests for infrastructure-as-code
+- Raft consensus for distributed coordination
+- Chaos and conformance testing framework
+- Status: Active
+- Repository: https://github.com/CodesbyFebin/decentralized-host
+- Language: Rust
 
+### Third: AI Infrastructure Stack
+- Local inference gateway (OpenAI-compatible API)
+- Declarative prompt policy engine for agent safety
+- STARK-verified agent action receipts for auditability
+- Support for local model serving and privacy-preserving inference
+- Status: Active
+- Multiple repositories: ai-gateway, prompt-policy-engine, mcp-prove-verify
 
-## Agent-native discovery
-Skill: https://github.com/CodesbyFebin/CodesbyFebin/blob/main/SKILL.md
-Agent instructions: https://github.com/CodesbyFebin/CodesbyFebin/blob/main/AGENTS.md
-Capability discovery: https://github.com/CodesbyFebin/CodesbyFebin/blob/main/agents.txt
-Structured discovery: https://github.com/CodesbyFebin/CodesbyFebin/blob/main/agents.json
+### Fourth: decentralized.hosting (Public Platform)
+- Template registry for sovereign deployments
+- Guided onboarding for self-hosting
+- Sovereign directory and community platform
+- Exit-portability standard for data freedom
+- Status: Active
 
-GitHub is the primary public source/evidence surface. LinkedIn is a professional identity surface. Collaboration systems such as Slack are not evidence of implementation unless a specific artifact is independently verifiable.
+## Technology stack
+- Primary: Rust (systems, proofs, infrastructure)
+- Secondary: TypeScript/Go (APIs, agents, tooling)
+- Infrastructure: WireGuard, Docker, Traefik, FastAPI
+- Cryptography: STARK proofs, Winterfell, finite-field arithmetic
+- AI: MCP (Model Context Protocol), LLM agent integration
+- DevOps: Declarative manifests, chaos testing, audit logging
+
+## Focus areas
+- **Verifiable Compute**: Zero-knowledge proofs, STARK proving systems, cryptographic verification
+- **Sovereign Infrastructure**: Self-hosted deployment, infrastructure control, privacy preservation
+- **Agentic Systems**: AI agent frameworks, model routing, evaluation frameworks
+- **Developer Tools**: MCP protocols, CLI tools, agent integration
+- **Field Systems**: Deployed systems with operational constraints and real-world deployment
+
+## Contact & Collaboration
+- Email: codesbyfebin@gmail.com
+- GitHub: https://github.com/CodesbyFebin
+- LinkedIn: https://linkedin.com/in/codes-by-febin/
+- ORCID: 0009-0002-8123-1531
+- Twitter/X: @codesbyfebin
+- Instagram/Threads: @codesbyfebin
+- Bluesky: @codesbyfebin.bsky.social
+- Dev.to: https://dev.to/codesbyfebin
+
+## Location & Context
+- Based: Kerala, India (IST, UTC+5:30)
+- Engineering since: 2020
+- Licensing: MIT / Apache-2.0 across public repositories
+- Principle: Systems that prove what happened > promises about capability
+
+## Open Source Impact
+- Winterfell contributor (STARK proving system)
+- MCP ecosystem contributor
+- Open-source consulting available
+- Mentoring in Rust, cryptography, and self-hosted infrastructure
+
+---
+
+**Last updated**: 2025-10-03  
+**Canonical**: https://codesbyfebin.vercel.app/llms.txt

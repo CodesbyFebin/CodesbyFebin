@@ -1,0 +1,14 @@
+{
+  "updated": "2025-10-03",
+  "maintainer": { "name": "Febin Francis", "handle": "CodesbyFebin" },
+  "count": 24,
+  "categories": ["verifiable-compute", "ai-infrastructure", "self-hosted", "tools", "learning"],
+  "projects": [
+    { "id": "rust-stark-zkvm", "name": "rust-stark-zkvm", "category": "verifiable-compute", "language": "Rust", "version": "0.4.2", "status": "active", "url": "https://github.com/CodesbyFebin/rust-stark-zkvm", "description": "Zero-knowledge VM with STARK proving/verification, HTTP prove-verify API, and MCP tools.", "topics": ["stark", "winterfell", "zkvm", "cryptography"] },
+    { "id": "decentralized-host", "name": "decentralized-host", "category": "self-hosted", "language": "Rust", "version": "1.1.0", "status": "active", "url": "https://github.com/CodesbyFebin/decentralized-host", "description": "Self-hosted deployment mesh: WireGuard overlay, DNS-01 TLS, declarative manifests, audit logs.", "topics": ["wireguard", "self-hosted", "infrastructure"] },
+    { "id": "mcp-prove-verify", "name": "mcp-prove-verify", "category": "ai-infrastructure", "language": "TypeScript", "version": "0.9.0", "status": "active", "url": "https://github.com/CodesbyFebin/mcp-prove-verify", "description": "MCP server exposing zkVM prove/verify as agent tools.", "topics": ["mcp", "agents", "zkvm"] },
+    { "id": "ai-gateway", "name": "ai-gateway", "category": "ai-infrastructure", "language": "Go", "version": "0.6.0", "status": "active", "url": "https://github.com/CodesbyFebin/ai-gateway", "description": "Self-hosted OpenAI-compatible inference gateway with routing, streaming, caching, quotas.", "topics": ["llm", "inference", "privacy"] },
+    { "id": "prompt-policy-engine", "name": "prompt-policy-engine", "category": "ai-infrastructure", "language": "Rust", "version": "0.3.0", "status": "active", "url": "https://github.com/CodesbyFebin/prompt-policy-engine", "description": "Declarative agent safety: allowlists, path scoping, approval gates, audit logging.", "topics": ["security", "agents", "policy"] },
+    { "id": "sovereign-templates", "name": "sovereign-templates", "category": "self-hosted", "language": "Shell", "version": "2.0.0", "status": "active", "url": "https://github.com/CodesbyFebin/sovereign-templates", "description": "Reviewed, checksummed deployment templates with mandatory exit-portability.", "topics": ["docker", "templates", "backups"] }
+  ]
+}

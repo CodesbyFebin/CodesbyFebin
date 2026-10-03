@@ -1,0 +1,11 @@
+/* TEAM */
+Engineer & Author: Febin Francis (CodesbyFebin)
+Location: Kerala, India
+Contact: codesbyfebin@gmail.com
+
+/* SITE */
+Stack: HTML5, CSS3, vanilla ES2020 · no frameworks
+Standards: Schema.org JSON-LD, Atom, RFC 9116, OpenSearch
+Design: matrix-green terminal aesthetic (#00d46a on #0f0f0f)
+Deployment: Vercel (static site)
+Repository: https://github.com/CodesbyFebin/CodesbyFebin

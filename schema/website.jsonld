@@ -1,0 +1,18 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://codesbyfebin.vercel.app/#website",
+  "url": "https://codesbyfebin.vercel.app",
+  "name": "CodesbyFebin",
+  "description": "AI infrastructure, verifiable compute with STARK proofs, and sovereign self-hosted systems.",
+  "publisher": { "@id": "https://codesbyfebin.vercel.app/#person" },
+  "inLanguage": "en",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://codesbyfebin.vercel.app/portfolio-enhanced.html?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}

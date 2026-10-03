@@ -1,0 +1,38 @@
+{
+  "updated": "2025-10-03",
+  "feed": "https://codesbyfebin.vercel.app/feed.xml",
+  "articles": [
+    {
+      "slug": "ai-infrastructure-2026",
+      "title": "Building AI Infrastructure for the Open Web",
+      "published": "2025-03-12",
+      "readMinutes": 8,
+      "url": "https://codesbyfebin.vercel.app/blog/ai-infrastructure-2026/",
+      "tags": ["ai", "infrastructure", "self-hosted"]
+    },
+    {
+      "slug": "stark-proofs-explained",
+      "title": "Understanding STARK Proofs in Simple Terms",
+      "published": "2025-03-05",
+      "readMinutes": 6,
+      "url": "https://codesbyfebin.vercel.app/blog/stark-proofs-explained/",
+      "tags": ["cryptography", "blockchain", "education"]
+    },
+    {
+      "slug": "self-hosted-2025",
+      "title": "Why Self-Hosted Systems Matter in 2025",
+      "published": "2025-02-26",
+      "readMinutes": 4,
+      "url": "https://codesbyfebin.vercel.app/blog/self-hosted-2025/",
+      "tags": ["privacy", "sovereignty", "infrastructure"]
+    },
+    {
+      "slug": "rust-systems",
+      "title": "Getting Started with Rust for Systems Programming",
+      "published": "2025-02-25",
+      "readMinutes": 8,
+      "url": "https://codesbyfebin.vercel.app/blog/rust-systems/",
+      "tags": ["rust", "systems", "education"]
+    }
+  ]
+}

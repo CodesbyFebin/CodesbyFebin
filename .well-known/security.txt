@@ -1,0 +1,4 @@
+Contact: mailto:codesbyfebin@gmail.com
+Expires: 2026-10-03T00:00:00Z
+Preferred-Languages: en, ml
+Canonical: https://codesbyfebin.vercel.app/.well-known/security.txt

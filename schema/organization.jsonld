@@ -1,0 +1,29 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://codesbyfebin.vercel.app/#org",
+  "name": "CodesbyFebin",
+  "url": "https://codesbyfebin.vercel.app",
+  "description": "AI infrastructure, verifiable compute, and self-hosted systems consulting.",
+  "founder": { "@id": "https://codesbyfebin.vercel.app/#person" },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kerala",
+    "addressRegion": "KL",
+    "addressCountry": "IN"
+  },
+  "knowsAbout": [
+    "AI Infrastructure",
+    "Verifiable Compute",
+    "Distributed Systems",
+    "Cryptography",
+    "Zero-Knowledge Proofs",
+    "Self-Hosted Systems",
+    "STARK Proofs"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "General",
+    "email": "codesbyfebin@gmail.com"
+  }
+}
