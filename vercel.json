@@ -1,35 +1,11 @@
 {
-  "name": "codesbyfebin-portfolio",
   "version": 2,
-  "buildCommand": "echo 'Static site - no build required'",
+  "buildCommand": "echo 'Static site'",
+  "outputDirectory": ".",
   "public": true,
-  "projectSettings": {
-    "framework": "other",
-    "buildCommand": null,
-    "outputDirectory": "."
-  },
-  "env": [],
-  "functions": {},
-  "rewrites": [
-    {
-      "source": "/feed",
-      "destination": "/feed.xml"
-    },
-    {
-      "source": "/feed.xml",
-      "destination": "/feed.xml"
-    }
-  ],
-  "routes": [
-    {
-      "src": "^/(?!.*\\.).*$",
-      "methods": ["GET", "HEAD"],
-      "dest": "/$1"
-    }
-  ],
   "headers": [
     {
-      "source": "/assets/profile-header.svg",
+      "source": "/assets/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -43,15 +19,11 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=3600, must-revalidate"
-        },
-        {
-          "key": "Content-Type",
-          "value": "text/html; charset=utf-8"
         }
       ]
     },
     {
-      "source": "/feed.xml",
+      "source": "/feed\\.xml",
       "headers": [
         {
           "key": "Cache-Control",
@@ -73,10 +45,6 @@
         {
           "key": "X-Frame-Options",
           "value": "DENY"
-        },
-        {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
         }
       ]
     }
