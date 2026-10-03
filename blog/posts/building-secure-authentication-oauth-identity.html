@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Building Secure Authentication Systems: OAuth and Identity</title>
+    <meta name="description" content="Engineering guide to OAuth 2.0, federated identity, email/password auth, and security models. Learn trust boundaries, session management, and production-ready patterns.">
+    <meta name="keywords" content="OAuth, authentication, identity management, security, federated login, email/password, session management, web security">
+    <meta name="author" content="Febin Francis">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Building Secure Authentication Systems: OAuth and Identity">
+    <meta property="og:description" content="Learn production-ready authentication patterns: OAuth 2.0 with Google/X, email/password flows, session security, and trust boundaries.">
+    <meta property="og:image" content="https://codesbyfebin.github.io/og-auth.png">
+    <meta property="og:url" content="https://codesbyfebin.github.io/blog/posts/authentication-systems-oauth-security.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Building Secure Authentication Systems: OAuth and Identity">
+    <meta name="twitter:description" content="Learn production-ready authentication patterns: OAuth 2.0 with Google/X, email/password flows, session security.">
+    <meta name="twitter:creator" content="@codesbyfebin">
+    <link rel="canonical" href="https://codesbyfebin.github.io/blog/posts/authentication-systems-oauth-security.html">
+
+    <style>
+        :root {
+            --bg: #f8f7f6;
+            --surface: #ffffff;
+            --text: #1a1a1a;
+            --text-muted: #666666;
+            --accent: #00d46a;
+            --border: #e0e0e0;
+            --code-bg: #f0f0f0;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --bg: #0f0f0f;
+                --surface: #1a1a1a;
+                --text: #e0e0e0;
+                --text-muted: #999999;
+                --accent: #00d46a;
+                --border: #333333;
+                --code-bg: #252525;
+                color-scheme: dark;
+            }
+        }
+
+        :root[data-theme="dark"] {
+            --bg: #0f0f0f;
+            --surface: #1a1a1a;
+            --text: #e0e0e0;
+            --text-muted: #999999;
+            --accent: #00d46a;
+            --border: #333333;
+            --code-bg: #252525;
+            color-scheme: dark;
+        }
+
+        * { box-sizing: border-box; }
+        html, body { height: 100%; }
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        .container {
+            max-width: 840px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .meta {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+            font-size: 14px;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+        }
+
+        .category {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--code-bg);
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-size: clamp(28px, 5vw, 48px);
+            line-height: 1.2;
+            margin: 24px 0 16px 0;
+            text-wrap: balance;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            line-height: 1.4;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin: 48px 0 24px 0;
+            text-wrap: balance;
+            border-top: 1px solid var(--border);
+            padding-top: 32px;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin: 32px 0 16px 0;
+            text-wrap: balance;
+        }
+
+        p {
+            margin: 16px 0;
+            line-height: 1.7;
+        }
+
+        strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        code {
+            background: var(--code-bg);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+        }
+
+        pre {
+            background: var(--code-bg);
+            padding: 16px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 24px 0;
+            line-height: 1.5;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            border-radius: 0;
+        }
+
+        ul, ol {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        .key-point {
+            background: var(--code-bg);
+            border-left: 4px solid var(--accent);
+            padding: 16px;
+            margin: 24px 0;
+            border-radius: 4px;
+        }
+
+        .key-point strong {
+            color: var(--accent);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            font-weight: 600;
+            background: var(--code-bg);
+        }
+
+        tr:hover {
+            background: var(--code-bg);
+        }
+
+        footer {
+            margin-top: 64px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 32px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
+        a:hover {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 24px; }
+            h2 { font-size: 20px; }
+            h3 { font-size: 18px; }
+            body { padding: 16px; }
+        }
+    </style>
+
+    <!-- Schema Markup: Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Building Secure Authentication Systems: OAuth and Identity",
+        "description": "Engineering guide to OAuth 2.0, federated identity, email/password auth, session management, and security models for production systems.",
+        "image": "https://codesbyfebin.github.io/og-auth.png",
+        "author": {
+            "@type": "Person",
+            "name": "Febin Francis",
+            "url": "https://codesbyfebin.github.io",
+            "sameAs": ["https://twitter.com/codesbyfebin", "https://github.com/CodesbyFebin"]
+        },
+        "datePublished": "2026-10-04",
+        "dateModified": "2026-10-04",
+        "publisher": {
+            "@type": "Organization",
+            "name": "CodesbyFebin",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://codesbyfebin.github.io/logo.png"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://codesbyfebin.github.io/blog/posts/authentication-systems-oauth-security.html"
+        },
+        "articleBody": "Complete guide to building secure authentication systems with OAuth 2.0, federated identity providers, email/password flows, and production-ready security patterns.",
+        "keywords": "OAuth, authentication, security, federated identity, session management, email/password, web security, identity provider",
+        "articleSection": "Systems Architecture"
+    }
+    </script>
+
+    <!-- Schema Markup: Breadcrumb -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://codesbyfebin.github.io"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://codesbyfebin.github.io/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Building Secure Authentication Systems",
+                "item": "https://codesbyfebin.github.io/blog/posts/authentication-systems-oauth-security.html"
+            }
+        ]
+    }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <a href="/blog/" class="back-link">← Back to Blog</a>
+
+        <header>
+            <div class="meta">
+                <span class="category">Systems Architecture</span>
+                <span>Published October 4, 2026</span>
+            </div>
+            <h1>Building Secure Authentication Systems: OAuth and Identity</h1>
+            <p class="subtitle">Engineering guide to OAuth 2.0, federated identity, email/password auth, session management, and security models for production systems.</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>Why This Matters</h2>
+                <p>Authentication is the first security boundary between your system and its users. A well-designed auth system separates concerns cleanly: identity providers handle credentials, your app manages sessions and per-user data, and clear trust boundaries prevent both data leaks and impersonation attacks.</p>
+                <p>Poor auth design cascades: shared secrets in logs, session tokens leaked in URLs, cross-site request forgery (CSRF), session fixation, and permission confusion between users. This guide covers tested patterns that prevent these classes of bugs.</p>
+
+                <div class="key-point">
+                    <strong>Core principle:</strong> Authentication (who you are) and authorization (what you can do) are separate concerns. Never conflate them. Identity is stable; permissions can change per request.
+                </div>
+            </section>
+
+            <section>
+                <h2>Architecture: Three Layers</h2>
+                <p>Production auth stacks three distinct layers:</p>
+
+                <h3>1. Identity Provider (IdP)</h3>
+                <p>Handles credential storage and verification. In modern systems, this is <strong>never</strong> your own code—use a trusted third party:</p>
+                <ul>
+                    <li><strong>OAuth 2.0 providers</strong> (Google, X/Twitter): Federated. Users sign in with an existing account; your app never sees credentials.</li>
+                    <li><strong>Email/password</strong> (Better Auth, Auth0): A managed service still handles the crypto and recovery flows. Building your own password hashing is a footgun.</li>
+                    <li><strong>Hybrid</strong> (recommended for most products): Offer both OAuth (frictionless onboarding) and email/password (account independence).</li>
+                </ul>
+
+                <h3>2. Session Broker</h3>
+                <p>Mediates between identity provider and your app. Handles the OAuth handshake (SDP exchange), maintains a session after sign-in, and serves the current user on each request.</p>
+                <ul>
+                    <li>Uses cookies marked <code>__Host-</code> (HTTPS-only, same-site) or bearer tokens in the Authorization header.</li>
+                    <li>Never leaks tokens in URLs or logs.</li>
+                    <li>Validates the session on every protected request.</li>
+                </ul>
+
+                <h3>3. Your App's Authorization</h3>
+                <p>Once a user is authenticated (session valid), your app enforces what that user can do:</p>
+                <ul>
+                    <li>Scope every database query to <code>user_id</code>: never trust a user-supplied ID without server-side verification.</li>
+                    <li>Define roles and permissions explicitly in a table, not ad-hoc in code.</li>
+                    <li>Assume the session is valid; the broker already verified it.</li>
+                </ul>
+
+                <pre><code>// PATTERN: Server function with auth middleware
+export const listTodos = createServerFn()
+  .middleware([authMiddleware])  // Verify session
+  .handler(async ({ context }) => {
+    // context.userId is verified by middleware
+    const todos = await db`
+      SELECT id, title FROM todos
+      WHERE user_id = ${context.userId}
+    `;
+    return todos;
+  });</code></pre>
+            </section>
+
+            <section>
+                <h2>OAuth 2.0: Federated Identity</h2>
+                <p><strong>Use OAuth 2.0 when you want users to sign in with an existing account (Google, X, etc.).</strong> Your app never sees their password.</p>
+
+                <h3>The Flow</h3>
+                <ol>
+                    <li>User clicks "Sign in with Google"</li>
+                    <li>Browser opens a popup to Google's login screen</li>
+                    <li>User approves your app and Google redirects back with a temporary code</li>
+                    <li>Your server exchanges the code for a token (backend-to-backend, secure)</li>
+                    <li>Your app creates a session and the user is signed in</li>
+                </ol>
+
+                <div class="key-point">
+                    <strong>Security invariant:</strong> The exchange of code for token must happen server-to-server. Never expose tokens in the browser or URL. A popup is fine for the user-facing flow; the backend exchange is invisible.
+                </div>
+
+                <h3>Setup (High Level)</h3>
+                <ul>
+                    <li>Register your app with Google/X developer consoles. Get a client ID and secret.</li>
+                    <li>On your server, handle <code>POST /api/auth/callback</code> and exchange the code for a token.</li>
+                    <li>Fetch the user's profile from the IdP.</li>
+                    <li>Create or update a user record in your database.</li>
+                    <li>Issue a session cookie/token to the client.</li>
+                </ul>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Step</th>
+                            <th>Player</th>
+                            <th>Security Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>User initiates sign-in</td>
+                            <td>Frontend (popup)</td>
+                            <td>Redirect to IdP login; pop-up or full-page, both safe</td>
+                        </tr>
+                        <tr>
+                            <td>IdP redirects with code</td>
+                            <td>IdP → Frontend</td>
+                            <td>Code is single-use, short-lived (minutes)</td>
+                        </tr>
+                        <tr>
+                            <td>Exchange code for token</td>
+                            <td>Backend (server-to-server)</td>
+                            <td>Use client secret here; never expose in frontend</td>
+                        </tr>
+                        <tr>
+                            <td>Create session</td>
+                            <td>Backend</td>
+                            <td>Issue secure, httpOnly cookie; never send token to client if avoidable</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Supported Providers</h3>
+                <p>Google and X (Twitter) are the recommended starting point. Both have straightforward OAuth implementations and high adoption. Never build OAuth yourself—use a library like <code>better-auth</code> or delegate to a managed service.</p>
+            </section>
+
+            <section>
+                <h2>Email/Password: Account Independence</h2>
+                <p><strong>Use email/password for users who want account independence or as a fallback when OAuth is unavailable.</strong> Delegate password hashing to a managed service; never build it yourself.</p>
+
+                <h3>The Pattern</h3>
+                <ol>
+                    <li>User submits email + password to your sign-up form.</li>
+                    <li>Your server validates email format and password strength, then sends it to a managed auth service.</li>
+                    <li>The service hashes the password (bcrypt, Argon2, etc.), stores it securely, and returns a user ID.</li>
+                    <li>On sign-in, verify the password against the service, not by fetching and comparing hashes yourself.</li>
+                    <li>Create a session and sign the user in.</li>
+                </ol>
+
+                <div class="key-point">
+                    <strong>Never hash passwords in your app code.</strong> Use a managed service (Better Auth, Auth0, Firebase) or a well-tested library with annual security audits. Hashing is a commodity; your app should not own it.
+                </div>
+
+                <pre><code>// WRONG: Do NOT do this
+const hash = crypto.createHash('sha256').update(password).digest('hex');
+db.users.insert({ email, hash });
+
+// RIGHT: Use a managed service
+const user = await betterAuth.signUpEmail({
+  email: data.email,
+  password: data.password
+});
+// Service handles hashing, salting, verification</code></pre>
+            </section>
+
+            <section>
+                <h2>Session Management</h2>
+                <p>After authentication, the session keeps the user signed in across requests.</p>
+
+                <h3>Session Formats</h3>
+                <ul>
+                    <li><strong>Cookies (httpOnly, Secure, SameSite=Strict)</strong>: Sent automatically on every request; can't be stolen by JavaScript; CSRF-protected.</li>
+                    <li><strong>Bearer tokens in Authorization header</strong>: Require explicit JavaScript; good for APIs and multi-domain scenarios.</li>
+                    <li><strong>Hybrid (recommended):</strong> Use cookies for web apps, accept bearer tokens for API calls from other services.</li>
+                </ul>
+
+                <h3>Session Lifetime</h3>
+                <ul>
+                    <li><strong>Short-lived (15 min):</strong> Limits exposure if a session token leaks.</li>
+                    <li><strong>Refresh tokens (7 days):</strong> Used to mint a new short-lived session without re-authenticating.</li>
+                    <li><strong>Explicit logout:</strong> Invalidate the session immediately; don't rely on expiry alone.</li>
+                </ul>
+
+                <div class="key-point">
+                    <strong>Never store secrets in URLs.</strong> Use POST request bodies or Authorization headers. URLs are logged by proxies, CDNs, and browser history. Redirect after a sign-in POST to hide the token from the URL.
+                </div>
+            </section>
+
+            <section>
+                <h2>Security Model: Trust Boundaries</h2>
+
+                <h3>What Your App Must Do</h3>
+                <ul>
+                    <li><strong>Validate session on every request:</strong> Don't cache auth state. Middleware should verify the token/cookie fresh each time.</li>
+                    <li><strong>Scope database queries:</strong> Always filter by the authenticated <code>user_id</code>. A missing filter is a data leak.</li>
+                    <li><strong>Never trust user input for auth:</strong> A <code>?user_id=123</code> query param is not proof the user is 123. Verify against the session.</li>
+                    <li><strong>Handle errors safely:</strong> Don't leak whether an email exists, whether a session is valid, or why a request failed. Log details server-side; show generic errors to the client.</li>
+                </ul>
+
+                <h3>What Your App Must NOT Do</h3>
+                <ul>
+                    <li>Embed tokens in URLs or HTML data attributes (they're visible in logs and history).</li>
+                    <li>Relax CSRF protection for "convenience" (e.g., accepting JSON requests without a CSRF token). If cookies carry auth, CSRF protection is mandatory.</li>
+                    <li>Reuse session cookies across domains. Mark them with <code>__Host-</code> or <code>__Secure-</code> prefixes.</li>
+                    <li>Store passwords in plaintext, even in logs. Use hashed/salted passwords or managed services only.</li>
+                </ul>
+
+                <h3>Defense in Depth</h3>
+                <p>Layer multiple checks:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Layer</th>
+                            <th>What It Stops</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>httpOnly cookies</td>
+                            <td>JavaScript theft (XSS)</td>
+                        </tr>
+                        <tr>
+                            <td>SameSite=Strict</td>
+                            <td>Cross-site requests (CSRF)</td>
+                        </tr>
+                        <tr>
+                            <td>Server-side session validation</td>
+                            <td>Forged tokens, replayed sessions</td>
+                        </tr>
+                        <tr>
+                            <td>Scoped database queries</td>
+                            <td>Permission escalation, lateral data leaks</td>
+                        </tr>
+                        <tr>
+                            <td>HTTPS + Secure flag</td>
+                            <td>Man-in-the-middle attacks</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>Common Pitfalls</h2>
+
+                <h3>1. Storing Secrets in Environment</h3>
+                <p><strong>Problem:</strong> OAuth client secret checked into version control.</p>
+                <p><strong>Solution:</strong> Use injected environment variables in production. In development, keep secrets in a local `.env` file (never committed). Rotate secrets annually and immediately if exposed.</p>
+
+                <h3>2. Leaking User IDs in URLs</h3>
+                <p><strong>Problem:</strong> <code>/dashboard?user_id=42</code> looks like a user ID and is tempting to increment.</p>
+                <p><strong>Solution:</strong> Never expose internal IDs in URLs. Use the session to determine the user. If a URL must name something, use an opaque token (UUID v4) or slug, never an incrementing integer.</p>
+
+                <h3>3. Silent Failures</h3>
+                <p><strong>Problem:</strong> A missing auth middleware means a public endpoint leaks data.</p>
+                <p><strong>Solution:</strong> Middleware should be the default. Make protected routes the common case; public routes the exception. Use a linter rule to flag <code>createServerFn</code> without auth middleware.</p>
+
+                <h3>4. Forgetting Logout</h3>
+                <p><strong>Problem:</strong> "Sign out" button clears the client-side session but doesn't invalidate the server token.</p>
+                <p><strong>Solution:</strong> Logout must hit the server. Revoke the session token, invalidate the refresh token, and only then clear client-side state. A server-side logout is mandatory; client-side only is a false logout.</p>
+            </section>
+
+            <section>
+                <h2>Implementation Checklist</h2>
+                <ul>
+                    <li>☐ Identity provider chosen: OAuth (Google/X) + email/password hybrid, or managed service</li>
+                    <li>☐ OAuth credentials registered with each provider</li>
+                    <li>☐ Session broker configured: cookie flags set (httpOnly, Secure, SameSite=Strict)</li>
+                    <li>☐ Server-side session validation middleware in place on all protected routes</li>
+                    <li>☐ Database queries scoped to authenticated user_id; no user-supplied IDs in WHERE clauses</li>
+                    <li>☐ Logout endpoint implemented; server-side session revocation working</li>
+                    <li>☐ Error messages are generic; no leaking of user existence or session validity</li>
+                    <li>☐ No secrets in URLs, logs, or HTML attributes</li>
+                    <li>☐ CSRF protection enabled for cookie-based auth</li>
+                    <li>☐ HTTPS enforced; Secure flag set on session cookies</li>
+                    <li>☐ Password reset flow tested (email verification, token expiry, rate limiting)</li>
+                    <li>☐ Session timeout configured; refresh token expiry enforced</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Further Reading</h2>
+                <p>This guide covers the architecture and patterns. For implementation, consult:</p>
+                <ul>
+                    <li><a href="https://better-auth.com">Better Auth documentation</a> — OAuth and email/password implementation</li>
+                    <li><a href="https://owasp.org/www-community/attacks/csrf">OWASP: Cross-Site Request Forgery (CSRF)</a></li>
+                    <li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html">OWASP Session Management Cheat Sheet</a></li>
+                    <li><a href="https://datatracker.ietf.org/doc/html/rfc6749">OAuth 2.0 Authorization Framework (RFC 6749)</a></li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p><strong>Evidence-first engineering.</strong> This guide is drawn from production patterns tested in the Grok Build framework and referenced against RFC 6749, OWASP guidelines, and current best practices in session management and federated identity.</p>
+            <p>Published October 4, 2026 · Systems Engineering</p>
+            <p>PROOF > PROMISES</p>
+        </footer>
+    </div>
+</body>
+</html>
