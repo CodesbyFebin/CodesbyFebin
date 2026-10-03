@@ -1,3 +1,23 @@
+![Febin Francis — CodesbyFebin: AI infrastructure, verifiable compute and self-hosted systems](assets/profile-header.svg)
+
+<div align="center">
+
+[Portfolio](https://codesbyfebin.github.io/) · [Projects](https://codesbyfebin.github.io/portfolio.html) · [DEV articles](https://dev.to/codesbyfebin) · [Bluesky](https://bsky.app/profile/codesbyfebin.bsky.social) · [LinkedIn](https://www.linkedin.com/in/codes-by-febin/)
+
+</div>
+
+## Hi, I'm Febin 👋
+
+I'm an open-source builder from **Kerala, India**, working on AI infrastructure, verifiable computation and systems you can run yourself. I share code, debugging lessons and the trade-offs behind the design.
+
+**Start exploring:** [STARK computation in Rust](https://github.com/CodesbyFebin/rust-stark-zkvm) · [Self-hosted infrastructure](https://github.com/CodesbyFebin/Decentralized-) · [OM Personal AI](https://github.com/CodesbyFebin/-Om-Personal-Ai)
+
+**Follow the work:** [Read practical build notes on DEV](https://dev.to/codesbyfebin) or [connect on Bluesky](https://bsky.app/profile/codesbyfebin.bsky.social).
+
+Project capabilities evolve. Inspect each repository's source, tests and limitations for current implementation status.
+
+---
+
 <div align="center">
 
 # FEBIN FRANCIS

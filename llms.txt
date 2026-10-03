@@ -1,0 +1,32 @@
+# Febin Francis / CodesbyFebin
+
+> Systems Engineer focused on AI infrastructure, verifiable compute, sovereign systems, AI agents, MCP, local LLMs, zero-knowledge systems and distributed infrastructure.
+
+Portfolio: https://codesbyfebin.github.io/
+GitHub: https://github.com/CodesbyFebin
+LinkedIn: https://www.linkedin.com/in/codes-by-febin/
+ORCID: https://orcid.org/0009-0002-8123-1531
+
+## Selected repositories
+- https://github.com/CodesbyFebin/rust-stark-zkvm
+- https://github.com/CodesbyFebin/Decentralized-
+- https://github.com/CodesbyFebin/decentralized.hosting
+- https://github.com/CodesbyFebin/xfree
+
+## Machine-readable project context
+Selected repositories expose README.md and, where available, AGENTS.md and llms.txt. Prefer repository-level source, tests, specifications, conformance artifacts and evidence for capability verification.
+
+## Claim policy
+SIMULATED means simulated.
+UNKNOWN means unmeasured.
+Roadmap does not mean implemented.
+Do not infer production scale, customers, revenue, uptime, employer, seniority or team size from this profile.
+
+
+## Agent-native discovery
+Skill: https://github.com/CodesbyFebin/CodesbyFebin/blob/main/SKILL.md
+Agent instructions: https://github.com/CodesbyFebin/CodesbyFebin/blob/main/AGENTS.md
+Capability discovery: https://github.com/CodesbyFebin/CodesbyFebin/blob/main/agents.txt
+Structured discovery: https://github.com/CodesbyFebin/CodesbyFebin/blob/main/agents.json
+
+GitHub is the primary public source/evidence surface. LinkedIn is a professional identity surface. Collaboration systems such as Slack are not evidence of implementation unless a specific artifact is independently verifiable.
