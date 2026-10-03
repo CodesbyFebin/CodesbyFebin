@@ -311,23 +311,106 @@
             </header>
 
             <div class="article-content">
-                <h2>Introduction</h2>
-<p>This article explores rust memory safety: ownership, borrowing, and lifetimes explained. Read on to understand key concepts, implementation details, and best practices.</p>
+<h2>Introduction</h2>
+<p>Rust's most distinctive feature is its ownership system, a revolutionary approach to memory management that eliminates entire categories of bugs at compile time. Unlike garbage-collected languages or manual memory management, Rust uses ownership to ensure memory safety without runtime overhead. This comprehensive guide explores ownership, borrowing, and lifetimes—the three pillars of Rust's memory model.</p>
 
-<h2>Key Concepts</h2>
-<p>The following sections cover the essential knowledge needed to understand this topic:</p>
+<h2>Understanding Ownership</h2>
+<p>Ownership is Rust's answer to the fundamental question: who is responsible for freeing memory? The three rules of ownership are:</p>
+<ol>
+<li>Each value in Rust has an owner</li>
+<li>There can only be one owner at a time</li>
+<li>When the owner goes out of scope, the value will be dropped</li>
+</ol>
 
-<h3>Core Principles</h3>
-<p>Understanding the fundamentals is crucial for mastering this subject.</p>
+<h3>Values and Memory</h3>
+<p>When you create a variable in Rust, you're taking ownership of that value. The value lives in memory until the owner goes out of scope. For stack-allocated types like integers, this is straightforward. For heap-allocated types like <code>String</code>, ownership determines when the heap memory is freed.</p>
 
-<h3>Implementation</h3>
-<p>Practical examples and code demonstrations help solidify your understanding.</p>
+<pre><code>fn main() {
+    let s1 = String::from("hello");  // s1 owns the string
+    let s2 = s1;  // ownership moves to s2
+    // println!("{}", s1);  // ERROR: s1 no longer owns the value
+    println!("{}", s2);  // OK: s2 owns it now
+}</code></pre>
+
+<h3>Move Semantics</h3>
+<p>When you assign a value to another variable, Rust moves the value, not copies it. This prevents double-freeing memory. The original variable becomes invalid after the move. This is fundamentally different from languages like C++ where assignment usually copies.</p>
+
+<p>For types that implement the <code>Copy</code> trait (like integers), values are copied instead of moved. This is safe because they're small and the copy cost is negligible.</p>
+
+<h2>Borrowing and References</h2>
+<p>Borrowing allows you to use a value without taking ownership. You create a reference to the value, and the reference can be passed around or used without transferring ownership.</p>
+
+<h3>Immutable References</h3>
+<p>An immutable reference (<code>&T</code>) lets you read a value but not modify it. You can create multiple immutable references to the same value:</p>
+
+<pre><code>fn main() {
+    let s = String::from("hello");
+    let r1 = &s;
+    let r2 = &s;
+    println!("{}, {}", r1, r2);  // Both references are valid
+}</code></pre>
+
+<h3>Mutable References</h3>
+<p>A mutable reference (<code>&mut T</code>) allows you to modify a value through the reference. But Rust enforces a critical rule: you can have only one mutable reference to a value at a time. This prevents data races at compile time.</p>
+
+<pre><code>fn main() {
+    let mut s = String::from("hello");
+    let r1 = &mut s;
+    // let r2 = &mut s;  // ERROR: cannot have two mutable references
+    r1.push_str(" world");
+    println!("{}", r1);
+}</code></pre>
+
+<h3>The Borrowing Rules</h3>
+<p>Rust enforces these critical borrowing rules:</p>
+<ul>
+<li>You can have either multiple immutable references OR one mutable reference</li>
+<li>References must always be valid (no dangling references)</li>
+<li>You cannot borrow data as mutable while an immutable reference is in scope</li>
+</ul>
+
+<h2>Lifetimes Explained</h2>
+<p>Lifetimes describe how long a reference is valid. The Rust compiler uses lifetimes to ensure that all references are always valid. In most cases, lifetimes are implicit and inferred by the compiler.</p>
+
+<h3>Explicit Lifetime Annotations</h3>
+<p>Sometimes the compiler needs help determining lifetimes. You explicitly annotate lifetimes using <code>'a</code>, <code>'b</code>, etc.:</p>
+
+<pre><code>fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
+    if x.len() > y.len() {
+        x
+    } else {
+        y
+    }
+}</code></pre>
+
+<p>This signature says: "I return a reference that's valid as long as both input references are valid." The lifetime parameter <code>'a</code> indicates this relationship.</p>
+
+<h3>Struct Lifetimes</h3>
+<p>When a struct contains references, you must specify lifetimes for those references:</p>
+
+<pre><code>struct Article<'a> {
+    title: &'a str,
+    content: &'a str,
+}
+
+fn main() {
+    let title = "Rust Ownership";
+    let content = "Understanding memory safety...";
+    let article = Article { title, content };
+}</code></pre>
 
 <h2>Best Practices</h2>
-<p>Industry-standard approaches and proven patterns for production systems.</p>
+<p>To write efficient, safe Rust code:</p>
+<ul>
+<li><strong>Default to ownership:</strong> Only use references when necessary</li>
+<li><strong>Prefer immutable borrows:</strong> Use <code>&T</code> by default, <code>&mut T</code> only when modification is needed</li>
+<li><strong>Return owned values:</strong> When a function computes a new value, return ownership</li>
+<li><strong>Use reference parameters:</strong> When a function needs to borrow without modification</li>
+<li><strong>Leverage the compiler:</strong> Trust lifetime elision for simple cases</li>
+</ul>
 
 <h2>Conclusion</h2>
-<p>You now have a comprehensive understanding of rust memory safety: ownership, borrowing, and lifetimes explained. Continue exploring and practicing to deepen your knowledge.</p>
+<p>Rust's ownership system, combined with borrowing and lifetimes, creates a uniquely powerful memory model. It prevents data races, eliminates null pointer dereferences, and ensures memory safety without garbage collection. While the learning curve is steep, mastering ownership transforms how you write concurrent, efficient, reliable code. The compiler's strict rules protect you from entire categories of bugs that plague other languages.</p>
             </div>
 
             <footer class="article-footer">

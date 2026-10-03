@@ -311,23 +311,134 @@
             </header>
 
             <div class="article-content">
-                <h2>Introduction</h2>
-<p>This article explores getting started with docker: containerization fundamentals. Read on to understand key concepts, implementation details, and best practices.</p>
+<h2>Introduction</h2>
+<p>Docker revolutionized how we build, ship, and run applications. By containerizing software and its dependencies, Docker ensures that your application runs identically in development, testing, and production. This guide covers Docker's architecture, core concepts, and practical implementation patterns for modern development workflows.</p>
 
-<h2>Key Concepts</h2>
-<p>The following sections cover the essential knowledge needed to understand this topic:</p>
+<h2>What is Docker?</h2>
+<p>Docker is a containerization platform that packages your application with all its dependencies into a standardized unit called a container. Unlike virtual machines, containers share the host OS kernel, making them lightweight and fast to start.</p>
 
-<h3>Core Principles</h3>
-<p>Understanding the fundamentals is crucial for mastering this subject.</p>
+<h3>Key Concepts</h3>
+<ul>
+<li><strong>Image:</strong> A read-only template containing application code, runtime, libraries, and dependencies</li>
+<li><strong>Container:</strong> A running instance of an image with its own filesystem, network, and process space</li>
+<li><strong>Registry:</strong> A repository storing images (Docker Hub, ECR, GCR, etc.)</li>
+<li><strong>Dockerfile:</strong> A text file defining how to build an image</li>
+</ul>
 
-<h3>Implementation</h3>
-<p>Practical examples and code demonstrations help solidify your understanding.</p>
+<h2>Docker Architecture</h2>
+<p>Docker uses a client-server architecture:</p>
 
-<h2>Best Practices</h2>
-<p>Industry-standard approaches and proven patterns for production systems.</p>
+<pre><code>┌─────────────────────────────────────────┐
+│         Docker Client (CLI)             │
+│  $ docker run, build, push              │
+└────────────┬────────────────────────────┘
+             │ Docker API
+┌────────────▼────────────────────────────┐
+│      Docker Daemon (dockerd)            │
+│  - Image management                     │
+│  - Container lifecycle                  │
+│  - Network & volume management          │
+└────────────┬────────────────────────────┘
+             │
+┌────────────▼────────────────────────────┐
+│   Operating System Kernel               │
+│  - cgroups (resource limits)            │
+│  - namespaces (process isolation)       │
+└─────────────────────────────────────────┘</code></pre>
+
+<h2>Creating Your First Dockerfile</h2>
+<p>A Dockerfile is a set of instructions to build an image:</p>
+
+<pre><code>FROM python:3.9-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY app.py .
+
+ENV PORT=8000
+EXPOSE 8000
+
+CMD ["python", "app.py"]</code></pre>
+
+<p>Each instruction creates a layer in the image. Docker caches layers for faster rebuilds. The <code>FROM</code> instruction specifies the base image, and subsequent instructions build on it.</p>
+
+<h3>Best Practices for Dockerfiles</h3>
+<ul>
+<li>Use specific image versions, not <code>latest</code></li>
+<li>Minimize layer count by combining commands with <code>&&</code></li>
+<li>Remove unnecessary files to reduce image size</li>
+<li>Order instructions from least to most frequently changing</li>
+<li>Use multi-stage builds to separate build and runtime environments</li>
+</ul>
+
+<h2>Running Containers</h2>
+<p>Build and run an image:</p>
+
+<pre><code># Build image
+docker build -t myapp:1.0 .
+
+# Run container
+docker run -p 8000:8000 myapp:1.0
+
+# Run with volume mount
+docker run -v /data:/app/data -p 8000:8000 myapp:1.0
+
+# Run in background
+docker run -d --name myapp-container myapp:1.0</code></pre>
+
+<h2>Docker Networks and Volumes</h2>
+<p>Containers often need to communicate and persist data:</p>
+
+<h3>Networking</h3>
+<p>By default, containers can't communicate. Create a network to allow container-to-container communication:</p>
+
+<pre><code>docker network create mynetwork
+docker run --network mynetwork --name web myapp:1.0
+docker run --network mynetwork --name db postgres:13</code></pre>
+
+<h3>Data Persistence</h3>
+<p>Containers are ephemeral; changes to the filesystem are lost when the container stops. Use volumes for persistent storage:</p>
+
+<pre><code>docker volume create mydata
+docker run -v mydata:/app/data myapp:1.0</code></pre>
+
+<h2>Docker Compose</h2>
+<p>Managing multiple containers is easier with Docker Compose. Define your entire application stack in a single YAML file:</p>
+
+<pre><code>version: '3.8'
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgres://db:5432/myapp
+    depends_on:
+      - db
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: myapp
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:</code></pre>
+
+<h2>Best Practices for Production</h2>
+<ul>
+<li>Use specific versions for all images</li>
+<li>Implement health checks for container monitoring</li>
+<li>Set resource limits (memory, CPU) to prevent resource exhaustion</li>
+<li>Use read-only filesystems where possible</li>
+<li>Scan images for vulnerabilities before deployment</li>
+<li>Use container registries with authentication</li>
+</ul>
 
 <h2>Conclusion</h2>
-<p>You now have a comprehensive understanding of getting started with docker: containerization fundamentals. Continue exploring and practicing to deepen your knowledge.</p>
+<p>Docker provides a powerful abstraction for containerization, enabling consistent deployment across environments. By understanding Docker's architecture, image building, networking, and composition patterns, you gain the foundation for modern DevOps practices, microservices architectures, and scalable infrastructure. The principles learned here extend to Kubernetes and advanced container orchestration platforms.</p>
             </div>
 
             <footer class="article-footer">
