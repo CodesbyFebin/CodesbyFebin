@@ -445,6 +445,62 @@
             }
         }
     </style>
+
+    <!-- Schema Markup: Portfolio Page -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Portfolio — Systems Engineering & Verifiable Compute",
+        "description": "20+ projects in verifiable computation, AI infrastructure, distributed systems, and cryptography.",
+        "url": "https://codesbyfebin.vercel.app/portfolio/",
+        "author": {
+            "@type": "Person",
+            "name": "Febin Francis",
+            "jobTitle": "Systems Engineer"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "CodesbyFebin"
+        }
+    }
+    </script>
+
+    <!-- Schema Markup: Skills & Expertise -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Technical Skills",
+        "description": "Languages, frameworks, and systems expertise",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Languages",
+                "description": "Rust, Python, TypeScript, Go, Bash, SQL"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Cryptography",
+                "description": "STARKs, SNARKs, Pedersen commitments, Poseidon hash"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Distributed Systems",
+                "description": "Raft consensus, Byzantine fault tolerance, distributed protocols"
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Infrastructure",
+                "description": "Docker, Kubernetes, VPS management, self-hosting"
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -736,5 +792,27 @@
             </div>
         </div>
     </footer>
+<!-- Schema Markup: BreadcrumbList Navigation -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://codesbyfebin.vercel.app/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Portfolio",
+                "item": "https://codesbyfebin.vercel.app/portfolio/"
+            }
+        ]
+    }
+    </script>
+
 </body>
 </html>

@@ -729,6 +729,131 @@
             }
         }
     </style>
+
+    <!-- Schema Markup: Organization & Website -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "CodesbyFebin",
+        "url": "https://codesbyfebin.vercel.app",
+        "logo": "https://codesbyfebin.vercel.app/assets/logo.png",
+        "description": "Systems engineering and verifiable computation research. AI infrastructure, STARK proofs, sovereign systems.",
+        "sameAs": [
+            "https://github.com/CodesbyFebin",
+            "https://twitter.com/codesbyfebin",
+            "https://linkedin.com/in/febin-francis"
+        ],
+        "founder": {
+            "@type": "Person",
+            "name": "Febin Francis",
+            "jobTitle": "Founder & Systems Engineer"
+        },
+        "foundingDate": "2020",
+        "areaServed": {
+            "@type": "Place",
+            "name": "Global"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "General Inquiry",
+            "email": "febin@codesbyfebin.com"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "CodesbyFebin",
+        "url": "https://codesbyfebin.vercel.app",
+        "description": "Building sovereign systems for a verifiable future. Systems engineering, AI infrastructure, verifiable compute.",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://codesbyfebin.vercel.app/blog/?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <!-- Schema Markup: Homepage BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://codesbyfebin.vercel.app/"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Schema Markup: Featured Projects as CreativeWorks -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Featured Systems",
+        "description": "Core research and engineering systems by CodesbyFebin",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@type": "SoftwareApplication",
+                    "name": "rust-stark-zkvm",
+                    "description": "Rust STARK zkVM with custom ISA, Winterfell proving/verification, HTTP/MCP interfaces",
+                    "url": "https://github.com/codesbyfebin/rust-stark-zkvm",
+                    "applicationCategory": "DeveloperApplication",
+                    "offers": {
+                        "@type": "Offer",
+                        "price": "0",
+                        "priceCurrency": "USD"
+                    }
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@type": "SoftwareApplication",
+                    "name": "Decentralized.host",
+                    "description": "Sovereign self-hosted infrastructure with Raft consensus, WireGuard, chaos testing",
+                    "url": "https://github.com/codesbyfebin/decentralized.host",
+                    "applicationCategory": "DeveloperApplication"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@type": "SoftwareApplication",
+                    "name": "AI Infrastructure",
+                    "description": "Privacy-preserving AI deployment with verifiable compute guarantees",
+                    "applicationCategory": "DeveloperApplication"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "item": {
+                    "@type": "SoftwareApplication",
+                    "name": "Sovereign Systems",
+                    "description": "Self-hosted deployment mesh and orchestration platform",
+                    "applicationCategory": "DeveloperApplication"
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->

@@ -232,6 +232,49 @@
             }
         }
     </style>
+
+    <!-- Schema Markup: Research Publications Index -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Research & Publications — CodesbyFebin",
+        "description": "Published papers and technical studies on verifiable compute, cryptography, distributed systems, and AI infrastructure.",
+        "url": "https://codesbyfebin.vercel.app/docs/research/",
+        "publisher": {
+            "@type": "Organization",
+            "name": "CodesbyFebin"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Febin Francis"
+        }
+    }
+    </script>
+
+    <!-- Schema Markup: Sample ScholarlyArticle -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ScholarlyArticle",
+        "headline": "STARK Proofs: Scalability Without Trusted Setup",
+        "description": "Analysis of Scalable Transparent Arguments of Knowledge (STARKs) and their advantages over ZK-SNARKs with implementation details.",
+        "author": {
+            "@type": "Person",
+            "name": "Febin Francis"
+        },
+        "datePublished": "2026-10-01",
+        "publisher": {
+            "@type": "Organization",
+            "name": "CodesbyFebin"
+        },
+        "keywords": ["zero-knowledge proofs", "STARKs", "cryptography", "verifiable computation"],
+        "about": {
+            "@type": "Topic",
+            "name": "Cryptography"
+        }
+    }
+    </script>
 </head>
 <body>
     <nav>
@@ -364,5 +407,27 @@
             <p>© 2026 Febin Francis. Research & Technical Writings | <a href="/" style="color: var(--primary); text-decoration: none;">Back to Home</a></p>
         </div>
     </footer>
+<!-- Schema Markup: BreadcrumbList Navigation -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://codesbyfebin.vercel.app/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Research",
+                "item": "https://codesbyfebin.vercel.app/docs/research/"
+            }
+        ]
+    }
+    </script>
+
 </body>
 </html>

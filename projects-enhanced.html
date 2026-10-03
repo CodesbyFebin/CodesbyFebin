@@ -536,6 +536,58 @@
             }
         }
     </style>
+
+    <!-- Schema Markup: Projects CollectionPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Featured Projects — CodesbyFebin",
+        "description": "Open-source projects in verifiable compute, AI infrastructure, distributed systems, and self-hosting.",
+        "url": "https://codesbyfebin.vercel.app/projects-enhanced/",
+        "publisher": {
+            "@type": "Organization",
+            "name": "CodesbyFebin"
+        }
+    }
+    </script>
+
+    <!-- Schema Markup: Featured Software Applications -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Open Source Projects",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@type": "SoftwareApplication",
+                    "name": "rust-stark-zkvm",
+                    "url": "https://github.com/codesbyfebin/rust-stark-zkvm",
+                    "description": "Rust STARK zkVM implementation with custom ISA, Winterfell proving/verification, HTTP/MCP interfaces",
+                    "applicationCategory": "DeveloperApplication",
+                    "softwareVersion": "1.0.0",
+                    "license": "MIT/Apache-2.0",
+                    "author": {"@type": "Person", "name": "Febin Francis"}
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@type": "SoftwareApplication",
+                    "name": "decentralized.host",
+                    "url": "https://github.com/codesbyfebin/decentralized.host",
+                    "description": "Sovereign self-hosted infrastructure with Raft consensus, WireGuard VPN, chaos testing",
+                    "applicationCategory": "DeveloperApplication",
+                    "author": {"@type": "Person", "name": "Febin Francis"}
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -798,5 +850,27 @@
         // Load projects on page load
         loadProjects();
     </script>
+<!-- Schema Markup: BreadcrumbList Navigation -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://codesbyfebin.vercel.app/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Projects",
+                "item": "https://codesbyfebin.vercel.app/projects-enhanced/"
+            }
+        ]
+    }
+    </script>
+
 </body>
 </html>
