@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>xAI API Integration: Grok LLM, Image & Video Generation</title>
+    <meta name="description" content="Complete guide to integrating xAI Grok API: chat/LLM, Imagine (image/video generation), voice/TTS, and spending quota responsibly.">
+    <meta name="keywords" content="xAI, Grok, LLM API, image generation, video generation, text-to-speech, AI integration, API, OpenAI-compatible">
+    <meta name="author" content="Febin Francis">
+    <meta property="og:title" content="xAI API Integration: Grok LLM, Image & Video Generation">
+    <meta property="og:description" content="Learn to integrate xAI Grok API: chat, image generation, video creation, and voice features in your application.">
+    <link rel="canonical" href="https://codesbyfebin.github.io/blog/posts/xai-grok-api-integration.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="xAI API Integration: Grok LLM, Image & Video Generation">
+    <meta name="twitter:creator" content="@codesbyfebin">
+
+    <style>
+        :root {
+            --bg: #f8f7f6;
+            --text: #1a1a1a;
+            --text-muted: #666666;
+            --accent: #00d46a;
+            --border: #e0e0e0;
+            --code-bg: #f0f0f0;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --bg: #0f0f0f;
+                --text: #e0e0e0;
+                --text-muted: #999999;
+                --accent: #00d46a;
+                --border: #333333;
+                --code-bg: #252525;
+                color-scheme: dark;
+            }
+        }
+
+        :root[data-theme="dark"] {
+            --bg: #0f0f0f;
+            --text: #e0e0e0;
+            --text-muted: #999999;
+            --accent: #00d46a;
+            --border: #333333;
+            --code-bg: #252525;
+            color-scheme: dark;
+        }
+
+        * { box-sizing: border-box; }
+        html, body { height: 100%; }
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        .container { max-width: 840px; margin: 0 auto; }
+        header { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+        .meta { display: flex; gap: 16px; margin-bottom: 16px; font-size: 14px; color: var(--text-muted); flex-wrap: wrap; }
+        .category { display: inline-block; padding: 4px 12px; background: var(--code-bg); border-radius: 4px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        h1 { font-size: clamp(28px, 5vw, 48px); line-height: 1.2; margin: 24px 0 16px 0; }
+        .subtitle { font-size: 20px; line-height: 1.4; color: var(--text-muted); margin: 0; }
+        main { display: grid; gap: 48px; }
+        h2 { font-size: 28px; margin: 48px 0 24px 0; border-top: 1px solid var(--border); padding-top: 32px; }
+        h3 { font-size: 20px; margin: 32px 0 16px 0; }
+        p { margin: 16px 0; line-height: 1.7; }
+        strong { color: var(--text); font-weight: 600; }
+        code { background: var(--code-bg); padding: 2px 6px; border-radius: 3px; font-family: 'Monaco', 'Courier New', monospace; font-size: 14px; }
+        pre { background: var(--code-bg); padding: 16px; border-radius: 6px; overflow-x: auto; margin: 24px 0; line-height: 1.5; }
+        pre code { background: none; padding: 0; border-radius: 0; }
+        ul, ol { margin: 16px 0; padding-left: 24px; }
+        li { margin: 8px 0; }
+        .key-point { background: var(--code-bg); border-left: 4px solid var(--accent); padding: 16px; margin: 24px 0; border-radius: 4px; }
+        table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid var(--border); }
+        th { font-weight: 600; background: var(--code-bg); }
+        footer { margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--border); font-size: 14px; color: var(--text-muted); }
+        .back-link { display: inline-block; margin-bottom: 32px; color: var(--accent); text-decoration: none; font-weight: 500; }
+        .back-link:hover { text-decoration: underline; }
+        a { color: var(--accent); text-decoration: underline; }
+        @media (max-width: 600px) { h1 { font-size: 24px; } h2 { font-size: 20px; } h3 { font-size: 18px; } body { padding: 16px; } }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "xAI API Integration: Grok LLM, Image & Video Generation",
+        "description": "Complete guide to xAI Grok API: chat/LLM, Imagine for image/video generation, voice/TTS, and quota management.",
+        "author": { "@type": "Person", "name": "Febin Francis" },
+        "datePublished": "2026-10-04",
+        "articleSection": "API Integration"
+    }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <a href="/blog/" class="back-link">← Back to Blog</a>
+        <header>
+            <div class="meta">
+                <span class="category">API Integration</span>
+                <span>Published October 4, 2026</span>
+            </div>
+            <h1>xAI API Integration: Grok LLM, Image & Video Generation</h1>
+            <p class="subtitle">Integrate xAI Grok: chat, image/video generation (Imagine), voice, and the patterns to spend quota responsibly.</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>What You Get With xAI API</h2>
+                <p>When <code>XAI_API_KEY</code> is present in your environment, this app has **real xAI API access**. Use it for AI features instead of mocking or reaching for another provider. The same key is injected into the deployed app, so code built against it works identically in preview and production.</p>
+
+                <div class="key-point">
+                    <strong>Critical:</strong> The key is the app owner's personal key. Every call—including ones triggered by anonymous visitors—spends their quota and credits. Be deliberate about usage and understand spend patterns before wiring AI into anything public.
+                </div>
+
+                <p><strong>The API unlocks three major capabilities:</strong></p>
+                <ul>
+                    <li><strong>Chat / LLM</strong> — Latest model: <code>grok-4.5</code></li>
+                    <li><strong>Imagine</strong> — Generate and edit images, generate video, at runtime</li>
+                    <li><strong>Voice</strong> — Text-to-speech with expressive voices, transcription</li>
+                </ul>
+
+                <p>The API is **OpenAI-compatible** at <code>https://api.x.ai/v1</code>, so any OpenAI-style client works by switching the base URL and key. Full docs: <a href="https://docs.x.ai">docs.x.ai</a>.</p>
+            </section>
+
+            <section>
+                <h2>Environment Setup (No .env File)</h2>
+                <p>Do NOT create a .env file. <code>XAI_API_KEY</code> is injected by the platform.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Where</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>XAI_API_KEY</code></td>
+                            <td>Server only</td>
+                            <td>Injected by platform (preview & deploy). Never write, hardcode, or ask user for it.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Server-Only Access</h3>
+                <p>Read the key with <code>process.env.XAI_API_KEY</code> inside <code>createServerFn</code> handlers / server code, never in client components. Never expose it via a <code>VITE_</code>-prefixed variable or an API response.</p>
+
+                <p>The key can be **absent** (rollout-gated). Degrade gracefully—check for it and show a friendly "AI features are unavailable" state:</p>
+
+                <pre><code>const apiKey = process.env.XAI_API_KEY;
+if (!apiKey) throw new Error("AI is not available in this environment");</code></pre>
+            </section>
+
+            <section>
+                <h2>Calling the API: Chat/LLM</h2>
+                <p>No SDK needed—use plain <code>fetch</code> from a server function.</p>
+
+                <pre><code>import { createServerFn } from "@tanstack/react-start";
+
+export const askGrok = createServerFn({ method: "POST" })
+  .validator((input: { prompt: string }) => input)
+  .handler(async ({ data }) => {
+    const apiKey = process.env.XAI_API_KEY;
+    if (!apiKey) return { ok: false as const, error: "AI is not available" };
+
+    const res = await fetch("https://api.x.ai/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        model: "grok-4.5",  // Latest Grok model
+        messages: [{ role: "user", content: data.prompt }],
+      }),
+    });
+    if (!res.ok) {
+      return { ok: false as const, error: `xAI API error ${res.status}` };
+    }
+    const body = (await res.json()) as {
+      choices: { message: { content: string } }[];
+    };
+    return { ok: true as const, text: body.choices[0]?.message.content ?? "" };
+  });</code></pre>
+
+                <p><strong>For streaming, structured outputs, vision, or the full model list:</strong> Follow <a href="https://docs.x.ai">docs.x.ai</a>—the shapes are OpenAI-compatible.</p>
+            </section>
+
+            <section>
+                <h2>Imagine: Image & Video Generation</h2>
+                <p>Runtime image/video generation (different from build-time <code>imagine_text_to_image</code> tools). Use when the running app generates media.</p>
+
+                <h3>Image Generation</h3>
+                <pre><code>// POST https://api.x.ai/v1/images/generations
+const res = await fetch("https://api.x.ai/v1/images/generations", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${apiKey}`,
+  },
+  body: JSON.stringify({
+    model: "grok-imagine-image-quality",  // or "grok-imagine-image" (cheaper)
+    prompt: "A serene mountain landscape at sunset",
+    n: 1,              // Number of images (≤10)
+    resolution: "1k",  // "1k" or "2k"
+    response_format: "url",  // "url" or "b64_json"
+  }),
+});
+
+const data = await res.json();
+const imageUrl = data.data[0].url;</code></pre>
+
+                <h3>Image Editing</h3>
+                <p>Natural-language edits with up to 3 reference images: <code>POST /v1/images/edits</code>.</p>
+
+                <h3>Video Generation</h3>
+                <p>Async workflow: start generation, then poll for completion.</p>
+                <ul>
+                    <li>Model: <code>grok-imagine-video</code></li>
+                    <li>Max length: ~15s clips</li>
+                    <li>Flow: <code>POST /v1/videos/generations</code> → get request ID → poll <code>GET /v1/videos/generations/{id}</code></li>
+                </ul>
+
+                <p><strong>Full parameters and examples:</strong> <a href="https://docs.x.ai">docs.x.ai</a> → Imagine API.</p>
+            </section>
+
+            <section>
+                <h2>Voice: Text-to-Speech</h2>
+                <p><code>POST https://api.x.ai/v1/tts</code> turns text into spoken audio—narration, accessibility, character voices.</p>
+
+                <pre><code>const res = await fetch("https://api.x.ai/v1/tts", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${apiKey}`,
+  },
+  body: JSON.stringify({
+    text: "Hello, this is Grok speaking.",
+    voice_id: "eve",  // eve = default voice; list others with GET /v1/tts/voices
+  }),
+});
+
+// Returns audio bytes (e.g. MP3)
+const audioBuffer = await res.arrayBuffer();
+const audioBlob = new Blob([audioBuffer], { type: "audio/mpeg" });
+
+// Serve to client (never call API from browser)
+const audioUrl = URL.createObjectURL(audioBlob);
+const audio = new Audio(audioUrl);
+audio.play();</code></pre>
+
+                <p><strong>Voices & transcription:</strong> List voices at <code>GET /v1/tts/voices</code>. Transcription (speech-to-text) also available. Details: <a href="https://docs.x.ai">docs.x.ai</a> → Voice API.</p>
+            </section>
+
+            <section>
+                <h2>Spend Responsibly (Critical)</h2>
+                <p>The key is the app owner's quota. Every visitor call burns credits. Wasteful patterns degrade or break every other use of the key.</p>
+
+                <h3>Best Practices</h3>
+                <ul>
+                    <li><strong>Cap output (<code>max_tokens</code>) and keep prompts small</strong> for visitor-facing features. Image and video generation cost far more per call than chat.</li>
+                    <li><strong>Never call the API in a loop, on every keystroke, or on page load.</strong> Make calls user-initiated (button press, form submit) and debounce.</li>
+                    <li><strong>Cache or persist results</strong> (see the neon skill) instead of regenerating the same content per visitor or per render.</li>
+                    <li><strong>Gate expensive flows.</strong> On an app with sign-in, put media generation behind <code>authMiddleware</code>. On apps without accounts, cap usage: user-initiated calls, small limits, cached results.</li>
+                    <li><strong>Don't add retry storms:</strong> On an API error, surface it. Retry at most once.</li>
+                </ul>
+
+                <div class="key-point">
+                    <strong>Pattern: User-initiated, single call, cached result.</strong> Button "Generate image" → one call to xAI → cache the URL in the database → reuse for all visitors. Never loop, never auto, never on page load.
+                </div>
+            </section>
+
+            <section>
+                <h2>Implementation Pattern: Image Generation with Caching</h2>
+                <pre><code>import { createServerFn } from "@tanstack/react-start";
+import { db } from "@/db";  // Your Neon database
+
+export const generateUserAvatar = createServerFn({ method: "POST" })
+  .validator((input: { userId: string; prompt: string }) => input)
+  .handler(async ({ data }) => {
+    const apiKey = process.env.XAI_API_KEY;
+    if (!apiKey) return { ok: false as const, error: "AI unavailable" };
+
+    // Check cache first
+    const cached = await db.query(
+      "SELECT avatar_url FROM users WHERE id = $1 AND avatar_url IS NOT NULL",
+      [data.userId]
+    );
+    if (cached.rows[0]) {
+      return { ok: true as const, url: cached.rows[0].avatar_url };
+    }
+
+    // Generate once
+    const res = await fetch("https://api.x.ai/v1/images/generations", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        model: "grok-imagine-image",
+        prompt: data.prompt,
+        n: 1,
+        resolution: "1k",
+      }),
+    });
+
+    if (!res.ok) {
+      return { ok: false as const, error: "Generation failed" };
+    }
+
+    const body = await res.json();
+    const avatarUrl = body.data[0].url;
+
+    // Cache it
+    await db.query(
+      "UPDATE users SET avatar_url = $1 WHERE id = $2",
+      [avatarUrl, data.userId]
+    );
+
+    return { ok: true as const, url: avatarUrl };
+  });</code></pre>
+            </section>
+
+            <section>
+                <h2>Finish Checklist</h2>
+                <ul>
+                    <li>☐ <code>XAI_API_KEY</code> read from <code>process.env</code> in server code only</li>
+                    <li>☐ Key never exposed to client (no <code>VITE_</code> prefix, no API response)</li>
+                    <li>☐ Graceful degradation when key is absent</li>
+                    <li>☐ Chat calls use <code>grok-4.5</code> model (latest)</li>
+                    <li>☐ Image generation caches results (no per-visitor regeneration)</li>
+                    <li>☐ Video generation uses async workflow (start, then poll)</li>
+                    <li>☐ Voice/TTS served from server (never called from browser)</li>
+                    <li>☐ Expensive flows gated (auth or rate limits)</li>
+                    <li>☐ No retry loops; max one retry per error</li>
+                    <li>☐ User-initiated calls only (no auto-generation on page load)</li>
+                    <li>☐ <code>max_tokens</code> capped for chat; output limited for media</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p><strong>Evidence-first engineering.</strong> This guide covers xAI API patterns from the Grok Build framework.</p>
+            <p>Published October 4, 2026 · API Integration</p>
+            <p>PROOF > PROMISES</p>
+        </footer>
+    </div>
+</body>
+</html>

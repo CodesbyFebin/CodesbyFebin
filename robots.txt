@@ -1,35 +1,28 @@
-# CodesbyFebin robotics configuration
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /.git/
-Disallow: /private/
 
-# Optimize for AI search engines and answer engines
 User-agent: GPTBot
 Allow: /
 
-User-agent: PerplexityBot
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
 Allow: /
 
 User-agent: ClaudeBot
 Allow: /
 
-User-agent: GoogleBot
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
-# Crawler hints
-Sitemap: https://codesbyfebin.com/sitemap.xml
-Crawl-delay: 0
-Request-rate: 50/1s
-
-# Google Extended crawling (AI training)
-User-agent: Google-Extended
-Allow: /
-
-# Rate limiting guidance
-User-agent: *
-Crawl-delay: 1
+Sitemap: https://codesbyfebin.github.io/sitemap.xml

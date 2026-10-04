@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Peer-to-Peer Networking: Real-Time Multiplayer Architecture</title>
+    <meta name="description" content="Engineering guide to WebRTC peer-to-peer mesh networking for low-latency multiplayer: signaling, connection patterns, and trust models.">
+    <meta name="keywords" content="WebRTC, peer-to-peer, P2P, multiplayer, real-time, gaming, networking, latency, mesh topology">
+    <meta name="author" content="Febin Francis">
+    <meta property="og:title" content="Peer-to-Peer Networking: Real-Time Multiplayer Architecture">
+    <meta property="og:description" content="Learn WebRTC P2P mesh for low-latency multiplayer: setup, connection patterns, trust boundaries, and scaling to 8 players.">
+    <link rel="canonical" href="https://codesbyfebin.github.io/blog/posts/peer-to-peer-networking-realtime-architecture.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Peer-to-Peer Networking: Real-Time Multiplayer Architecture">
+    <meta name="twitter:creator" content="@codesbyfebin">
+
+    <style>
+        :root {
+            --bg: #f8f7f6;
+            --text: #1a1a1a;
+            --text-muted: #666666;
+            --accent: #00d46a;
+            --border: #e0e0e0;
+            --code-bg: #f0f0f0;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --bg: #0f0f0f;
+                --text: #e0e0e0;
+                --text-muted: #999999;
+                --accent: #00d46a;
+                --border: #333333;
+                --code-bg: #252525;
+                color-scheme: dark;
+            }
+        }
+
+        :root[data-theme="dark"] {
+            --bg: #0f0f0f;
+            --text: #e0e0e0;
+            --text-muted: #999999;
+            --accent: #00d46a;
+            --border: #333333;
+            --code-bg: #252525;
+            color-scheme: dark;
+        }
+
+        * { box-sizing: border-box; }
+        html, body { height: 100%; }
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        .container { max-width: 840px; margin: 0 auto; }
+        header { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+        .meta { display: flex; gap: 16px; margin-bottom: 16px; font-size: 14px; color: var(--text-muted); flex-wrap: wrap; }
+        .category { display: inline-block; padding: 4px 12px; background: var(--code-bg); border-radius: 4px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        h1 { font-size: clamp(28px, 5vw, 48px); line-height: 1.2; margin: 24px 0 16px 0; }
+        .subtitle { font-size: 20px; line-height: 1.4; color: var(--text-muted); margin: 0; }
+        main { display: grid; gap: 48px; }
+        h2 { font-size: 28px; margin: 48px 0 24px 0; border-top: 1px solid var(--border); padding-top: 32px; }
+        h3 { font-size: 20px; margin: 32px 0 16px 0; }
+        p { margin: 16px 0; line-height: 1.7; }
+        strong { color: var(--text); font-weight: 600; }
+        code { background: var(--code-bg); padding: 2px 6px; border-radius: 3px; font-family: 'Monaco', 'Courier New', monospace; font-size: 14px; }
+        pre { background: var(--code-bg); padding: 16px; border-radius: 6px; overflow-x: auto; margin: 24px 0; line-height: 1.5; }
+        pre code { background: none; padding: 0; border-radius: 0; }
+        ul, ol { margin: 16px 0; padding-left: 24px; }
+        li { margin: 8px 0; }
+        .key-point { background: var(--code-bg); border-left: 4px solid var(--accent); padding: 16px; margin: 24px 0; border-radius: 4px; }
+        table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid var(--border); }
+        th { font-weight: 600; background: var(--code-bg); }
+        footer { margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--border); font-size: 14px; color: var(--text-muted); }
+        .back-link { display: inline-block; margin-bottom: 32px; color: var(--accent); text-decoration: none; font-weight: 500; }
+        .back-link:hover { text-decoration: underline; }
+        a { color: var(--accent); text-decoration: underline; }
+        @media (max-width: 600px) { h1 { font-size: 24px; } h2 { font-size: 20px; } h3 { font-size: 18px; } body { padding: 16px; } }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Peer-to-Peer Networking: Real-Time Multiplayer Architecture",
+        "description": "Engineering guide to WebRTC P2P mesh networking: signaling, connection patterns, latency, trust models, and scaling.",
+        "author": { "@type": "Person", "name": "Febin Francis" },
+        "datePublished": "2026-10-04",
+        "articleSection": "Distributed Systems"
+    }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <a href="/blog/" class="back-link">← Back to Blog</a>
+        <header>
+            <div class="meta">
+                <span class="category">Distributed Systems</span>
+                <span>Published October 4, 2026</span>
+            </div>
+            <h1>Peer-to-Peer Networking: Real-Time Multiplayer Architecture</h1>
+            <p class="subtitle">Learn WebRTC peer-to-peer mesh for low-latency multiplayer: signaling, connection patterns, and trust models for co-op gaming.</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>Why P2P for Multiplayer</h2>
+                <p>Traditional multiplayer sends all game traffic through a server. P2P lets players connect directly to each other, with the server handling only the connection handshake. Result: browser-to-browser latency (often 5–40ms) instead of browser-to-server-to-browser (50+ ms).</p>
+                <p><strong>Use P2P when:</strong> 2–8 players, co-op or casual play among friends, shared cursors, drawing, party games, casual action.</p>
+                <p><strong>Don't use P2P for:</strong> Competitive ranking, cheat-sensitive games, or anonymous-stranger matchmaking. P2P has no server authority—every peer runs its own copy of the rules and can lie about position, score, or anything else.</p>
+
+                <div class="key-point">
+                    <strong>Trust model:</strong> P2P is for co-op and casual play among people who choose to play together. Peers see each other's IP addresses during connection; competitive or cheat-sensitive play requires server authority (not P2P).
+                </div>
+            </section>
+
+            <section>
+                <h2>Full Mesh Topology</h2>
+                <p>All visitors on the same domain form one "room" and open a WebRTC data channel to every other visitor. For N peers, that's N×(N-1)/2 connections (O(N²) scaling).</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Players</th>
+                            <th>Connections</th>
+                            <th>Practical?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>✓ Yes</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>6</td>
+                            <td>✓ Yes</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>28</td>
+                            <td>✓ Cap at 8</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>120</td>
+                            <td>✗ Too many</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Limit rooms to ~8 peers. Each peer opens 7 connections; mobile browsers start to struggle beyond that.</p>
+            </section>
+
+            <section>
+                <h2>Signaling Relay: The Only Server</h2>
+                <p>Peers need to know each other's network addresses before connecting. A <strong>signaling relay</strong> at <code>/api/rtc</code> brokers the handshake only—game traffic never touches it.</p>
+                <p><strong>The flow:</strong></p>
+                <ol>
+                    <li>Peer A generates an offer (SDP)</li>
+                    <li>Peer A posts it to <code>/api/rtc</code>; relay stores it</li>
+                    <li>Peer B polls <code>/api/rtc</code> and fetches Peer A's offer</li>
+                    <li>Peer B generates an answer (SDP) and posts it back</li>
+                    <li>Both peers post ICE candidates (network addresses)</li>
+                    <li>Relay relays candidates between them</li>
+                    <li>Peers connect directly; relay goes silent</li>
+                </ol>
+
+                <pre><code>// The signaling relay is simple:
+// GET /api/rtc?room=lobby → returns offers/answers/ICE for this room
+// POST /api/rtc → stores an offer/answer/ICE candidate
+
+// Peers poll GET every 100ms, post SDP on state changes
+const p2p = new P2PRoom({
+  room: 'lobby',
+  selfId: myId,
+  onPeersChanged: (peers) => render(peers),
+  onMessage: (from, data) => gameState.apply(from, data)
+});
+
+await p2p.join();
+p2p.broadcast(gameState);  // Unreliable, game-rate (~20/s)
+p2p.send(event);            // Reliable, exactly-once</code></pre>
+            </section>
+
+            <section>
+                <h2>Two Message Channels</h2>
+                <p>Each peer-to-peer connection carries two data channels:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Channel</th>
+                            <th>Reliability</th>
+                            <th>Use</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>"state"</td>
+                            <td>Unreliable, unordered</td>
+                            <td>Position, cursor, continuously-refreshed state</td>
+                        </tr>
+                        <tr>
+                            <td>"events"</td>
+                            <td>Reliable, ordered</td>
+                            <td>One-shot events: jump, attack, take damage</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><strong>Why two?</strong> State broadcasts at game rate (~20 Hz). Late packets are stale and dropped. Events must arrive exactly-once or the game breaks (you died twice, or not at all). Unreliable state is fast; reliable events are slow but certain.</p>
+
+                <pre><code>// Broadcast position every frame (unreliable, stale drops OK)
+p2p.broadcast({ pos: [x, y], angle: dir });
+
+// Send attack event (reliable, must arrive exactly once)
+p2p.send({ type: 'attack', target: enemyId });</code></pre>
+            </section>
+
+            <section>
+                <h2>Late Joiners</h2>
+                <p>When a new peer joins, the existing peers don't automatically send state—late joiners would start with no knowledge of the game world.</p>
+                <p><strong>Pattern:</strong> When a new peer appears in <code>p2p.peers</code>, an existing peer (selected by comparing IDs) sends the current shared state:</p>
+
+                <pre><code>// On every peer change, check if we should answer a newcomer
+onPeersChanged: (peers) => {
+  for (const newPeer of peers) {
+    if (newPeer.isNew) {
+      // Answer only if our ID is the smallest among existing peers
+      // This ensures exactly one peer sends the state
+      const existingIds = peers.filter(p => !p.isNew).map(p => p.id);
+      if (iSmallestId(myId, existingIds)) {
+        p2p.send({ type: 'init', world: gameState }, newPeer.id);
+      }
+    }
+  }
+};</code></pre>
+            </section>
+
+            <section>
+                <h2>Handling Connection Failures</h2>
+                <p>Roughly 10–20% of peer pairs sit behind strict NATs and cannot connect directly. The signaling relay will detect this as <code>connectionState: "failed"</code>.</p>
+                <p><strong>Show it in the UI instead of hanging:</strong></p>
+                <ul>
+                    <li>If all peers are connected: green, game plays normally</li>
+                    <li>If one peer has failed connections: yellow warning, game may be desynchronized</li>
+                    <li>If many connections fail: red, ask players to restart or use a different device</li>
+                </ul>
+                <p>To override the default STUN server, set <code>VITE_STUN_URLS</code> in <code>.grok/app-env.json</code> and restart the dev server.</p>
+            </section>
+
+            <section>
+                <h2>Peer Disappearance</h2>
+                <p>Peers disappear without goodbye: a tab close, device sleep, or network loss. Treat a peer missing from <code>p2p.peers</code> as gone immediately:</p>
+
+                <ul>
+                    <li>Drop its entities from the game world</li>
+                    <li>Stop rendering its position or cursor</li>
+                    <li>Don't wait for a "goodbye" message</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Implementation Checklist</h2>
+                <ul>
+                    <li>☐ Room capped at ~8 peers</li>
+                    <li>☐ Signaling relay implemented at <code>/api/rtc</code></li>
+                    <li>☐ Two channels: unreliable state + reliable events</li>
+                    <li>☐ Late joiners: one existing peer sends init state</li>
+                    <li>☐ UI shows connection state per peer (green/yellow/red)</li>
+                    <li>☐ Peers disappear are handled immediately (drop entities)</li>
+                    <li>☐ No server authority assumed (game is co-op only)</li>
+                    <li>☐ Diagnostics available: <code>p2p.peers[i].rttMs</code>, <code>connectionState</code></li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p><strong>Evidence-first engineering.</strong> This guide covers tested P2P patterns from the Grok Build framework.</p>
+            <p>Published October 4, 2026 · Distributed Systems</p>
+            <p>PROOF > PROMISES</p>
+        </footer>
+    </div>
+</body>
+</html>

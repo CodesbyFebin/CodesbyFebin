@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Serverless PostgreSQL: Database Design for Scale</title>
+    <meta name="description" content="Production guide to serverless PostgreSQL with connection pooling, migrations, per-user data patterns, and preview/production parity.">
+    <meta name="keywords" content="PostgreSQL, serverless, Neon, database, SQL, migrations, connection pooling, database design, web applications">
+    <meta name="author" content="Febin Francis">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Serverless PostgreSQL: Database Design for Scale">
+    <meta property="og:description" content="Learn serverless PostgreSQL patterns: migrations, connection pooling, per-user data scoping, and development/production parity.">
+    <meta property="og:url" content="https://codesbyfebin.github.io/blog/posts/serverless-postgresql-database-architecture.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Serverless PostgreSQL: Database Design for Scale">
+    <meta name="twitter:creator" content="@codesbyfebin">
+    <link rel="canonical" href="https://codesbyfebin.github.io/blog/posts/serverless-postgresql-database-architecture.html">
+
+    <style>
+        :root {
+            --bg: #f8f7f6;
+            --surface: #ffffff;
+            --text: #1a1a1a;
+            --text-muted: #666666;
+            --accent: #00d46a;
+            --border: #e0e0e0;
+            --code-bg: #f0f0f0;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --bg: #0f0f0f;
+                --surface: #1a1a1a;
+                --text: #e0e0e0;
+                --text-muted: #999999;
+                --accent: #00d46a;
+                --border: #333333;
+                --code-bg: #252525;
+                color-scheme: dark;
+            }
+        }
+
+        :root[data-theme="dark"] {
+            --bg: #0f0f0f;
+            --surface: #1a1a1a;
+            --text: #e0e0e0;
+            --text-muted: #999999;
+            --accent: #00d46a;
+            --border: #333333;
+            --code-bg: #252525;
+            color-scheme: dark;
+        }
+
+        * { box-sizing: border-box; }
+        html, body { height: 100%; }
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        .container {
+            max-width: 840px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .meta {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+            font-size: 14px;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+        }
+
+        .category {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--code-bg);
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-size: clamp(28px, 5vw, 48px);
+            line-height: 1.2;
+            margin: 24px 0 16px 0;
+            text-wrap: balance;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            line-height: 1.4;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin: 48px 0 24px 0;
+            text-wrap: balance;
+            border-top: 1px solid var(--border);
+            padding-top: 32px;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin: 32px 0 16px 0;
+            text-wrap: balance;
+        }
+
+        p {
+            margin: 16px 0;
+            line-height: 1.7;
+        }
+
+        strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        code {
+            background: var(--code-bg);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+        }
+
+        pre {
+            background: var(--code-bg);
+            padding: 16px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 24px 0;
+            line-height: 1.5;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            border-radius: 0;
+        }
+
+        ul, ol {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        .key-point {
+            background: var(--code-bg);
+            border-left: 4px solid var(--accent);
+            padding: 16px;
+            margin: 24px 0;
+            border-radius: 4px;
+        }
+
+        .key-point strong {
+            color: var(--accent);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            font-weight: 600;
+            background: var(--code-bg);
+        }
+
+        tr:hover {
+            background: var(--code-bg);
+        }
+
+        footer {
+            margin-top: 64px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 32px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
+        a:hover {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 24px; }
+            h2 { font-size: 20px; }
+            h3 { font-size: 18px; }
+            body { padding: 16px; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Serverless PostgreSQL: Database Design for Scale",
+        "description": "Production guide to serverless PostgreSQL: connection pooling, migrations, per-user data patterns, and development/production parity.",
+        "author": {
+            "@type": "Person",
+            "name": "Febin Francis",
+            "url": "https://codesbyfebin.github.io"
+        },
+        "datePublished": "2026-10-04",
+        "dateModified": "2026-10-04",
+        "publisher": {
+            "@type": "Organization",
+            "name": "CodesbyFebin"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://codesbyfebin.github.io/blog/posts/serverless-postgresql-database-architecture.html"
+        },
+        "articleSection": "Database Architecture"
+    }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <a href="/blog/" class="back-link">← Back to Blog</a>
+
+        <header>
+            <div class="meta">
+                <span class="category">Database Architecture</span>
+                <span>Published October 4, 2026</span>
+            </div>
+            <h1>Serverless PostgreSQL: Database Design for Scale</h1>
+            <p class="subtitle">Production guide to serverless PostgreSQL: connection pooling, migrations, per-user data patterns, and development/production parity.</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>Why PostgreSQL, and Why Serverless</h2>
+                <p>PostgreSQL is the default choice for production systems: ACID transactions, rich types, indexing, and SQL itself are proven for 30 years. Serverless PostgreSQL (like Neon) removes infrastructure burden while keeping every feature: pay per connection-minute, no capacity planning, instant scaling.</p>
+                <p>Serverless works well for:</p>
+                <ul>
+                    <li><strong>Multi-tenant SaaS</strong> where per-user data must be isolated and scoped server-side</li>
+                    <li><strong>Rapid prototyping</strong> where schema changes are frequent and you need instant migrations</li>
+                    <li><strong>Bursty traffic</strong> where you don't want to reserve capacity for peak load</li>
+                    <li><strong>Regional deployments</strong> where you want a database close to your servers</li>
+                </ul>
+
+                <div class="key-point">
+                    <strong>Key constraint:</strong> Serverless databases use connection pooling to share connections. This means you cannot rely on session state (SET statements, temporary tables, advisory locks). Keep sessions stateless.
+                </div>
+            </section>
+
+            <section>
+                <h2>Development vs. Production: Choose Parity</h2>
+                <p>A common problem: development uses SQLite or mock data, production uses PostgreSQL. The two behave differently, and bugs only appear in production.</p>
+                <p><strong>Better approach:</strong> Use the same database engine in development as production. Serverless PostgreSQL supports this with a lightweight fallback:</p>
+                <ul>
+                    <li><strong>Configured (env var set, e.g. deployed):</strong> Real Neon PostgreSQL</li>
+                    <li><strong>Not configured (sandbox live preview):</strong> Embedded PGLite (Postgres in WebAssembly), same SQL semantics</li>
+                </ul>
+                <p>Both modes work with the same driver and the same query API. This means you develop against real SQL, catch bugs early, and deploy with confidence.</p>
+
+                <pre><code>// Same code, same API, different backend
+import { getSql } from '@/lib/db';
+
+const sql = await getSql();
+// In dev: PGLite (in-process, zero config)
+// In prod: Neon (real PostgreSQL, connection pool)
+return sql<{ id: number; title: string }>`
+  SELECT id, title FROM posts ORDER BY id DESC
+`;</code></pre>
+            </section>
+
+            <section>
+                <h2>Migrations: Schema as Code</h2>
+                <p>Migrations are your source of truth for the schema. Never create tables by hand or through a GUI. Write SQL, version it, and apply it to every environment in the same order.</p>
+
+                <h3>Structure</h3>
+                <p>Store migrations in <code>migrations/</code> directory, numbered and ordered:</p>
+                <pre><code>migrations/
+  0001_users.sql
+  0002_posts.sql
+  0003_add_tags.sql</code></pre>
+
+                <h3>Pattern</h3>
+                <p>Each migration is idempotent. Use <code>CREATE TABLE IF NOT EXISTS</code> so re-running a migration doesn't fail:</p>
+                <pre><code>-- migrations/0001_users.sql
+CREATE TABLE IF NOT EXISTS users (
+  id         SERIAL PRIMARY KEY,
+  email      TEXT NOT NULL UNIQUE,
+  user_id    TEXT NOT NULL UNIQUE,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE INDEX IF NOT EXISTS users_email_idx ON users (email);</code></pre>
+
+                <h3>Development Workflow</h3>
+                <ol>
+                    <li>Write a new migration: <code>migrations/0002_posts.sql</code></li>
+                    <li>Start the dev server. The migration runs automatically on PGLite startup.</li>
+                    <li>Test your queries against the new schema.</li>
+                    <li>On deploy, the build step runs all migrations against Neon before shipping.</li>
+                </ol>
+
+                <div class="key-point">
+                    <strong>Never edit an applied migration.</strong> It is tracked by name in <code>_migrations</code; a re-run is skipped. If a migration has bugs, write a new migration that fixes it. This keeps the history auditable and replay-safe.
+                </div>
+            </section>
+
+            <section>
+                <h2>Per-User Data: The Scoping Rule</h2>
+                <p>In multi-user systems, every query must be scoped to the authenticated user. This is not optional—it is your primary defense against data leaks.</p>
+
+                <h3>The Pattern</h3>
+                <p>Every user-owned table gets a <code>user_id</code> column:</p>
+                <pre><code>CREATE TABLE todos (
+  id         SERIAL PRIMARY KEY,
+  user_id    TEXT NOT NULL,
+  title      TEXT NOT NULL,
+  done       BOOLEAN NOT NULL DEFAULT false,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE INDEX todos_user_id_idx ON todos (user_id);</code></pre>
+
+                <p>On every query, filter by user:</p>
+                <pre><code>import { authMiddleware } from '@/lib/auth/middleware';
+
+export const listTodos = createServerFn()
+  .middleware([authMiddleware])  // Verify session
+  .handler(async ({ context }) => {
+    const sql = await getSql();
+    // Always scope: context.userId is verified by middleware
+    return sql<{ id: number; title: string }>`
+      SELECT id, title FROM todos
+      WHERE user_id = ${context.userId}
+      ORDER BY id DESC
+    `;
+  });</code></pre>
+
+                <h3>Mutations Must Also Scope</h3>
+                <p>Not just reads—every write must scope to the user:</p>
+                <pre><code>// WRONG: Missing scope
+UPDATE todos SET done = true WHERE id = ${todoId};
+
+// RIGHT: Scope the update
+UPDATE todos
+  SET done = true
+  WHERE id = ${todoId} AND user_id = ${context.userId};</code></pre>
+
+                <p>The second update protects against a user guessing another user's todo ID and marking it done. Without the <code>AND user_id = …</code>, it would succeed.</p>
+
+                <div class="key-point">
+                    <strong>Trust the driver, not the user.</strong> A Postgres client library has full database access. The only check is your WHERE clause. An unscoped query is a lateral data leak waiting to happen.
+                </div>
+            </section>
+
+            <section>
+                <h2>Connection Pooling and Stateless Sessions</h2>
+                <p>Serverless databases like Neon use pooling to share connections across many requests. This means you cannot rely on session state.</p>
+
+                <h3>What Doesn't Work</h3>
+                <ul>
+                    <li><code>SET variable = value</code> — pooling may route the next query to a different physical connection</li>
+                    <li>Temporary tables — created in one connection, invisible from another</li>
+                    <li>Advisory locks — session-specific, don't work across connections</li>
+                    <li><code>LISTEN/NOTIFY</code> — session notifications don't reach pooled connections</li>
+                </ul>
+
+                <h3>What Works</h3>
+                <ul>
+                    <li>Standard SQL: SELECT, INSERT, UPDATE, DELETE, transactions within a single query</li>
+                    <li>Indexes and constraints (live in the database, not the connection)</li>
+                    <li>Prepared statements (compiled server-side, reusable)</li>
+                    <li>Explicit scoping: WHERE user_id = $1</li>
+                </ul>
+
+                <p>Think of each query as stateless. Pass all context in parameters, not in connection state.</p>
+            </section>
+
+            <section>
+                <h2>Query Patterns and Performance</h2>
+
+                <h3>Avoid N+1 Queries</h3>
+                <p>Loading a list of posts, then fetching the author for each post, is O(N) database calls:</p>
+                <pre><code>// SLOW: N+1 query pattern
+const posts = await sql`SELECT * FROM posts WHERE user_id = ${userId}`;
+for (const post of posts) {
+  const author = await sql`SELECT * FROM users WHERE id = ${post.author_id}`;
+  post.author = author;
+}</code></pre>
+
+                <p>Better: Join or use a batch query:</p>
+                <pre><code>// BETTER: Single query with join
+const posts = await sql`
+  SELECT p.*, u.name as author_name
+  FROM posts p
+  LEFT JOIN users u ON p.author_id = u.id
+  WHERE p.user_id = ${userId}
+`;</code></pre>
+
+                <h3>Indexes for Common Filters</h3>
+                <p>If you always filter by a column, index it:</p>
+                <pre><code>CREATE INDEX IF NOT EXISTS posts_user_id_idx ON posts (user_id);
+-- After adding this index, queries with WHERE user_id = X run in milliseconds</code></pre>
+
+                <h3>Type Safety</h3>
+                <p>Always declare result types to catch schema mismatches:</p>
+                <pre><code>// Declares the shape of each row
+const posts = await sql<{
+  id: number;
+  title: string;
+  created_at: string;  // Dates come back as ISO strings
+}>`SELECT id, title, created_at FROM posts`;</code></pre>
+            </section>
+
+            <section>
+                <h2>Development ↔ Production Parity</h2>
+
+                <h3>PGLite (Development)</h3>
+                <ul>
+                    <li>In-memory, wiped on dev-server restart</li>
+                    <li>Single connection (no concurrency or locking)</li>
+                    <li>No extensions (don't <code>CREATE EXTENSION</code>)</li>
+                    <li>Perfect for catching SQL errors early</li>
+                </ul>
+
+                <h3>Neon (Production)</h3>
+                <ul>
+                    <li>Persistent network database</li>
+                    <li>Connection pool (stateless sessions)</li>
+                    <li>Network latency: queries may take 10–100ms</li>
+                    <li>Cold resume: scaling from zero takes a few seconds</li>
+                </ul>
+
+                <h3>Differences to Respect</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>PGLite (Dev)</th>
+                            <th>Neon (Prod)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Transactions</td>
+                            <td>✓ Work fine</td>
+                            <td>✓ Work fine</td>
+                        </tr>
+                        <tr>
+                            <td>Session state (SET)</td>
+                            <td>✓ Works</td>
+                            <td>✗ Pooled away</td>
+                        </tr>
+                        <tr>
+                            <td>Concurrent writes</td>
+                            <td>✗ Single connection</td>
+                            <td>✓ Full support</td>
+                        </tr>
+                        <tr>
+                            <td>Latency</td>
+                            <td>&lt;1ms</td>
+                            <td>10–100ms</td>
+                        </tr>
+                        <tr>
+                            <td>user_id type</td>
+                            <td>TEXT ('dev-user')</td>
+                            <td>TEXT (from auth)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>Checklist</h2>
+                <ul>
+                    <li>☐ Migrations tracked in <code>migrations/</code>, ordered, idempotent</li>
+                    <li>☐ Every user-owned table has <code>user_id TEXT NOT NULL</code> column</li>
+                    <li>☐ All queries scoped by <code>WHERE user_id = ${context.userId}</code></li>
+                    <li>☐ Mutations also scoped: UPDATE/DELETE include user_id in WHERE</li>
+                    <li>☐ No session state (SET statements) relied upon</li>
+                    <li>☐ Type-safe query results declared</li>
+                    <li>☐ Indexes on frequently filtered columns</li>
+                    <li>☐ N+1 queries eliminated (use joins or batch queries)</li>
+                    <li>☐ <code>DATABASE_URL</code> injected in production, unset in development (uses PGLite)</li>
+                    <li>☐ Dev-server queries tested against PGLite before deploy</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p><strong>Evidence-first engineering.</strong> This guide reflects patterns from the Grok Build framework and tested against both PGLite and Neon PostgreSQL.</p>
+            <p>Published October 4, 2026 · Database Architecture</p>
+            <p>PROOF > PROMISES</p>
+        </footer>
+    </div>
+</body>
+</html>
