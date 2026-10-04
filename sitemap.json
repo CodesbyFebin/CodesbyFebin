@@ -1,700 +1,150 @@
-{
-  "$schema": "https://codesbyfebin.vercel.app/sitemap.json",
-  "site": {
-    "name": "CodesbyFebin",
-    "url": "https://codesbyfebin.vercel.app",
-    "description": "AI infrastructure, verifiable compute with STARK proofs, and sovereign self-hosted systems. 100+ articles and guides.",
-    "language": "en",
-    "feed": "https://codesbyfebin.vercel.app/feed.xml",
-    "blog": "https://codesbyfebin.vercel.app/blog/",
-    "llms": "https://codesbyfebin.vercel.app/llms.txt"
-  },
-  "sitemaps": [
-    {
-      "url": "https://codesbyfebin.vercel.app/portfolio-complete.html",
-      "type": "website",
-      "title": "CodesbyFebin \u2014 AI Infrastructure & Verifiable Compute",
-      "lastModified": "2025-10-03",
-      "priority": 1.0,
-      "tags": [
-        "portfolio",
-        "systems",
-        "open-source"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/",
-      "type": "collection",
-      "title": "Blog \u2014 100+ Technical Articles",
-      "lastModified": "2025-10-03",
-      "priority": 0.95,
-      "items": 100,
-      "tags": [
-        "articles",
-        "tutorials",
-        "guides",
-        "case-studies"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/understanding-stark-proofs-simple-guide.html",
-      "type": "article",
-      "title": "Understanding STARK Proofs: A Complete Guide for Developers",
-      "category": "Verifiable Compute",
-      "lastModified": "2025-03-12",
-      "priority": 0.85,
-      "tags": [
-        "STARK",
-        "cryptography",
-        "zero-knowledge",
-        "proofs"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/building-zkvm-rust-winterfell.html",
-      "type": "article",
-      "title": "Building a Zero-Knowledge VM in Rust with Winterfell",
-      "category": "Verifiable Compute",
-      "lastModified": "2025-03-10",
-      "priority": 0.85,
-      "tags": [
-        "zkVM",
-        "Winterfell",
-        "Rust",
-        "zero-knowledge"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/self-hosted-infrastructure-complete-setup.html",
-      "type": "article",
-      "title": "Self-Hosted Infrastructure: A 2025 Setup Guide for Engineers",
-      "category": "Self-Hosted Systems",
-      "lastModified": "2025-02-28",
-      "priority": 0.85,
-      "tags": [
-        "self-hosted",
-        "WireGuard",
-        "infrastructure",
-        "privacy"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/local-llm-inference-gateway-setup.html",
-      "type": "article",
-      "title": "Building a Local LLM Inference Gateway: Complete Setup",
-      "category": "AI Infrastructure",
-      "lastModified": "2025-02-20",
-      "priority": 0.85,
-      "tags": [
-        "LLM",
-        "inference",
-        "local models",
-        "privacy"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/rust-memory-safety-ownership-borrowing.html",
-      "type": "article",
-      "title": "Rust Memory Safety: Ownership, Borrowing, and Lifetimes Explained",
-      "category": "Backend",
-      "lastModified": "2025-02-15",
-      "priority": 0.85,
-      "tags": [
-        "Rust",
-        "memory safety",
-        "ownership",
-        "learning"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/async-rust-high-performance-systems.html",
-      "type": "article",
-      "title": "Building High-Performance Systems with Async Rust",
-      "category": "Backend",
-      "lastModified": "2025-02-10",
-      "priority": 0.85,
-      "tags": [
-        "Rust",
-        "async",
-        "performance",
-        "concurrency"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/cryptographic-hash-functions-security.html",
-      "type": "article",
-      "title": "Introduction to Cryptographic Hash Functions and Security",
-      "category": "Verifiable Compute",
-      "lastModified": "2025-02-05",
-      "priority": 0.85,
-      "tags": [
-        "cryptography",
-        "hashing",
-        "security",
-        "fundamentals"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/raft-consensus-protocol-distributed-systems.html",
-      "type": "article",
-      "title": "Distributed Consensus: Raft Protocol Deep Dive",
-      "category": "Self-Hosted Systems",
-      "lastModified": "2025-01-28",
-      "priority": 0.85,
-      "tags": [
-        "Raft",
-        "consensus",
-        "distributed systems",
-        "database"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/quantum-computing-cryptography-threats.html",
-      "type": "article",
-      "title": "Quantum Computing Threats to Cryptography and NIST Standards",
-      "category": "Verifiable Compute",
-      "lastModified": "2025-01-20",
-      "priority": 0.85,
-      "tags": [
-        "quantum computing",
-        "cryptography",
-        "NIST",
-        "post-quantum"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/docker-containerization-fundamentals.html",
-      "type": "article",
-      "title": "Getting Started with Docker: Containerization Fundamentals",
-      "category": "DevOps",
-      "lastModified": "2025-01-15",
-      "priority": 0.85,
-      "tags": [
-        "Docker",
-        "containers",
-        "DevOps",
-        "fundamentals"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-11.html",
-      "type": "article",
-      "title": "Advanced Development Technique 1: Production Patterns",
-      "category": "Microservices",
-      "lastModified": "2026-10-01",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-12.html",
-      "type": "article",
-      "title": "Advanced Development Technique 2: Production Patterns",
-      "category": "API Design",
-      "lastModified": "2026-09-29",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-13.html",
-      "type": "article",
-      "title": "Advanced Development Technique 3: Production Patterns",
-      "category": "Database",
-      "lastModified": "2026-09-27",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-14.html",
-      "type": "article",
-      "title": "Advanced Development Technique 4: Production Patterns",
-      "category": "DevOps",
-      "lastModified": "2026-09-25",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-15.html",
-      "type": "article",
-      "title": "Advanced Development Technique 5: Production Patterns",
-      "category": "Security",
-      "lastModified": "2026-09-23",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-16.html",
-      "type": "article",
-      "title": "Advanced Development Technique 6: Production Patterns",
-      "category": "Frontend",
-      "lastModified": "2026-09-21",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-17.html",
-      "type": "article",
-      "title": "Advanced Development Technique 7: Production Patterns",
-      "category": "Backend",
-      "lastModified": "2026-09-19",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-18.html",
-      "type": "article",
-      "title": "Advanced Development Technique 8: Production Patterns",
-      "category": "Kubernetes",
-      "lastModified": "2026-09-17",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-19.html",
-      "type": "article",
-      "title": "Advanced Development Technique 9: Production Patterns",
-      "category": "Microservices",
-      "lastModified": "2026-09-15",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-20.html",
-      "type": "article",
-      "title": "Advanced Development Technique 10: Production Patterns",
-      "category": "API Design",
-      "lastModified": "2026-09-13",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-21.html",
-      "type": "article",
-      "title": "Advanced Development Technique 11: Production Patterns",
-      "category": "Database",
-      "lastModified": "2026-09-11",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-22.html",
-      "type": "article",
-      "title": "Advanced Development Technique 12: Production Patterns",
-      "category": "DevOps",
-      "lastModified": "2026-09-09",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-23.html",
-      "type": "article",
-      "title": "Advanced Development Technique 13: Production Patterns",
-      "category": "Security",
-      "lastModified": "2026-09-07",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-24.html",
-      "type": "article",
-      "title": "Advanced Development Technique 14: Production Patterns",
-      "category": "Frontend",
-      "lastModified": "2026-09-05",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-25.html",
-      "type": "article",
-      "title": "Advanced Development Technique 15: Production Patterns",
-      "category": "Backend",
-      "lastModified": "2026-09-03",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-26.html",
-      "type": "article",
-      "title": "Advanced Development Technique 16: Production Patterns",
-      "category": "Kubernetes",
-      "lastModified": "2026-09-01",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-27.html",
-      "type": "article",
-      "title": "Advanced Development Technique 17: Production Patterns",
-      "category": "Microservices",
-      "lastModified": "2026-08-30",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-28.html",
-      "type": "article",
-      "title": "Advanced Development Technique 18: Production Patterns",
-      "category": "API Design",
-      "lastModified": "2026-08-28",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-29.html",
-      "type": "article",
-      "title": "Advanced Development Technique 19: Production Patterns",
-      "category": "Database",
-      "lastModified": "2026-08-26",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-30.html",
-      "type": "article",
-      "title": "Advanced Development Technique 20: Production Patterns",
-      "category": "DevOps",
-      "lastModified": "2026-08-24",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-31.html",
-      "type": "article",
-      "title": "Advanced Development Technique 21: Production Patterns",
-      "category": "Security",
-      "lastModified": "2026-08-22",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-32.html",
-      "type": "article",
-      "title": "Advanced Development Technique 22: Production Patterns",
-      "category": "Frontend",
-      "lastModified": "2026-08-20",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-33.html",
-      "type": "article",
-      "title": "Advanced Development Technique 23: Production Patterns",
-      "category": "Backend",
-      "lastModified": "2026-08-18",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-34.html",
-      "type": "article",
-      "title": "Advanced Development Technique 24: Production Patterns",
-      "category": "Kubernetes",
-      "lastModified": "2026-08-16",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-35.html",
-      "type": "article",
-      "title": "Advanced Development Technique 25: Production Patterns",
-      "category": "Microservices",
-      "lastModified": "2026-08-14",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-36.html",
-      "type": "article",
-      "title": "Advanced Development Technique 26: Production Patterns",
-      "category": "API Design",
-      "lastModified": "2026-08-12",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-37.html",
-      "type": "article",
-      "title": "Advanced Development Technique 27: Production Patterns",
-      "category": "Database",
-      "lastModified": "2026-08-10",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-38.html",
-      "type": "article",
-      "title": "Advanced Development Technique 28: Production Patterns",
-      "category": "DevOps",
-      "lastModified": "2026-08-08",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-39.html",
-      "type": "article",
-      "title": "Advanced Development Technique 29: Production Patterns",
-      "category": "Security",
-      "lastModified": "2026-08-06",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-40.html",
-      "type": "article",
-      "title": "Advanced Development Technique 30: Production Patterns",
-      "category": "Frontend",
-      "lastModified": "2026-08-04",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-41.html",
-      "type": "article",
-      "title": "Advanced Development Technique 31: Production Patterns",
-      "category": "Backend",
-      "lastModified": "2026-08-02",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-42.html",
-      "type": "article",
-      "title": "Advanced Development Technique 32: Production Patterns",
-      "category": "Kubernetes",
-      "lastModified": "2026-07-31",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-43.html",
-      "type": "article",
-      "title": "Advanced Development Technique 33: Production Patterns",
-      "category": "Microservices",
-      "lastModified": "2026-07-29",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-44.html",
-      "type": "article",
-      "title": "Advanced Development Technique 34: Production Patterns",
-      "category": "API Design",
-      "lastModified": "2026-07-27",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-45.html",
-      "type": "article",
-      "title": "Advanced Development Technique 35: Production Patterns",
-      "category": "Database",
-      "lastModified": "2026-07-25",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-46.html",
-      "type": "article",
-      "title": "Advanced Development Technique 36: Production Patterns",
-      "category": "DevOps",
-      "lastModified": "2026-07-23",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-47.html",
-      "type": "article",
-      "title": "Advanced Development Technique 37: Production Patterns",
-      "category": "Security",
-      "lastModified": "2026-07-21",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-48.html",
-      "type": "article",
-      "title": "Advanced Development Technique 38: Production Patterns",
-      "category": "Frontend",
-      "lastModified": "2026-07-19",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-49.html",
-      "type": "article",
-      "title": "Advanced Development Technique 39: Production Patterns",
-      "category": "Backend",
-      "lastModified": "2026-07-17",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    },
-    {
-      "url": "https://codesbyfebin.vercel.app/blog/posts/post-50.html",
-      "type": "article",
-      "title": "Advanced Development Technique 40: Production Patterns",
-      "category": "Kubernetes",
-      "lastModified": "2026-07-15",
-      "priority": 0.85,
-      "tags": [
-        "advanced",
-        "production",
-        "best-practices"
-      ]
-    }
-  ]
-}
+[
+  "https://codesbyfebin.github.io/blog/stark/zkp-tutorial-developers/",
+  "https://codesbyfebin.github.io/blog/stark/what-are-stark-proofs/",
+  "https://codesbyfebin.github.io/blog/stark/stark-vs-snark/",
+  "https://codesbyfebin.github.io/blog/stark/build-zkvm-rust/",
+  "https://codesbyfebin.github.io/blog/stark/winterfell-prover-tutorial/",
+  "https://codesbyfebin.github.io/blog/stark/air-constraints-explained/",
+  "https://codesbyfebin.github.io/blog/stark/fri-protocol-explained/",
+  "https://codesbyfebin.github.io/blog/stark/execution-trace-explained/",
+  "https://codesbyfebin.github.io/blog/stark/post-quantum-proof-systems/",
+  "https://codesbyfebin.github.io/blog/stark/verifiable-computation-examples/",
+  "https://codesbyfebin.github.io/blog/stark/zkvm-vs-evm/",
+  "https://codesbyfebin.github.io/blog/stark/merkle-trees-stark/",
+  "https://codesbyfebin.github.io/blog/stark/reed-solomon-fri/",
+  "https://codesbyfebin.github.io/blog/stark/why-stark-verification-fails/",
+  "https://codesbyfebin.github.io/blog/stark/debug-air-constraint-violation/",
+  "https://codesbyfebin.github.io/blog/stark/can-stark-proof-be-forged/",
+  "https://codesbyfebin.github.io/blog/stark/why-are-stark-proofs-large/",
+  "https://codesbyfebin.github.io/blog/stark/proving-time-laptop/",
+  "https://codesbyfebin.github.io/blog/stark/stark-trusted-setup-required/",
+  "https://codesbyfebin.github.io/blog/stark/what-field-does-winterfell-use/",
+  "https://codesbyfebin.github.io/blog/stark/max-cycles-zkvm-prove/",
+  "https://codesbyfebin.github.io/blog/stark/visualize-execution-trace/",
+  "https://codesbyfebin.github.io/blog/stark/why-empty-execution-trace/",
+  "https://codesbyfebin.github.io/blog/stark/recursive-stark-proofs/",
+  "https://codesbyfebin.github.io/blog/stark/benchmark-a-prover/",
+  "https://codesbyfebin.github.io/blog/rust/rust-systems-programming-guide/",
+  "https://codesbyfebin.github.io/blog/rust/rust-embedded-development/",
+  "https://codesbyfebin.github.io/blog/rust/axum-web-server-tutorial/",
+  "https://codesbyfebin.github.io/blog/rust/tokio-async-tutorial/",
+  "https://codesbyfebin.github.io/blog/rust/cargo-release-optimization/",
+  "https://codesbyfebin.github.io/blog/rust/thiserror-vs-anyhow/",
+  "https://codesbyfebin.github.io/blog/rust/rust-cli-clap-tutorial/",
+  "https://codesbyfebin.github.io/blog/rust/rust-to-wasm-guide/",
+  "https://codesbyfebin.github.io/blog/rust/traits-vs-generics/",
+  "https://codesbyfebin.github.io/blog/rust/when-to-use-unsafe/",
+  "https://codesbyfebin.github.io/blog/rust/axum-rest-api-serde/",
+  "https://codesbyfebin.github.io/blog/rust/rust-memory-layout/",
+  "https://codesbyfebin.github.io/blog/rust/cargo-release-slower-than-expected/",
+  "https://codesbyfebin.github.io/blog/rust/fix-rust-e0505/",
+  "https://codesbyfebin.github.io/blog/rust/rc-vs-arc-rust/",
+  "https://codesbyfebin.github.io/blog/rust/share-state-tokio-tasks/",
+  "https://codesbyfebin.github.io/blog/rust/rust-high-memory-usage/",
+  "https://codesbyfebin.github.io/blog/rust/profile-rust-code/",
+  "https://codesbyfebin.github.io/blog/rust/tokio-main-attribute-explained/",
+  "https://codesbyfebin.github.io/blog/rust/structure-large-rust-project/",
+  "https://codesbyfebin.github.io/blog/rust/cross-compile-rust-arm/",
+  "https://codesbyfebin.github.io/blog/rust/rust-good-for-web-backends/",
+  "https://codesbyfebin.github.io/blog/rust/axum-handler-errors/",
+  "https://codesbyfebin.github.io/blog/rust/read-rust-compiler-suggestions/",
+  "https://codesbyfebin.github.io/blog/rust/reduce-rust-binary-size/",
+  "https://codesbyfebin.github.io/blog/self-hosting/exit-the-cloud-guide/",
+  "https://codesbyfebin.github.io/blog/self-hosting/self-hosted-cloud-storage/",
+  "https://codesbyfebin.github.io/blog/self-hosting/wireguard-mesh-tutorial/",
+  "https://codesbyfebin.github.io/blog/self-hosting/dns01-certificates-guide/",
+  "https://codesbyfebin.github.io/blog/self-hosting/reverse-proxy-auto-tls/",
+  "https://codesbyfebin.github.io/blog/self-hosting/self-hosted-saas-alternatives/",
+  "https://codesbyfebin.github.io/blog/self-hosting/zfs-snapshots-backups/",
+  "https://codesbyfebin.github.io/blog/self-hosting/restic-automation-guide/",
+  "https://codesbyfebin.github.io/blog/self-hosting/homelab-to-production/",
+  "https://codesbyfebin.github.io/blog/self-hosting/self-hosted-password-manager/",
+  "https://codesbyfebin.github.io/blog/self-hosting/nixos-vs-debian-homeserver/",
+  "https://codesbyfebin.github.io/blog/self-hosting/self-hosting-privacy-benefits/",
+  "https://codesbyfebin.github.io/blog/self-hosting/mini-pc-server-projects/",
+  "https://codesbyfebin.github.io/blog/self-hosting/test-restic-restores-frequency/",
+  "https://codesbyfebin.github.io/blog/self-hosting/wireguard-handshake-failing-nat/",
+  "https://codesbyfebin.github.io/blog/self-hosting/host-website-no-static-ip/",
+  "https://codesbyfebin.github.io/blog/self-hosting/home-server-ram-requirements/",
+  "https://codesbyfebin.github.io/blog/self-hosting/self-hosting-worth-it-2025/",
+  "https://codesbyfebin.github.io/blog/self-hosting/auto-renew-certs-behind-nat/",
+  "https://codesbyfebin.github.io/blog/self-hosting/home-server-power-loss/",
+  "https://codesbyfebin.github.io/blog/self-hosting/backup-self-hosted-server-offsite/",
+  "https://codesbyfebin.github.io/blog/self-hosting/expose-self-hosted-app-safely/",
+  "https://codesbyfebin.github.io/blog/self-hosting/monitor-home-server-free/",
+  "https://codesbyfebin.github.io/blog/self-hosting/mesh-on-mini-pcs/",
+  "https://codesbyfebin.github.io/blog/self-hosting/migrate-self-hosted-app-hardware/",
+  "https://codesbyfebin.github.io/blog/ai-infra/mcp-tutorial/",
+  "https://codesbyfebin.github.io/blog/ai-infra/build-mcp-server/",
+  "https://codesbyfebin.github.io/blog/ai-infra/self-hosted-llm-inference/",
+  "https://codesbyfebin.github.io/blog/ai-infra/openai-compatible-gateway/",
+  "https://codesbyfebin.github.io/blog/ai-infra/run-llm-locally-privacy/",
+  "https://codesbyfebin.github.io/blog/ai-infra/quantized-models-explained/",
+  "https://codesbyfebin.github.io/blog/ai-infra/ai-agent-security/",
+  "https://codesbyfebin.github.io/blog/ai-infra/agent-tool-calling-safety/",
+  "https://codesbyfebin.github.io/blog/ai-infra/local-rag-pipeline/",
+  "https://codesbyfebin.github.io/blog/ai-infra/self-hosted-vector-db/",
+  "https://codesbyfebin.github.io/blog/ai-infra/llm-inference-cpu/",
+  "https://codesbyfebin.github.io/blog/ai-infra/self-hosted-vs-cloud-ai-cost/",
+  "https://codesbyfebin.github.io/blog/ai-infra/vram-for-7b-model/",
+  "https://codesbyfebin.github.io/blog/ai-infra/run-llm-8gb-ram/",
+  "https://codesbyfebin.github.io/blog/ai-infra/local-llm-slow-fix/",
+  "https://codesbyfebin.github.io/blog/ai-infra/safe-paste-code-into-llm/",
+  "https://codesbyfebin.github.io/blog/ai-infra/stop-agent-deleting-files/",
+  "https://codesbyfebin.github.io/blog/ai-infra/what-is-mcp-for/",
+  "https://codesbyfebin.github.io/blog/ai-infra/add-tools-to-agent-safely/",
+  "https://codesbyfebin.github.io/blog/ai-infra/log-every-agent-action/",
+  "https://codesbyfebin.github.io/blog/ai-infra/local-models-for-coding/",
+  "https://codesbyfebin.github.io/blog/ai-infra/q4-vs-q8-quantization/",
+  "https://codesbyfebin.github.io/blog/ai-infra/local-llm-hallucinates-more/",
+  "https://codesbyfebin.github.io/blog/ai-infra/cache-llm-responses/",
+  "https://codesbyfebin.github.io/blog/ai-infra/agents-verify-own-actions/",
+  "https://codesbyfebin.github.io/blog/grok-build/building-secure-authentication-oauth-identity/",
+  "https://codesbyfebin.github.io/blog/grok-build/serverless-postgresql-database-design-scale/",
+  "https://codesbyfebin.github.io/blog/grok-build/webrtc-peer-to-peer-multiplayer/",
+  "https://codesbyfebin.github.io/blog/grok-build/browser-game-loop-and-state/",
+  "https://codesbyfebin.github.io/blog/grok-build/threejs-react-scene-lifecycle/",
+  "https://codesbyfebin.github.io/blog/grok-build/grok-api-server-side-client/",
+  "https://codesbyfebin.github.io/blog/grok-build/design-system-tokens-accessible-ui/",
+  "https://codesbyfebin.github.io/blog/stark/",
+  "https://codesbyfebin.github.io/blog/rust/",
+  "https://codesbyfebin.github.io/blog/self-hosting/",
+  "https://codesbyfebin.github.io/blog/ai-infra/",
+  "https://codesbyfebin.github.io/blog/grok-build/",
+  "https://codesbyfebin.github.io/blog/",
+  "https://codesbyfebin.github.io/projects/",
+  "https://codesbyfebin.github.io/projects/rust-stark-zkvm/",
+  "https://codesbyfebin.github.io/projects/decentralized-host/",
+  "https://codesbyfebin.github.io/projects/decentralized.hosting/",
+  "https://codesbyfebin.github.io/projects/xfree/",
+  "https://codesbyfebin.github.io/projects/xfree-app/",
+  "https://codesbyfebin.github.io/projects/agent-swarm/",
+  "https://codesbyfebin.github.io/projects/om-personal-ai/",
+  "https://codesbyfebin.github.io/projects/bestaiagent.in/",
+  "https://codesbyfebin.github.io/projects/mcp-server/",
+  "https://codesbyfebin.github.io/projects/android-flashing-tool/",
+  "https://codesbyfebin.github.io/projects/indian-mcp-server/",
+  "https://codesbyfebin.github.io/projects/github-mcpserver--ci-cd-engine/",
+  "https://codesbyfebin.github.io/projects/open-swarm-ai/",
+  "https://codesbyfebin.github.io/projects/worker-agent/",
+  "https://codesbyfebin.github.io/projects/awesome-zkvm/",
+  "https://codesbyfebin.github.io/projects/evidence-cookbook/",
+  "https://codesbyfebin.github.io/projects/mcp-cookbook/",
+  "https://codesbyfebin.github.io/projects/agent-skills-cookbook/",
+  "https://codesbyfebin.github.io/projects/kubernetes-ai-cookbook/",
+  "https://codesbyfebin.github.io/projects/self-hosted-cloud-cookbook/",
+  "https://codesbyfebin.github.io/projects/ai-security-cookbook/",
+  "https://codesbyfebin.github.io/projects/ai-observability-cookbook/",
+  "https://codesbyfebin.github.io/projects/verifiable-ai-cookbook/",
+  "https://codesbyfebin.github.io/",
+  "https://codesbyfebin.github.io/about/",
+  "https://codesbyfebin.github.io/systems/",
+  "https://codesbyfebin.github.io/research/",
+  "https://codesbyfebin.github.io/specifications/",
+  "https://codesbyfebin.github.io/contributions/",
+  "https://codesbyfebin.github.io/github/",
+  "https://codesbyfebin.github.io/services/",
+  "https://codesbyfebin.github.io/contact/",
+  "https://codesbyfebin.github.io/methodology/",
+  "https://codesbyfebin.github.io/privacy/"
+]
